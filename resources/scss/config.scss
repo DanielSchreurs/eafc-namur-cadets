@@ -1,0 +1,36 @@
+/**
+ * BASE SIZE
+ * All calculations are based on this. It’s recommended that
+ * you keep it at 1rem because that is the root font size. You
+ * can set it to whatever you like and whatever unit you like.
+ */
+$base-size: 1rem;
+$base-size-xs: $base-size * 0.2;
+$base-size-s: $base-size * 0.5;
+$base-size-l: $base-size * 2;
+$base-size-xl: $base-size * 3;
+$base-size-xxl: $base-size * 4;
+$base-size-xxxl: $base-size * 5;
+
+$primary: #003e46;
+$secondary: #ffb000;
+$tertiary: #001ca1;
+$quaternary: #ff0008;
+$white: #ffffff;
+$light: #fafafa;
+$light-shade: #eeeeee;
+$grey: #c4c4c4;
+
+
+$transition: 0.4s ease;
+$border: 2px solid $secondary;
+$max-width: $base-size*100;
+$xxl-screen: 1900px;
+$box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+$box-shadow-strong: 2px 2px 6px rgba(0, 0, 0, 0.27);
+
+
+$bold: 'Inter-Bold' Helvetica, sans-serif;
+
+$burger-line-height: 2px;
+

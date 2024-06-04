@@ -1,0 +1,29 @@
+<header class="header">
+    <div class="wrapper">
+        <h1 class="visually-hidden">{{header:full_name}}</h1>
+        <div class="header__logo">
+            <a title="Retournez à la page d’accueil" href="{{ site:url }}">
+                {{ svg src="Logo-EAFC" id="Logo-EAFC" title="Le logo d'EAFC Namur Cadets" }}
+            </a>
+            <input id="burger" type="checkbox"/>
+            <label for="burger">
+                <span class="line line--first"></span>
+                <span class="line"></span>
+                <span class="line line--last"></span>
+                <span class="visually-hidden">Ouvrir ou fermer le menu</span>
+            </label>
+        </div>
+        <div class="header__nav">
+            <div class="header__nav__content">
+                <nav class="tools-nav" aria-label="Navigation secondaire : liens vers nos outils externes">
+                    <h2 class="visually-hidden">{{ footer:tools_title }}</h2>
+                    {{ partial:second_nav }}
+                </nav>
+                <nav class="main-nav" aria-label="Navigation principale">
+                    <h2 class="visually-hidden">Navigation principale</h2>
+                    {{ partial:main_nav }}
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

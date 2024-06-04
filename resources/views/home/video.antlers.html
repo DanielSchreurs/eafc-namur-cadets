@@ -1,0 +1,16 @@
+<section class="video">
+    <div class="wrapper">
+        {{ svg src="css/pencil" class="video__pencil" }}
+        <h2 class="video__header">{{ video_title }}{{ svg src="css/arrow--video" }}</h2>
+        {{ if video | is_embeddable }}
+            <!-- Youtube and Vimeo -->
+            <iframe title="Vidéo promotionnel de l’EAFC-Namur-Cadets" src="{{ video | embed_url }}"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        {{ else }}
+            <!-- Other HTML5 video types -->
+            <video src="{{ video | embed_url }}"></video>
+        {{ /if }}
+    </div>
+    {{ svg src="css/space" class="video__space" }}
+</section>

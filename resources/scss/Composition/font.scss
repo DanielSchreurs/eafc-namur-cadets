@@ -1,0 +1,115 @@
+/* RecursiveSansCslSt-Bold */
+@font-face {
+    font-family: 'RecursiveSansCslSt-Bold';
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+    src: url('../fonts/RecursiveSansCslSt-Bold.woff2') format('woff2');
+}
+
+/* RecursiveSansCslSt-Light */
+@font-face {
+    font-family: 'RecursiveSansCslSt-Light';
+    font-style: normal;
+    font-weight: lighter;
+    font-display: swap;
+    src: url('../fonts/RecursiveSansCslSt-Light.woff2') format('woff2');
+}
+
+/* Inter-Light */
+@font-face {
+    font-family: 'Inter-Light';
+    font-style: normal;
+    font-weight: lighter;
+    font-display: swap;
+    src: url('../fonts/Inter-Light.woff2') format('woff2');
+}
+
+/* Inter-Medium */
+@font-face {
+    font-family: 'Inter-Medium';
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+    src: url('../fonts/Inter-Medium.woff2') format('woff2');
+}
+
+/* Inter-Regular */
+@font-face {
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+}
+
+/* latin */
+@font-face {
+    font-family: 'Inter-Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/Inter-Bold.woff) format('woff');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+    font-family: "Inter-Regular", Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "RecursiveSansCslSt-Bold", fantasy;
+    color: $primary;
+}
+
+a {
+    color: $primary;
+    transition: .3s;
+}
+
+a:hover, a:focus {
+    color: $secondary;
+}
+
+::-moz-selection {
+    background: $secondary;
+    color: $primary;
+}
+
+::selection {
+    background: $secondary;
+    color: $primary;
+}
+
+html {
+    scrollbar-color: $primary Canvas;
+    caret-color: $primary;
+}
+
+//::-webkit-scrollbar {
+//    background-color: $primary;
+//}
+
+::-webkit-scrollbar-thumb {
+    background-color: r $primary;
+}
+
+:root {
+    accent-color: $secondary;
+}
+
+:focus-visible {
+    outline-color: $secondary;
+}
+
+::marker {
+    color: $secondary;
+}
+
+:is(
+  ::-webkit-calendar-picker-indicator,
+  ::-webkit-clear-button,
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button
+) {
+    color: $secondary;
+}

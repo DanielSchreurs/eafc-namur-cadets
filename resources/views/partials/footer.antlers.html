@@ -1,0 +1,42 @@
+<footer class="footer">
+    <div class="wrapper">
+        <div class="footer_content">
+            {{ if footer:partners  }}
+                <nav class="partners" aria-label="{{ footer:partners_title }}">
+                    <h2 class="">{{ footer:partners_title }}</h2>
+                    {{ footer:partners }}
+                    <a href="{{ link }}"><span
+                        class="visually-hidden">{{ name }}</span>{{ glide:logo preset="partners" tag="true" }}</a>
+                    {{ /footer:partners }}
+                </nav>
+            {{ endif }}
+            <nav class="main-nav" aria-label="Plan du site">
+                <h2 class="">Plan du site</h2>
+                {{ partial:main_nav }}
+            </nav>
+            <section class="footer__contact">
+                <h2>{{ footer:contacts_title }}</h2>
+                {{ if footer:contacts  }}
+                    {{ footer:contacts }}
+                    <div class="footer__contact__info">
+                        {{ info }}
+                    </div>
+                    {{ /footer:contacts }}
+                {{ endif }}
+            </section>
+{{#             <nav class="tools-nav" aria-label="{{ footer:tools_title }}"> #}}
+{{#                 <h2 class="">{{footer:tools_title}}</h2> #}}
+{{#                 {{ partial:second_nav }} #}}
+{{#             </nav> #}}
+            <div class="footer__po">
+                <h2>Pouvoir organisateur</h2>
+                {{ svg src="WBE_logo_horizontal" title="Wallonie-Bruxelles Enseignement" }}
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <a href="{{ footer:terms_of_use }}">Conditions d’utilisation</a>
+            <a href="{{ footer:cookie_policy }}">Politique de gestion des cookies</a>
+            <p lang="en">Made by <a lang="fr" href="https://artisan-web.be">Artisan Web</a>.</p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,26 @@
+.btn {
+    background-color: $primary;
+    border: 2px solid $secondary;
+    text-decoration: none;
+    font-family: $bold;
+    font-weight: bold;
+    color: $white;
+    padding: $base-size-s $base-size;
+    border-radius: $base-size-s 0 $base-size-s 0;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    transition: $transition;
+
+
+    &:hover,&:focus {
+        text-decoration: none;
+        background-color: $secondary;
+        border-radius: 0 $base-size-s 0 $base-size-s;
+        color: $primary;
+        border: 2px solid $primary;
+    }
+}
+

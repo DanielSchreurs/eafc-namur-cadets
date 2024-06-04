@@ -1,0 +1,187 @@
+.categories {
+    padding: $base-size-l 0;
+    display: flex;
+    flex-direction: column;
+    gap: $base-size;
+    position: relative;
+    background: $light-shade;
+    @media screen and (max-width: $xxl-screen) {
+        gap: $base-size-xxl;
+    }
+
+    &__header {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+
+        svg {
+            fill: $white;
+            position: absolute;
+            bottom: 0;
+            left: -8vw;
+            z-index: -1;
+            display: none;
+            @media screen and (min-width: 768px) {
+                display: block;
+            }
+
+        }
+    }
+
+    &__category {
+        overflow-x: visible;
+        align-items: center;
+        position: relative;
+        text-align: center;
+        min-width: 14rem;
+        background: $white;
+        border-radius: 0 $base-size 0 $base-size;
+        box-shadow: $box-shadow;
+        margin-bottom: $base-size;
+
+        &__link {
+            min-height: 10rem;
+            padding: $base-size;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: $base-size;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.2;
+
+            &:hover, &:focus {
+                svg {
+                    fill: $secondary;
+
+                    path {
+                        fill: $secondary;
+                    }
+                }
+            }
+
+            &__icon {
+                display: flex;
+                background: $primary;
+                height: $base-size-xl;
+                width: $base-size-xl;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+
+                svg {
+                    fill: $white;
+
+                    path {
+                        fill: $white;
+                    }
+                }
+            }
+
+            &__levels {
+                font-weight: normal;
+                overflow-x: visible;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: $base-size;
+                left: -$base-size-s;
+                gap: $base-size-s;
+
+
+                &__level {
+                    padding: $base-size-xs;
+                    padding-left: $base-size-s;
+                    border-radius: 0 $base-size-xs $base-size-xs 0;
+                    color: $white;
+                    font-size: 0.8rem;
+                    position: relative;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        bottom: -$base-size-s;
+                        left: 0;
+                        display: inline-block;
+                        height: 0;
+                        width: 0;
+                        border-top: $base-size-s solid transparent;
+                        border-left: $base-size-s solid transparent;
+                    }
+                }
+
+                .SS {
+                    background: $secondary;
+
+                    &:before {
+                        border-top-color: $secondary;
+                    }
+                }
+
+                .STC {
+                    background: $tertiary;
+
+                    &:before {
+                        border-top-color: $tertiary;
+                    }
+                }
+
+                .SI {
+                    background: $quaternary;
+
+                    &:before {
+                        border-top-color: $quaternary;
+                    }
+                }
+            }
+        }
+    }
+
+    &__cta {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        z-index: 2;
+
+        .btn {
+            margin-right: $base-size;
+        }
+    }
+
+    &__star {
+        position: absolute;
+        bottom: -3.25rem;
+        left: 0;
+        z-index: 1;
+        fill: $secondary;
+        max-width: 3.75rem;
+    }
+
+    &__claw {
+        position: absolute;
+        top: 30%;
+        right: 0;
+        z-index: 1;
+        fill: $secondary;
+        @media screen and (min-width: 768px) {
+            right: calc(((100% - $max-width) / 2 - 6rem));
+        }
+    }
+
+    @media screen and (min-width: $xxl-screen) {
+        .swiper-button-prev {
+            left: calc((100% - $max-width) / 2 - $base-size);
+        }
+        .swiper-button-next {
+            right: calc((100% - $max-width) / 2 - $base-size);
+        }
+    }
+
+    .swiper-pagination {
+        padding-top: 0;
+    }
+}

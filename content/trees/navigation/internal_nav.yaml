@@ -1,0 +1,25 @@
+tree:
+  -
+    id: 9cb38b3f-2341-4cbc-bac0-402f5c1d3b76
+    title: Horaires
+    url: 'https://www.namur-cadets.be/docs/HoraireJour.pdf'
+    data:
+      icon: Date
+  -
+    id: bb1385e6-6476-4100-afda-34d349e290f1
+    title: SMARTSCHOOL
+    url: '#'
+    data:
+      icon: SmartSchool
+  -
+    id: 078df5e7-ef84-402e-b3d4-ff63a29c30c5
+    title: Moodle
+    url: '#'
+    data:
+      icon: moodle
+  -
+    id: 9ce513b3-a180-47b9-8243-173abb76f1bd
+    title: Enora
+    url: '#'
+    data:
+      icon: wbe

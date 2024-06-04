@@ -1,0 +1,17 @@
+.not_found {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        color: $primary;
+        text-align: center;
+        span{
+            color: $secondary;
+        }
+    }
+    * {
+       text-align: center;
+    }
+}

@@ -1,0 +1,40 @@
+/*---FONT SIZES 1279px DOWN---*/
+@media (max-width: 1279px) {
+    /*---HEADINGS---*/
+    h1 {
+        font-size: calc(1.375rem + 2.5vw);
+    }
+
+    h2 {
+        font-size: calc(1.325rem + 0.9vw);
+    }
+
+    h3 {
+        font-size: calc(1.3rem + 0.6vw);
+    }
+
+    h4 {
+        font-size: calc(1.275rem + 0.3vw);
+    }
+}
+
+/*---FONT SIZES ABOVE 1279px---*/
+@media screen and (min-width: 1280px) {
+
+    /*---HEADINGS---*/
+    h1 {
+        font-size: calc(2.58rem + 1.5vw);
+    }
+
+    h2 {
+        font-size: calc(2.05rem + 0.9vw);
+    }
+
+    h3 {
+        font-size: calc(1.78rem + 0.01vw);
+    }
+
+    h4 {
+        font-size: calc(1.52rem + 0.01vw)
+    }
+}

@@ -1,0 +1,143 @@
+title: Footer
+data:
+  partners_title: 'Nos partenaires'
+  partners:
+    -
+      id: luvkkmn0
+      name: 'Wallonie Bruxelles Enseignement'
+      logo: logo-fwb-negatif-horizontal.svg
+      link: 'https://www.wbe.be'
+      type: nouvel_ensemble
+      enabled: true
+    -
+      id: luvkmyju
+      name: 'fond social européen'
+      logo: fond-social-europe.svg
+      link: 'https://fse.be'
+      type: nouvel_ensemble
+      enabled: true
+    -
+      id: luvlpbgi
+      name: 'Pôle académique de Namur'
+      logo: pole-academique-namur--blanc.svg
+      link: 'https://www.poledenamur.be'
+      type: nouvel_ensemble
+      enabled: true
+  contacts_title: Contact
+  contacts:
+    -
+      id: luvoqixu
+      info:
+        -
+          type: paragraph
+          content:
+            -
+              type: text
+              text: 'EAFC Namur Cadets'
+            -
+              type: hardBreak
+            -
+              type: text
+              text: "Place de l'Ecole des Cadets,6"
+            -
+              type: hardBreak
+            -
+              type: text
+              text: '5000 NAMUR'
+      type: nouvel_ensemble
+      enabled: true
+    -
+      id: luvoqy0w
+      info:
+        -
+          type: paragraph
+          content:
+            -
+              type: text
+              text: 'Tél : '
+            -
+              type: text
+              marks:
+                -
+                  type: link
+                  attrs:
+                    href: 'tel:003281222903'
+                    rel: null
+                    target: null
+                    title: null
+                -
+                  type: bold
+              text: 081/22.29.03
+            -
+              type: hardBreak
+            -
+              type: text
+              text: 'Email : '
+            -
+              type: text
+              marks:
+                -
+                  type: link
+                  attrs:
+                    href: 'mailto:info@namur-cadets.be'
+                    rel: null
+                    target: null
+                    title: null
+                -
+                  type: bold
+              text: info@namur-cadets.be
+      type: nouvel_ensemble
+      enabled: true
+    -
+      id: luvos88s
+      info:
+        -
+          type: paragraph
+          content:
+            -
+              type: text
+              text: 'Ouvert du lundi au vendredi'
+        -
+          type: paragraph
+          content:
+            -
+              type: text
+              marks:
+                -
+                  type: bold
+              text: 'de 8h30 à 12h00 et '
+        -
+          type: paragraph
+          content:
+            -
+              type: text
+              marks:
+                -
+                  type: bold
+              text: 'de 15h30 à 20h30'
+        -
+          type: paragraph
+          content:
+            -
+              type: text
+              text: 'Le samedi'
+        -
+          type: paragraph
+          content:
+            -
+              type: text
+              marks:
+                -
+                  type: bold
+              text: 'de 8h30 à 13h00'
+        -
+          type: paragraph
+          content:
+            -
+              type: text
+              text: 'Fermé le dimanche'
+      type: nouvel_ensemble
+      enabled: true
+  tools_title: 'Nos outils'
+  terms_of_use: 'entry::fcb9960f-e2bd-4397-b066-e0ed8dab9617'
+  cookie_policy: 'entry::991140e1-bf24-4d87-8f8f-c0a2f9bbaf11'

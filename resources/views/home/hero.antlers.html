@@ -1,0 +1,23 @@
+<div class="wrapper hero">
+    <div class="video-container">
+        <h1 class="">{{ tag_line }}</h1>
+        <video
+            aria-description="Il s'agit ici d'une vidéo promotionnelle qui montre, avec une vue aérienne, où se situe l'école EAFC Namur-Cadets."
+            controls playsInline preload='none' muted loop autoplay
+            poster="{{ glide:header_img preset="hero--desk" }}">
+            {{ video_desktop }}
+            <source src="{{ url }}"
+                    type="video/mp4" media="(min-width:900px)">
+            {{ /video_desktop }}
+
+            {{ video_mobile }}
+            <source src="{{ url }}"
+                    type="video/mp4" media="(max-width:900px)">
+            {{ /video_mobile }}
+            <img src="{{ glide:header_img preset="hero--mobile" }}" alt="{{ header_img['alt'] }}" width="700"
+                 height="700">
+        </video>
+    </div>
+</div>
+
+

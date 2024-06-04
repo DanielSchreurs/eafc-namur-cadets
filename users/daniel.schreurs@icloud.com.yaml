@@ -1,0 +1,33 @@
+name: 'Daniel Schreurs'
+super: true
+avatar: img_7926.jpeg
+id: 409cbafe-f643-4145-b952-25177427041d
+password_hash: $2y$10$7D.QznJMfnYeR.BDxiPpwe4GKEXFgG1IFTw5f3AopYGPiFlNJqa36
+preferences:
+  locale: fr
+  collections:
+    news:
+      columns:
+        - title
+        - date
+        - slug
+        - status
+        - is_event
+      after_save: continue_editing
+    courses:
+      columns:
+        - title
+        - courses_categories
+        - courses_levels
+        - status
+  taxonomies:
+    categories:
+      columns:
+        - title
+    levels:
+      after_save: create_another
+      columns:
+        - title
+    courses_categories:
+      columns:
+        - title

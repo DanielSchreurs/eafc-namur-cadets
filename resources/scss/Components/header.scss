@@ -1,0 +1,278 @@
+.header {
+    background: $white;
+    position: relative;
+    z-index: 3;
+
+    .arrow-left {
+        display: none;
+    }
+
+    &__logo {
+        padding-top: $base-size;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+
+        a {
+            align-self: start;
+
+            svg {
+                min-width: $base-size*8;
+                height: auto;
+            }
+        }
+
+        #burger {
+            display: none;
+        }
+
+        label[for="burger"] {
+            position: relative;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            align-self: start;
+            justify-self: end;
+            background: $primary;
+            border: $border;
+
+            .line {
+                position: absolute;
+                width: 40%;
+                height: $burger-line-height;
+                top: calc(50% - $burger-line-height / 2);
+                left: 30%;
+                display: block;
+                background: $white;
+                transition: $transition;
+                border-radius: 3px;
+
+            }
+
+            .line--first {
+                top: 30%;
+            }
+
+            .line--last {
+                top: calc(70% - $burger-line-height);
+            }
+        }
+
+        label:hover {
+            cursor: pointer;
+        }
+
+        input:checked + label {
+            .line {
+                opacity: 0;
+                top: 50%;
+            }
+
+            .line--first {
+                opacity: 1;
+                transform: rotate(405deg);
+            }
+
+            .line--last {
+                opacity: 1;
+                transform: rotate(-405deg);
+            }
+        }
+
+    }
+
+    .tools-nav {
+        padding-top: $base-size;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        font-size: 0;
+        line-height: 0;
+        color: transparent;
+        padding-left: 0;
+
+        a {
+            width: 100%;
+            display: block;
+            height: 100%;
+            text-align: center;
+            border-right: 1px solid $grey;
+            font-size: 0;
+
+            svg {
+                height: $base-size;
+                width: auto;
+            }
+        }
+
+        a:last-child {
+            border-right: none;
+        }
+
+    }
+
+    .main-nav {
+        padding-top: $base-size;
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            display: block;
+            padding: $base-size 0;
+            border-bottom: 1px dashed $grey;
+
+            &:hover, &:focus {
+                background: $secondary;
+                color: $primary;
+            }
+        }
+
+        .children__items {
+            padding-left: $base-size;
+        }
+    }
+}
+
+.header__nav {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all $transition;
+
+    &__content {
+        overflow: hidden;
+    }
+}
+
+.header:has(#burger:checked) {
+    .header__nav {
+        grid-template-rows: 1fr;
+    }
+}
+
+
+@media (screen and min-width: 1200px) {
+    .header__logo {
+        padding-top: $base-size-s;
+
+        a {
+            height: 100%;
+
+            svg {
+                min-height: 100%;
+                width: auto;
+            }
+        }
+    }
+    .header .main-nav a {
+        border: none;
+    }
+    .header .tools-nav {
+        font-size: inherit;
+        line-height: inherit;
+        display: inline-flex;
+        flex-direction: row;
+        padding-top: 0;
+        justify-content: end;
+
+        a {
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: baseline;
+            gap: $base-size-s;
+            border: none;
+            text-decoration: none;
+            text-transform: uppercase;
+            white-space: nowrap;
+            max-width: fit-content;
+            padding: $base-size-s $base-size;
+
+            &:last-of-type {
+                padding-right: 0;
+            }
+        }
+    }
+
+    .header__nav__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        overflow: visible;
+
+    }
+    header .wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    header label {
+        display: none;
+    }
+    .header__nav {
+        display: flex;
+        flex-grow: 1;
+    }
+    .header .main-nav {
+        display: flex;
+        padding-top: 0;
+
+        > a, > div {
+            display: flex;
+            border-bottom: none;
+            @media screen and (min-width: 1500px) {
+                font-size: 1.25rem;
+            }
+            flex-grow: 1;
+            justify-content: end;
+            align-items: center;
+            position: relative;
+
+        }
+
+        > a:last-of-type {
+            padding-right: 0;
+        }
+
+        .current span {
+            position: relative;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 6rem;
+                height: 0.4rem;
+                background: url("../svg/css/actif-line.svg") no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+    }
+    .header .main-nav .children {
+
+        &:after {
+            display: block;
+            content: '';
+            width: $base-size;
+            height: $base-size;
+            background: url("../svg/css/arrow-down-menu.svg") no-repeat;
+            background-size: contain;
+        }
+    }
+    .header .main-nav .children__items {
+        position: absolute;
+        top: 100%;
+        display: none;
+        background: $white;
+        border-radius: 0 0 $base-size-s $base-size-s;
+        padding-left: $base-size-s;
+        a {
+            border: none;
+            font-size: 0.8em;
+        }
+    }
+    .header .main-nav .children:hover .children__items, .header .main-nav .children:focus .children__items {
+        display: block;
+    }
+    .header .main-nav a:hover, .header .main-nav a:focus {
+        background: none;
+        color: $secondary;
+    }
+}
+

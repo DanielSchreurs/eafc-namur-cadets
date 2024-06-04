@@ -1,0 +1,30 @@
+@import "config";
+@import "Composition/reset";
+@import "Composition/font";
+@import "Composition/headers";
+@import "Composition/svg";
+@import 'swiper/scss';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/a11y';
+@import "Utility/utility";
+@import "Components/header";
+@import "Components/home/hero";
+@import "Components/home/students";
+@import "Components/home/video";
+@import "Components/news";
+@import "Components/news-preview";
+@import "Components/btn";
+@import "Components/layout";
+@import "Components/categories";
+@import "Components/footer";
+@import "Components/404";
+@import "Components/swiper";
+
+body {
+    color: $primary;
+}
+
+main {
+    overflow-x: hidden;
+}

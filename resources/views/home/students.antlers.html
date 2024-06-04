@@ -1,0 +1,20 @@
+<nav class="wrapper students" aria-label="{{ student_title }}">
+    <h2 class="students__header">{{ student_title }}</h2>
+    <div class="students__items">
+        {{ student_links }}
+        <a class="{{ shape }} students__item" href="{{ url }}" title="{{ label }}">
+                <span class="students__item__border">
+                    {{ glide:student_img preset="{{shape}}" tag="true" }}
+                </span>
+            {{ if shape == 'square' }}
+                {{ svg src="css/infinity" class="students__infinity" }}
+            {{ endif }}
+            {{ if shape == 'triangle' }}
+                {{ svg src="css/spirale" class="students__spirale" }}
+            {{ endif }}
+            <p class="btn">{{ label }}</p>
+        </a>
+        {{ /student_links }}
+    </div>
+    {{ svg src="css/wave" class="students__wave" }}
+</nav>

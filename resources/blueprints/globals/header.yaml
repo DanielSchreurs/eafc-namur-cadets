@@ -1,0 +1,19 @@
+tabs:
+  main:
+    display: Principal
+    sections:
+      -
+        fields:
+          -
+            handle: full_name
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: "Nom complet de l'EAFC Namur-Cadets"
+              instructions: 'Cette nom est employée à plusieurs endroits sur le site non seulement pour informer nos visiteurs, mais également pour optimiser notre contenu pour les moteurs de recherche et les assistants vocaux.'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

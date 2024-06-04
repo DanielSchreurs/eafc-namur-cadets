@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#003e46"/>
+    <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg">
+    <link rel="icon" type="image/png" href="./favicon/favicon.png">
+    <title>{{ title }} | {{ site:name }}</title>
+    {{ vite src="resources/js/site.ts|resources/scss/main.scss" }}
+</head>
+<body>
+<a class="visually-hidden" href="#main-content">Aller au contenu principale</a>
+{{ partial:header }}
+<main id="main-content">
+    {{ template_content }}
+</main>
+{{ partial:footer }}
+</body>
+</html>

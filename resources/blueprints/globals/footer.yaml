@@ -1,0 +1,206 @@
+tabs:
+  main:
+    display: Principal
+    sections:
+      -
+        display: Partenaires
+        fields:
+          -
+            handle: partners_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Titre de la section'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: partners
+            field:
+              collapse: false
+              previews: true
+              fullscreen: true
+              sets:
+                nouveau_groupe_densembles:
+                  display: "Nouveau groupe d'ensembles"
+                  instructions: null
+                  icon: null
+                  sets:
+                    nouvel_ensemble:
+                      display: 'Nouvel ensemble'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: name
+                          field:
+                            input_type: text
+                            antlers: false
+                            type: text
+                            display: 'Le nom officiel du partenaire'
+                            instructions: "Ce nom ne sera pas visible mais il convient de choisir l'appellation exacte du partenaire pour le référencement."
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+                        -
+                          handle: logo
+                          field:
+                            max_files: 1
+                            min_files: 1
+                            mode: list
+                            container: assets
+                            restrict: false
+                            allow_uploads: true
+                            show_filename: true
+                            show_set_alt: true
+                            type: assets
+                            display: 'Le logo officiel du partenaire'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+                        -
+                          handle: link
+                          field:
+                            type: link
+                            display: 'Le lien vers le partenaire'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            validate:
+                              - required
+              type: replicator
+              display: Partenaires
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: Contact
+        fields:
+          -
+            handle: contacts_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Titre de la section'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: contacts
+            field:
+              collapse: false
+              previews: true
+              fullscreen: true
+              sets:
+                nouveau_groupe_densembles:
+                  display: "Nouveau groupe d'ensembles"
+                  instructions: null
+                  icon: null
+                  sets:
+                    nouvel_ensemble:
+                      display: 'Nouvel ensemble'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: info
+                          field:
+                            buttons:
+                              - bold
+                              - italic
+                              - unorderedlist
+                              - orderedlist
+                              - removeformat
+                              - anchor
+                            smart_typography: true
+                            save_html: false
+                            inline: false
+                            toolbar_mode: fixed
+                            reading_time: false
+                            word_count: false
+                            fullscreen: true
+                            allow_source: true
+                            enable_input_rules: true
+                            enable_paste_rules: true
+                            remove_empty_nodes: true
+                            antlers: false
+                            link_noopener: false
+                            link_noreferrer: false
+                            target_blank: false
+                            always_show_set_button: false
+                            collapse: false
+                            previews: true
+                            type: bard
+                            display: info
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+              type: replicator
+              display: 'Informations de contact'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: 'Nos outils'
+        fields:
+          -
+            handle: tools_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Titre de la section'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: 'Politique de gestion des cookies & Conditions d’utilisation'
+        fields:
+          -
+            handle: terms_of_use
+            field:
+              collections:
+                - pages
+              type: link
+              display: 'La page vers les conditions d’utilisation'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: cookie_policy
+            field:
+              collections:
+                - pages
+              type: link
+              display: 'La page vers la politique de gestion des cookies'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

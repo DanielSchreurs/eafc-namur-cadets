@@ -1,0 +1,17 @@
+title: Actualités
+template: news/show
+layout: layout
+revisions: false
+slugs: false
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+structure:
+  root: false

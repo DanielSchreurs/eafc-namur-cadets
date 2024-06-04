@@ -1,0 +1,19 @@
+svg .main {
+    fill: var(--color-primary);
+}
+
+svg .red {
+    fill: var(--color-red);
+}
+
+svg .blue {
+    fill: var(--color-blue);
+}
+
+svg .yellow {
+    fill: var(--color-yellow);
+}
+
+header svg#logo {
+    max-width: calc(265 / 16 * $base-size);
+}

@@ -1,0 +1,11 @@
+title: Artisanat
+icon: Artisanat
+updated_by: 409cbafe-f643-4145-b952-25177427041d
+updated_at: 1712683388
+blueprint: courses_category
+levels:
+  - secondaire-inferieur
+  - secondaire-superieur
+category_levels:
+  - secondaire-superieur
+  - secondaire-inferieur

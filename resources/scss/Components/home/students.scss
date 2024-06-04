@@ -1,0 +1,178 @@
+.students {
+    position: relative;
+    width: 100%;
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @media screen and (min-width: 880px) {
+            flex-direction: row;
+        }
+        gap: $base-size-xxxl;
+    }
+
+    &__header {
+        margin: 0 0 $base-size-xl;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: $base-size-l;
+        position: relative;
+        text-decoration: none;
+        flex-grow: 1;
+
+        &:hover {
+            .btn {
+                text-decoration: none;
+                background-color: $secondary;
+                border-radius: 0 $base-size-s 0 $base-size-s;
+                color: $primary;
+                border: 2px solid $primary;
+            }
+        }
+
+        &__border {
+            position: relative;
+            display: inline-block;
+            max-width: fit-content;
+
+            &:before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 2;
+                border-radius: $base-size;
+                border: 3px solid $quaternary;
+            }
+
+            img {
+                display: block;
+                border-radius: $base-size;
+                box-shadow: $box-shadow-strong;
+                transition: $transition;
+            }
+        }
+
+        .btn {
+            @media screen and (min-width: 880px) {
+                max-width: fit-content;
+            }
+        }
+
+    }
+
+    ul {
+        padding-left: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: $base-size-xl;
+    }
+
+    .square {
+        img {
+            transform: rotate(-5deg);
+        }
+
+        .students__item__border {
+            &:before {
+                transform: rotate(-5deg) translate($base-size-s, $base-size-s);
+                border: 2px solid $quaternary;
+            }
+        }
+
+        .students__infinity {
+            position: absolute;
+            bottom: $base-size-xxl;
+            left: -$base-size-xl;
+            z-index: -1;
+            display: none;
+            @media screen and (min-width: 768px) {
+                display: block;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: rotate(-5deg) scale(1.05);
+            }
+        }
+    }
+
+    .triangle {
+        overflow: visible;
+
+        img {
+            max-width: 100%;
+            transform: rotate(5deg);
+            clip-path: polygon(0.261% 96.364%, 47.495% 1.46%, 47.495% 1.46%, 47.84% 0.935%, 48.278% 0.526%, 48.786% 0.234%, 49.341% 0.059%, 49.92% -0.001%, 50.498% 0.057%, 51.054% 0.231%, 51.563% 0.521%, 52.003% 0.928%, 52.349% 1.452%, 100% 96.356%, 100% 96.356%, 100.192% 96.869%, 100.263% 97.384%, 100.224% 97.888%, 100.082% 98.369%, 99.846% 98.812%, 99.526% 99.204%, 99.13% 99.532%, 98.667% 99.783%, 98.145% 99.944%, 97.574% 100%, 2.689% 100%, 2.689% 100%, 2.12% 99.944%, 1.599% 99.784%, 1.137% 99.534%, 0.741% 99.207%, 0.421% 98.816%, 0.185% 98.374%, 0.042% 97.895%, 0.001% 97.391%, 0.071% 96.876%, 0.261% 96.364%);
+        }
+
+        .students__item__border {
+            &:before {
+                border: none;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url("../../resources/svg/css/triangle.svg") no-repeat center;
+                //background: rgba(0, 0, 0, 0.1);
+                transform: rotate(5deg) translate($base-size-s, $base-size-s);
+                // TODO: Fix the background-size
+                background-size: cover;
+            }
+        }
+
+        .students__spirale {
+            fill: $secondary;
+            position: absolute;
+            top: 0;
+            left: -$base-size-xl;
+            z-index: -1;
+        }
+
+        &:hover {
+            img {
+                transform: rotate(5deg) scale(1.05);
+            }
+        }
+    }
+
+    .rectangle {
+        img {
+            transform: rotate(-7deg);
+        }
+
+        .students__item__border {
+            &:before {
+                transform: rotate(-7deg) translate($base-size-s, $base-size-s);
+                border-color: $tertiary;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: rotate(-7deg) scale(1.05);
+            }
+        }
+    }
+
+    &__wave {
+        position: absolute;
+        top: 2%;
+        right: 0;
+        z-index: -1;
+        fill: $light-shade;
+        display: none;
+        @media screen and (min-width: 768px) {
+            display: block;
+        }
+    }
+
+}
