@@ -53,6 +53,4 @@ claw_shapes: claw-shapes
 link_to_news: 'entry::50639ff9-1fd4-44ce-9298-e25fca05db4e'
 claw_shapes_cat: claw-shapes
 bulb: ampoule
-video_desktop:
-  - desktop--low.mp4
 ---
