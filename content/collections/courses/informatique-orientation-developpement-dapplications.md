@@ -2,7 +2,7 @@
 id: 56fef20a-e1db-44e4-97ee-44a0196b1539
 blueprint: course
 title: "Informatique orientation développement d'applications"
-img: infromatique.jpg
+img: infromatique-1717700568.jpg
 courses_categories:
   - techniques-tertiaires
 courses_levels:
