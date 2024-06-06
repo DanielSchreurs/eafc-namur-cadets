@@ -13,6 +13,12 @@ tabs:
               validate:
                 - required
           -
+            handle: page_title
+            field:
+              type: text
+              display: 'Titre de la page'
+              instructions: "Il arrive que certaines pages aient un titre différent de celui qui apparaît dans le menu. C'est ici que vous pouvez renseigner la valeur de ce titre, qui n'apparaîtra donc pas dans le menu principal."
+          -
             handle: author
             field:
               type: users
@@ -26,6 +32,7 @@ tabs:
               type: template
               display: Template
               localizable: true
+              folder: pages
   sidebar:
     display: Sidebar
     sections:

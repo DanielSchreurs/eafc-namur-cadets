@@ -5,8 +5,8 @@ title: Accueil
 header_img: slide1.jpg
 tag_line: '<dfn>Namur-Cadets<span>,</span></dfn >votre chemin vers de nouveaux horizons'
 updated_by: 409cbafe-f643-4145-b952-25177427041d
-updated_at: 1717513376
-template: home
+updated_at: 1717619138
+template: pages/accueil
 news:
   - 8d7386ca-256f-4dd4-9ddd-a5bb73567dae
   - e32aa9d2-4e56-42da-a225-56e870392ffb
@@ -53,4 +53,8 @@ claw_shapes: claw-shapes
 link_to_news: 'entry::50639ff9-1fd4-44ce-9298-e25fca05db4e'
 claw_shapes_cat: claw-shapes
 bulb: ampoule
+video_desktop:
+  - desktop--low.mp4
+video_mobile:
+  - mobile.mp4
 ---

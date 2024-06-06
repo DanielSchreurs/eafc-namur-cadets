@@ -13,14 +13,15 @@ tabs:
               validate:
                 - required
               display: 'Le nom de la formation'
-              instructions: 'Il est impératif de choisir une dénomination exacte sans extra-information dans le nom de la formation.'
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
-              input_type: text
-              antlers: false
-              hide_display: false
+              instructions: "Il est impératif de choisir une dénomination exacte sans extra-informations dans le nom de la formation. Il est également important de soigner l'utilisation des majuscules dans le nom de la formation. Il n'est pas nécessaire de mettre le nom de la formation entièrement en majuscules. Cela n'apporte rien et il n'est pas souhaitable que ce nom apparaisse avec des majuscules sur Google ou d'autres moteurs de recherche. Bien entendu, vous devez ajouter une majuscule sur un mot si cela est justifié d'un point de vue typographique."
+          -
+            handle: img
+            field:
+              max_files: 1
+              min_files: 1
+              container: assets
+              type: assets
+              display: 'Image de la formation'
   sidebar:
     display: Sidebar
     sections:
@@ -32,3 +33,25 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
+          -
+            handle: courses_categories
+            field:
+              type: terms
+              taxonomies:
+                - courses_categories
+              display: Catégories
+              mode: select
+          -
+            handle: courses_levels
+            field:
+              type: terms
+              taxonomies:
+                - courses_levels
+              display: Niveaux
+              mode: select
+          -
+            handle: tag
+            field:
+              type: taggable
+              display: Tag
+              instructions: "Ajoutez ici des tags comme vous les voyez sur les réseaux sociaux. Attention, ces tags seront repris sur la page de toutes les formations afin de pouvoir filtrer les formations en fonction de ces tags. Il est donc important de ne pas en avoir trop, mais plutôt d'en choisir quelques-uns qui soient pertinents."

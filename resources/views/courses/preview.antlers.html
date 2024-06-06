@@ -1,0 +1,22 @@
+<article class="news-preview swiper-slide">
+    <span class="news-preview__tag">{{ is_event ? "Événement" : "Actualité" }}</span>
+    <a  href="{{ url }}" title="Se rendre sur la page de {{ is_event ? "l’événement" : "l’actualité" }} : {{ title }}" class="news-preview__content">
+        <div class="news-preview__img-container">
+            <img src="{{ glide:main_image preset="thumbnail" }}" alt="{{ main_image['alt'] }}">
+
+        </div>
+        <h3 class="news-preview__header">{{ title }}</h3>
+        {{ short_description }}
+    </a>
+    {{ if logistics_info }}
+        <ul class="news-preview__info">
+            {{ logistics_info }}
+            {{ if url_link }}
+                <li><a href="{{ url_link }}">{{ icon }}<span class="">{{ label }}</span></a></li>
+            {{ else }}
+                <li>{{ icon }}<span class="">{{ label }}</span></li>
+            {{ /if }}
+            {{ /logistics_info }}
+        </ul>
+    {{ /if }}
+</article>

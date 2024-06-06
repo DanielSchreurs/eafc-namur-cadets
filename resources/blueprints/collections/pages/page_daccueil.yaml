@@ -18,94 +18,45 @@ tabs:
             field:
               max_files: 1
               min_files: 1
-              mode: list
               container: assets
-              restrict: false
-              allow_uploads: true
-              show_filename: true
-              show_set_alt: true
               type: assets
               display: 'Image principale (Header)'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: tag_line
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Slogan
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: video_desktop
             field:
-              mode: list
               container: assets
-              restrict: false
-              allow_uploads: true
-              show_filename: true
               show_set_alt: false
               type: assets
               display: 'Vidéo (format paysage)'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: video_mobile
             field:
-              mode: list
               container: assets
-              restrict: false
-              allow_uploads: true
-              show_filename: true
               show_set_alt: false
               type: assets
               display: 'Vidéo (Pour les mobile - format carré 1:1)'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
       -
         display: 'Actualités & événements'
         fields:
           -
             handle: news_title
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Le titre de la section : Actualités & événements'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               validate:
                 - required
           -
             handle: news
             field:
-              mode: default
-              create: true
               collections:
                 - news
               type: entries
               display: "Les actualités & les événements de la page d'accueil"
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               max_items: 4
               instructions: "Sélectionnez les actualités & les événements à afficher sur la page d'accueil"
           -
@@ -116,26 +67,14 @@ tabs:
               type: link
               display: Lien
               instructions: 'Saisissez ici le lien qui renvoie vers la page de toutes les actualités et les évènements.'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
       -
         display: Categories
         fields:
           -
             handle: cat_title
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Le titre de la section : Explorez nos formations par catégories'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               validate:
                 - required
       -
@@ -144,31 +83,19 @@ tabs:
           -
             handle: student_title
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Le titre de la section : Futurs étudiants'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: student_links
             field:
-              collapse: false
-              previews: true
-              fullscreen: true
+              type: replicator
+              display: 'Liens pour les étudiants'
               sets:
                 nouveau_groupe_densembles:
                   display: "Nouveau groupe d'ensembles"
-                  instructions: null
-                  icon: null
                   sets:
                     nouvel_ensemble:
                       display: 'Nouvel ensemble'
-                      instructions: null
-                      icon: null
                       fields:
                         -
                           handle: label
@@ -239,38 +166,19 @@ tabs:
                             hide_display: false
                             validate:
                               - required
-              type: replicator
-              display: 'Liens pour les étudiants'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
       -
         display: 'Découvrez notre école'
         fields:
           -
             handle: video_title
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Titre de la section : Découvrez notre école'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: video
             field:
               type: video
               display: video
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
   sidebar:
     display: Sidebar
     sections:
@@ -297,3 +205,4 @@ tabs:
               type: template
               display: Template
               localizable: true
+              folder: pages
