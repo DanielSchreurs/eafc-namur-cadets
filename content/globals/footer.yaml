@@ -12,7 +12,6 @@ data:
     -
       id: luvkmyju
       name: 'fond social européen'
-      logo: fond-social-europe.svg
       link: 'https://fse.be'
       type: nouvel_ensemble
       enabled: true
