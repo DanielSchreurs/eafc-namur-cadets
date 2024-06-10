@@ -17,7 +17,6 @@ data:
     -
       id: luvlpbgi
       name: 'Pôle académique de Namur'
-      logo: pole-academique-namur--blanc.svg
       link: 'https://www.poledenamur.be'
       type: nouvel_ensemble
       enabled: true
