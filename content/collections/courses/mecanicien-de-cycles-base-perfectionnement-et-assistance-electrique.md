@@ -10,5 +10,8 @@ courses_levels:
 tag:
   - new
 updated_by: 409cbafe-f643-4145-b952-25177427041d
-updated_at: 1717700504
+updated_at: 1718029571
+formation_categories: techniques-tertiaires
+formations_levels:
+  - secondaire-superieur
 ---

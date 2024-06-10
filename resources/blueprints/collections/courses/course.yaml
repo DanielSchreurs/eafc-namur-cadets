@@ -34,15 +34,16 @@ tabs:
               localizable: true
               validate: 'max:200'
           -
-            handle: courses_categories
+            handle: formation_categories
             field:
               type: terms
               taxonomies:
                 - courses_categories
               display: Catégories
               mode: select
+              max_items: 1
           -
-            handle: courses_levels
+            handle: formations_levels
             field:
               type: terms
               taxonomies:
@@ -55,3 +56,11 @@ tabs:
               type: taggable
               display: Tag
               instructions: "Ajoutez ici des tags comme vous les voyez sur les réseaux sociaux. Attention, ces tags seront repris sur la page de toutes les formations afin de pouvoir filtrer les formations en fonction de ces tags. Il est donc important de ne pas en avoir trop, mais plutôt d'en choisir quelques-uns qui soient pertinents."
+          -
+            handle: courses_categories
+            field:
+              type: terms
+              taxonomies:
+                - courses_categories
+              display: Catégories
+              mode: select
