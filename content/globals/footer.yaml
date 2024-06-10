@@ -5,7 +5,6 @@ data:
     -
       id: luvkkmn0
       name: 'Wallonie Bruxelles Enseignement'
-      logo: logo-fwb-negatif-horizontal.svg
       link: 'https://www.wbe.be'
       type: nouvel_ensemble
       enabled: true
