@@ -8,65 +8,26 @@ tabs:
           -
             handle: partners_title
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Titre de la section'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: partners
             field:
-              collapse: false
-              previews: true
-              fullscreen: true
+              type: replicator
+              display: Partenaires
               sets:
                 nouveau_groupe_densembles:
                   display: "Nouveau groupe d'ensembles"
-                  instructions: null
-                  icon: null
                   sets:
                     nouvel_ensemble:
                       display: 'Nouvel ensemble'
-                      instructions: null
-                      icon: null
                       fields:
                         -
                           handle: name
                           field:
-                            input_type: text
-                            antlers: false
                             type: text
                             display: 'Le nom officiel du partenaire'
                             instructions: "Ce nom ne sera pas visible mais il convient de choisir l'appellation exacte du partenaire pour le référencement."
-                            listable: hidden
-                            instructions_position: above
-                            visibility: visible
-                            replicator_preview: true
-                            hide_display: false
-                            validate:
-                              - required
-                        -
-                          handle: logo
-                          field:
-                            max_files: 1
-                            min_files: 1
-                            mode: list
-                            container: assets
-                            restrict: false
-                            allow_uploads: true
-                            show_filename: true
-                            show_set_alt: true
-                            type: assets
-                            display: 'Le logo officiel du partenaire'
-                            listable: hidden
-                            instructions_position: above
-                            visibility: visible
-                            replicator_preview: true
-                            hide_display: false
                             validate:
                               - required
                         -
@@ -74,51 +35,33 @@ tabs:
                           field:
                             type: link
                             display: 'Le lien vers le partenaire'
-                            listable: hidden
-                            instructions_position: above
-                            visibility: visible
-                            replicator_preview: true
-                            hide_display: false
                             validate:
                               - required
-              type: replicator
-              display: Partenaires
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+                        -
+                          handle: logo
+                          field:
+                            type: icon
+                            display: Logo
+                            directory: resources/svg/logo
       -
         display: Contact
         fields:
           -
             handle: contacts_title
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Titre de la section'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: contacts
             field:
-              collapse: false
-              previews: true
-              fullscreen: true
+              type: replicator
+              display: 'Informations de contact'
               sets:
                 nouveau_groupe_densembles:
                   display: "Nouveau groupe d'ensembles"
-                  instructions: null
-                  icon: null
                   sets:
                     nouvel_ensemble:
                       display: 'Nouvel ensemble'
-                      instructions: null
-                      icon: null
                       fields:
                         -
                           handle: info
@@ -155,28 +98,14 @@ tabs:
                             visibility: visible
                             replicator_preview: true
                             hide_display: false
-              type: replicator
-              display: 'Informations de contact'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
       -
         display: 'Nos outils'
         fields:
           -
             handle: tools_title
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Titre de la section'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
       -
         display: 'Politique de gestion des cookies & Conditions d’utilisation'
         fields:
@@ -187,11 +116,6 @@ tabs:
                 - pages
               type: link
               display: 'La page vers les conditions d’utilisation'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: cookie_policy
             field:
@@ -199,8 +123,3 @@ tabs:
                 - pages
               type: link
               display: 'La page vers la politique de gestion des cookies'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false

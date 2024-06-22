@@ -6,7 +6,7 @@
                     <h2 class="">{{ footer:partners_title }}</h2>
                     {{ footer:partners }}
                     <a href="{{ link }}"><span
-                        class="visually-hidden">{{ name }}</span>{{ glide:logo preset="partners" tag="true" }}</a>
+                        class="visually-hidden">{{ name }}</span>{{ logo }}</a>
                     {{ /footer:partners }}
                 </nav>
             {{ endif }}
@@ -24,13 +24,13 @@
                     {{ /footer:contacts }}
                 {{ endif }}
             </section>
-{{#             <nav class="tools-nav" aria-label="{{ footer:tools_title }}"> #}}
-{{#                 <h2 class="">{{footer:tools_title}}</h2> #}}
-{{#                 {{ partial:second_nav }} #}}
-{{#             </nav> #}}
+            {{#             <nav class="tools-nav" aria-label="{{ footer:tools_title }}"> #}}
+            {{#                 <h2 class="">{{footer:tools_title}}</h2> #}}
+            {{#                 {{ partial:second_nav }} #}}
+            {{#             </nav> #}}
             <div class="footer__po">
                 <h2>Pouvoir organisateur</h2>
-                {{ svg src="WBE_logo_horizontal" title="Wallonie-Bruxelles Enseignement" }}
+                {{ svg src="logo/wbe-enseignement.svg" title="Wallonie-Bruxelles Enseignement" }}
             </div>
         </div>
         <div class="footer__bottom">

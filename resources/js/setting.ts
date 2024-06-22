@@ -43,7 +43,7 @@ export const setting = {
     },
     categories: {
         modules: [Navigation, Pagination, Keyboard, A11y],
-        slidesPerView: 1.2,
+        slidesPerView: 1.3,
         spaceBetween: 16,
         loop: false,
         keyboard: {

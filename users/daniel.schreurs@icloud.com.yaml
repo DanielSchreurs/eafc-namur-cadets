@@ -18,8 +18,8 @@ preferences:
       columns:
         - title
         - courses_categories
-        - courses_levels
         - status
+        - courses_levels
   taxonomies:
     categories:
       columns:

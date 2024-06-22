@@ -1,7 +1,7 @@
 tree:
   -
     id: 9cb38b3f-2341-4cbc-bac0-402f5c1d3b76
-    title: Horaires
+    title: 'Horaires du jour'
     url: 'https://www.namur-cadets.be/docs/HoraireJour.pdf'
     data:
       icon: Date
@@ -22,4 +22,4 @@ tree:
     title: Enora
     url: '#'
     data:
-      icon: wbe
+      icon: WBE

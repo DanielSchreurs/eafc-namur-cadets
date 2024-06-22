@@ -4,6 +4,7 @@ tabs:
     display: Principal
     sections:
       -
+        display: 'Aperçu de la formation'
         fields:
           -
             handle: title
@@ -13,7 +14,17 @@ tabs:
               validate:
                 - required
               display: 'Le nom de la formation'
-              instructions: "Il est impératif de choisir une dénomination exacte sans extra-informations dans le nom de la formation. Il est également important de soigner l'utilisation des majuscules dans le nom de la formation. Il n'est pas nécessaire de mettre le nom de la formation entièrement en majuscules. Cela n'apporte rien et il n'est pas souhaitable que ce nom apparaisse avec des majuscules sur Google ou d'autres moteurs de recherche. Bien entendu, vous devez ajouter une majuscule sur un mot si cela est justifié d'un point de vue typographique."
+              instructions: |-
+                Il est impératif de choisir la dénomination exacte du dossier pédagogique et sans extra-informations dans le nom de la formation.
+
+                Il est également important de soigner l'utilisation des majuscules dans le nom de la formation. Cela n'apporte rien et il n'est pas souhaitable que ce nom apparaisse avec des majuscules sur Google ou d'autres moteurs de recherche.
+                Bien entendu, vous devez ajouter une majuscule sur un mot si cela est justifié d'un point de vue typographique.
+          -
+            handle: subtitle
+            field:
+              type: text
+              display: 'Information importante'
+              instructions: "Il s'agit ici de renseigner une information importante, mais qui ne doit pas être repris dans le nom de la formation, comme le co-organisations."
           -
             handle: img
             field:
@@ -22,6 +33,78 @@ tabs:
               container: assets
               type: assets
               display: 'Image de la formation'
+          -
+            handle: is_new
+            field:
+              type: toggle
+              display: 'label "New"'
+              instructions: "Ce champ permet d'ajouter une petite icône \"new\" dans le coin de l'aperçu de la formation. C'est un moyen de la distinguer des autres formations."
+          -
+            handle: overview
+            field:
+              type: textarea
+              display: 'Résumé de la formation'
+              instructions: "Un résumé court qui apparait dans l'aperçu."
+              character_limit: '250'
+          -
+            handle: admission_conditions
+            field:
+              type: select
+              display: "Conditions d'admission (diplôme)"
+              options:
+                CEB: 'Certificat d’Études de Base (Niveau <abbr title="Cadre francophone des certifications">CFC</abbr>/<abbr title="Cadre européen des certifications">CEC</abbr> : 1)'
+                CESI-CE2D: 'Certificat d’Enseignement Secondaire Inférieur (CESI) ou Certificat d’Enseignement Secondaire du 2e Degré (CE2D) (Niveau <abbr title="Cadre francophone des certifications">CFC</abbr>/<abbr title="Cadre européen des certifications">CEC</abbr> : 2)</abbr>'
+                CESS-CQ6-CQ7: 'Certificat d’Enseignement Secondaire Supérieur (CESS) ou Certificat de Qualification (CQ6 ou CQ7) (Niveau <abbr title="Cadre francophone des certifications">CFC</abbr>/<abbr title="Cadre européen des certifications">CEC</abbr> : 4)</abbr>'
+              width: 50
+          -
+            handle: conditions_dadmission_epreuve
+            field:
+              type: select
+              display: 'Conditions d’admission (épreuve)'
+              options:
+                1: "Une épreuve écrite d'admission en français"
+                2: "Une épreuve écrite d'admission en français et en math"
+                3: 'Une épreuve écrite d''admission en fonction des <abbr title="Conditions Préalables Requises">CPR</abbr> des dossier pédagogiques'
+              width: 50
+          -
+            handle: type_delivered
+            field:
+              type: select
+              display: "Type du titre délivré à l'issue de la formation"
+              options:
+                1: 'Certificat inférieur'
+                2: 'Certificat de qualification inférieur'
+                3: 'Certificat de qualification supérieur'
+                4: 'Diplôme enseignement supérieur type court'
+          -
+            handle: course_name
+            field:
+              type: text
+              display: "Titre délivré à l'issue de la formation"
+          -
+            handle: duration
+            field:
+              options:
+                '<time datetime="PT1Y">Une année académique</time>': 'Une année académique'
+                '<time datetime="PT1Y6M">Une année et demie académique</time>': 'Une année et demie académique'
+                '<time datetime="PT2Y">Deux années académiques</time>': 'Deux années académiques'
+                '<time datetime="PT2Y6M">Deux années et demie académiques</time>': 'Deux années et demie académiques'
+                '<time datetime="PT3Y">Trois années académiques</time>': 'Trois années académiques'
+                '<time datetime="PT3Y6M">Trois années et demie académiques</time>': 'Trois années et demie académiques'
+                '<time datetime="PT4Y">Quatre années académiques</time>': 'Quatre années académiques'
+              taggable: true
+              push_tags: true
+              type: select
+              display: Durée
+              clearable: true
+          -
+            handle: horaire
+            field:
+              max_files: 1
+              container: horaires
+              show_set_alt: false
+              type: assets
+              display: Horaire
   sidebar:
     display: Sidebar
     sections:
@@ -34,24 +117,7 @@ tabs:
               localizable: true
               validate: 'max:200'
           -
-            handle: formation_categories
-            field:
-              type: terms
-              taxonomies:
-                - courses_categories
-              display: Catégories
-              mode: select
-              max_items: 1
-          -
-            handle: formations_levels
-            field:
-              type: terms
-              taxonomies:
-                - courses_levels
-              display: Niveaux
-              mode: select
-          -
-            handle: tag
+            handle: tags
             field:
               type: taggable
               display: Tag
@@ -63,4 +129,12 @@ tabs:
               taxonomies:
                 - courses_categories
               display: Catégories
+              mode: select
+          -
+            handle: courses_levels
+            field:
+              type: terms
+              taxonomies:
+                - courses_levels
+              display: Niveaux
               mode: select

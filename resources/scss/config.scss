@@ -13,9 +13,9 @@ $base-size-xxl: $base-size * 4;
 $base-size-xxxl: $base-size * 5;
 
 $primary: #003e46;
-$secondary: #ffb000;
-$tertiary: #001ca1;
-$quaternary: #ff0008;
+$secondary: #FBBA00;
+$tertiary: #001D77;
+$quaternary: #E11F21;
 $white: #ffffff;
 $light: #fafafa;
 $light-shade: #eeeeee;
@@ -27,7 +27,8 @@ $border: 2px solid $secondary;
 $max-width: $base-size*100;
 $xxl-screen: 1900px;
 $box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
-$box-shadow-strong: 2px 2px 6px rgba(0, 0, 0, 0.27);
+$box-shadow--color: 2px 2px 6px $secondary;
+$box-shadow-strong: 0 0 6px rgba(0, 0, 0, 0.15);
 
 
 $bold: 'Inter-Bold' Helvetica, sans-serif;

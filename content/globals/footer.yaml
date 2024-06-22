@@ -4,22 +4,25 @@ data:
   partners:
     -
       id: luvkkmn0
-      name: 'Wallonie Bruxelles Enseignement'
-      link: 'https://www.wbe.be'
+      name: 'Fédération Wallonie-Bruxelles'
+      link: 'https://www.federation-wallonie-bruxelles.be'
       type: nouvel_ensemble
       enabled: true
+      logo: fwb-couleur-horizontal
     -
       id: luvkmyju
       name: 'fond social européen'
       link: 'https://fse.be'
       type: nouvel_ensemble
       enabled: true
+      logo: fond-social-europe
     -
       id: luvlpbgi
       name: 'Pôle académique de Namur'
       link: 'https://www.poledenamur.be'
       type: nouvel_ensemble
       enabled: true
+      logo: pole-academique-de-namur
   contacts_title: Contact
   contacts:
     -

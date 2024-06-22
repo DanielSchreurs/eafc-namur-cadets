@@ -111,6 +111,7 @@
 
     .main-nav {
         padding-top: $base-size;
+
         a {
             text-decoration: none;
             text-transform: uppercase;
@@ -241,6 +242,8 @@
                 height: 0.4rem;
                 background: url("../svg/css/actif-line.svg") no-repeat;
                 background-size: 100% 100%;
+                left: 0;
+                bottom: -$base-size-s;
             }
         }
     }
@@ -253,6 +256,8 @@
             height: $base-size;
             background: url("../svg/css/arrow-down-menu.svg") no-repeat;
             background-size: contain;
+            margin-left: 0.2rem;
+            margin-top: 0.2rem;
         }
     }
     .header .main-nav .children__items {
@@ -262,12 +267,16 @@
         background: $white;
         border-radius: 0 0 $base-size-s $base-size-s;
         padding-left: $base-size-s;
+
         a {
             border: none;
             font-size: 0.8em;
         }
     }
     .header .main-nav .children:hover .children__items, .header .main-nav .children:focus .children__items {
+        display: block;
+    }
+    .header .main-nav .children:has(*:focus) .children__items {
         display: block;
     }
     .header .main-nav a:hover, .header .main-nav a:focus {

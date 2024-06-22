@@ -1,22 +1,56 @@
-<article class="news-preview swiper-slide">
-    <span class="news-preview__tag">{{ is_event ? "Événement" : "Actualité" }}</span>
-    <a  href="{{ url }}" title="Se rendre sur la page de {{ is_event ? "l’événement" : "l’actualité" }} : {{ title }}" class="news-preview__content">
-        <div class="news-preview__img-container">
-            <img src="{{ glide:main_image preset="thumbnail" }}" alt="{{ main_image['alt'] }}">
-
+<article class="course-preview">
+    <div class="course-preview__content">
+        {{ if is_new }}
+            <span class="course-preview__new"><span
+                class="visually-hidden">Il s’agit d’une nouvelle formation</span>{{ svg src="css/new" }}</span>
+        {{ endif }}
+        <div class="course-preview__img-container">
+            <img src="{{ glide:img preset="thumbnail" }}" alt="{{ img['alt'] }}">
+            {{ if formation_categories }}
+                {{ courses_categories }}
+                <span class="course-preview__cat">{{ title }}{{ icon }}</span>
+                {{ /courses_categories }}
+            {{ endif }}
+            {{ if tags }}
+                {{ tags }}
+                <li>{{ value }}</li>
+                {{ /tags }}
+            {{ endif }}
         </div>
-        <h3 class="news-preview__header">{{ title }}</h3>
-        {{ short_description }}
-    </a>
-    {{ if logistics_info }}
-        <ul class="news-preview__info">
-            {{ logistics_info }}
-            {{ if url_link }}
-                <li><a href="{{ url_link }}">{{ icon }}<span class="">{{ label }}</span></a></li>
-            {{ else }}
-                <li>{{ icon }}<span class="">{{ label }}</span></li>
-            {{ /if }}
-            {{ /logistics_info }}
-        </ul>
-    {{ /if }}
+
+        {{ if formations_levels }}
+            <ul>
+                {{ courses_levels }}
+                <li><abbr title="{{ title }}"></abbr>{{ abbr }}</li>
+                {{ /courses_levels }}
+            </ul>
+        {{ endif }}
+
+    </div>
+    <h2 class="course-preview__header">{{ title }}</h2>
+    {{ if subtitle }}
+        <p class="course-preview__subtitle">{{ subtitle }}</p>
+    {{ endif }}
+    {{ overview }}
+    <dfn>
+        {{ if admission_conditions }}
+            <dt>Conditions d'admission&nbsp;:</dt>
+            <dd>{{ admission_conditions:label }}</dd>
+            <dd>ou {{ conditions_dadmission_epreuve:label }}</dd>
+        {{ endif }}
+        {{ if type_delivered && course_name }}
+            <dt>Titre délivré&nbsp;:</dt>
+            <dd>{{ type_delivered:label }}&nbsp;: {{ course_name }}</dd>
+        {{ endif }}
+        {{ if duration }}
+            <dt>Durée minimale de la formation &nbsp;:</dt>
+            <dd>{{ duration }}</dd>
+        {{ endif }}
+    </dfn>
+    <a href="{{ url }}" class="course-preview__cta">Voir la formation <span
+        class="visually-hidden">{{ title }}</span></a>
+    {{ if horaire }}
+        <a href="{{ horaire:url }}" class="course-preview__cta" title="Voir L’horaire au format (PDF) de la formation {{ title }}">L’horaire (PDF)</a>
+    {{ endif }}
+    </div>
 </article>

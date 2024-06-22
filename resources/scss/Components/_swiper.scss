@@ -51,6 +51,18 @@
 .swiper::selection {
     background: none;
 }
+.swiper-slide {
+    transition: $transition;
+}
+
+.swiper-wrapper:has(.swiper-slide:hover) .swiper-slide:not(:hover) {
+    transform: scale(0.95);
+}
+.swiper-slide:hover {
+    transform: scale(1.02);
+}
+
+
 .swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
     //display: none;
 }
