@@ -1,4 +1,5 @@
 default:
-  name: '{{ config:app:name }}'
-  locale: fr-BE
+  name: EAFC-Namur-Cadets
   url: /
+  locale: fr-BE
+  lang: "français (Belgique)'"
