@@ -30,7 +30,7 @@ Bienvenue sur le dépôt du site Internet de l'EAFC-Namur-Cadet. Ce projet est c
 4. Lancez le serveur de développement :
 
    ```bash
-   PHP artisan serve --host=192.168.1.10 --port=51730 
+   PHP artisan serve --host=192.168.129.3 --port=51730 
    ```
 5. Lancer la compilation des assets
 
