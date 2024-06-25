@@ -5,7 +5,7 @@
                 <nav class="partners" aria-label="{{ footer:partners_title }}">
                     <h2 class="">{{ footer:partners_title }}</h2>
                     {{ footer:partners }}
-                    <a href="{{ link }}"><span
+                    <a rel="external" href="{{ link }}" title="Aller sur la page : {{ name }}"><span
                         class="visually-hidden">{{ name }}</span>{{ logo }}</a>
                     {{ /footer:partners }}
                 </nav>
@@ -30,7 +30,7 @@
             {{#             </nav> #}}
             <div class="footer__po">
                 <h2>Pouvoir organisateur</h2>
-                {{ svg src="logo/wbe-enseignement.svg" title="Wallonie-Bruxelles Enseignement" }}
+                <a rel="external" title="Aller sur la page : Wallonie-Bruxelles Enseignement" href="https://www.wbe.be">{{ svg src="./logo/wbe-enseignement-vertical.svg" }}</a>
             </div>
         </div>
         <div class="footer__bottom">
