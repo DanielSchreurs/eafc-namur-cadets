@@ -7,7 +7,9 @@
     &:after {
         font-size: $base-size;
     }
+
     transition: $transition;
+
     &:hover {
         background: $secondary;
         color: $primary;
@@ -51,15 +53,18 @@
 .swiper::selection {
     background: none;
 }
+
 .swiper-slide {
     transition: $transition;
 }
 
-.swiper-wrapper:has(.swiper-slide:hover) .swiper-slide:not(:hover) {
-    transform: scale(0.95);
-}
-.swiper-slide:hover {
-    transform: scale(1.02);
+@media screen and (hover) {
+    .swiper-wrapper:has(.swiper-slide:hover) .swiper-slide:not(:hover) {
+        transform: scale(0.95);
+    }
+    .swiper-slide:hover {
+        transform: scale(1.02);
+    }
 }
 
 
