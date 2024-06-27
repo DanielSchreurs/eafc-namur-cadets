@@ -1,0 +1,58 @@
+.levels {
+    font-weight: normal;
+    overflow-x: visible;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: $base-size;
+    left: -$base-size-s;
+    gap: $base-size-s;
+
+
+    &__level {
+        padding: $base-size-xs;
+        padding-left: $base-size-s;
+        border-radius: 0 $base-size-xs $base-size-xs 0;
+        color: $white;
+        font-size: 0.8rem;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -$base-size-s;
+            left: 0;
+            display: inline-block;
+            height: 0;
+            width: 0;
+            border-top: $base-size-s solid transparent;
+            border-left: $base-size-s solid transparent;
+        }
+
+        &--SS {
+            background: $secondary;
+
+            &:before {
+                border-top-color: $secondary;
+            }
+        }
+
+        &--STC {
+            background: $tertiary;
+
+            &:before {
+                border-top-color: $tertiary;
+            }
+        }
+
+        &--SI {
+            background: $quaternary;
+
+            &:before {
+                border-top-color: $quaternary;
+            }
+        }
+    }
+
+
+}

@@ -40,7 +40,7 @@
         }
     }
 
-    h2 {
+    h2,.h2 {
         margin: 0;
         color: $white;
         font-size: 2.05rem;
@@ -189,6 +189,11 @@
             margin-top: $base-size-l;
             justify-content: start;
             align-items: start;
+            svg {
+                min-width: 200px;
+                height: auto;
+            }
+
             @media (screen and min-width: $max-width) {
                 svg {
                     min-width: 50%;

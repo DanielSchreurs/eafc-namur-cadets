@@ -9,9 +9,9 @@
                         <span class="categories__category__link__icon">{{ icon }}</span>
                         <span>{{ title }}</span>
                         {{ if category_levels  }}
-                            <ul class="categories__category__link__levels">
+                            <ul class="levels">
                                 {{ category_levels }}
-                                <li class="categories__category__link__levels__level {{ abbr | upper }}"><abbr
+                                <li class="levels__level levels__level--{{ abbr | upper }}"><abbr
                                     title="{{ title }}">{{ abbr }}</abbr></li>
                                 {{ /category_levels }}
                             </ul>

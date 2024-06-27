@@ -13,7 +13,7 @@
     vertical-align: middle;
     user-select: none;
     transition: $transition;
-
+    white-space: nowrap;
 
     &:hover,&:focus {
         text-decoration: none;
@@ -24,3 +24,14 @@
     }
 }
 
+.btn--secondary {
+    background-color: $white;
+    border-color: $secondary;
+    color: $primary;
+
+    &:hover,&:focus {
+        background-color: $primary;
+        border-color: $secondary;
+        color: $white;
+    }
+}

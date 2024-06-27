@@ -4,3 +4,18 @@ main {
     flex-direction: column;
     gap: $base-size-xxl;
 }
+
+.grid-card {
+    padding-top: $base-size-xl;
+    padding-bottom: $base-size-xl;
+    display: grid;
+    gap: $base-size-l;
+    @media screen and (min-width: 680px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: $max-width) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
