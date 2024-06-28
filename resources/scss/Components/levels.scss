@@ -7,7 +7,9 @@
     top: $base-size;
     left: -$base-size-s;
     gap: $base-size-s;
-
+    &--course {
+        top: $base-size-xl;
+    }
 
     &__level {
         padding: $base-size-xs;

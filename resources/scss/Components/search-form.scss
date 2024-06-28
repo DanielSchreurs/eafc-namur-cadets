@@ -1,0 +1,38 @@
+body .search-form {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: start;
+    gap: $base-size-s;
+    max-width: 21.875rem;
+    &__input-container {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: $base-size-s;
+        width: 100%;
+
+        &__search {
+            flex-grow: 1;
+            border-radius: $base-size-s 0 0 $base-size-s;
+        }
+
+        &__submit {
+            flex-shrink: 1;
+            width: fit-content;
+            border-radius: 0 $base-size-s $base-size-s 0;
+
+            svg {
+                fill: $white;
+                width: $base-size;
+                height: auto;
+            }
+        }
+    }
+
+    &__label {
+        text-align: left;
+    }
+
+
+}

@@ -6,7 +6,6 @@ main {
 }
 
 .grid-card {
-    padding-top: $base-size-xl;
     padding-bottom: $base-size-xl;
     display: grid;
     gap: $base-size-l;
@@ -16,6 +15,17 @@ main {
     @media screen and (min-width: $max-width) {
         grid-template-columns: repeat(3, 1fr);
     }
-
 }
 
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 600px) {
+        align-items: flex-end;
+    }
+}

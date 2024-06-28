@@ -1,0 +1,12 @@
+input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="tel"], input[type="url"], input[type="number"], input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="color"], input[type="file"], input[type="range"], input[type="submit"], input[type="reset"], input[type="button"], button {
+    padding: $base-size-s;
+    border: $border;
+    color: $primary;
+    border-radius: $base-size-s;
+    width: 100%;
+    &:focus {
+        border-color: $secondary;
+        outline-offset: 2px;
+    }
+}
+

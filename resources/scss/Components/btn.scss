@@ -1,4 +1,4 @@
-.btn {
+.btn,button {
     background-color: $primary;
     border: 2px solid $secondary;
     text-decoration: none;
@@ -21,6 +21,7 @@
         border-radius: 0 $base-size-s 0 $base-size-s;
         color: $primary;
         border: 2px solid $primary;
+        outline-offset: 2px;
     }
 }
 
