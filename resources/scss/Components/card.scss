@@ -5,7 +5,7 @@
     padding: 0;
     background: $white;
     position: relative;
-    border-radius: $base-size;
+    border-radius: 0 $base-size 0 $base-size;
     box-shadow: $box-shadow;
 
     &__content {
@@ -36,7 +36,8 @@
         gap: $base-size-s;
         margin-bottom: $base-size;
         color: $secondary;
-        li{
+
+        li {
             padding: $base-size-xs $base-size;
             background: $primary;
             color: $white;
@@ -92,6 +93,7 @@
             align-items: center;
             transition: $transition;
             opacity: 1;
+
             & > * {
                 display: flex;
             }
@@ -105,11 +107,12 @@
         }
     }
 
-    &:hover .card__img-container  {
+    &:hover .card__img-container {
         img {
             filter: blur(0);
             -webkit-filter: blur(0);
         }
+
         &__cat {
             opacity: 0;
         }
@@ -126,12 +129,17 @@
         box-shadow: $box-shadow;
     }
 
-    &__header {
+    &__title {
         font-family: "Inter-Bold", Helvetica, sans-serif;
         font-weight: bold;
         text-transform: uppercase;
         margin: $base-size-l 0;
         display: block;
+    }
+
+    &__subtitle {
+        margin-top: -$base-size-l;
+        margin-bottom: $base-size-l;
     }
 
 
@@ -221,7 +229,6 @@
 .card--new-preview {
     padding: $base-size 0 0;
     overflow: clip;
-    border-radius: 0 $base-size 0 $base-size;
 }
 
 .card--course {

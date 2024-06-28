@@ -21,7 +21,7 @@
             </ul>
         {{ endif }}
 
-        <h2 class="card__header h4">{{ title }}</h2>
+        <h2 class="card__title h4">{{ title }}</h2>
         {{ if subtitle }}
             <p class="card__subtitle">{{ subtitle }}</p>
         {{ endif }}
@@ -60,11 +60,12 @@
             {{ endif }}
         </dfn>
         <div class="card__CTAs">
-            <a href="{{ url }}" class="btn btn--secondary">Voir la formation <span
-                class="visually-hidden">{{ title }}</span></a>
+            <a href="{{ url }}" class="btn btn--secondary">Voir la formation<span
+                class="visually-hidden"> : {{ title }}</span></a>
             {{ if horaire }}
                 <a href="{{ horaire:url }}" class="btn btn--secondary"
-                   title="Voir L’horaire au format (PDF) de la formation {{ title }}">L’horaire (PDF)</a>
+                   title="Voir L’horaire au format (PDF) de la formation {{ title }}">Voir l’horaire (PDF)<span
+                    class="visually-hidden"> de la formation {{ title }}</span></a>
             {{ endif }}
         </div>
     </div>
