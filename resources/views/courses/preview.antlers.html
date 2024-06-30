@@ -15,8 +15,10 @@
                 {{ /courses_categories }}
             {{ endif }}
         </div>
-
         {{ partial src="partials/category-levels" class="levels--course" :items="courses_levels" }}
+
+
+
 
         {{ if is_aside }}
             <h2 class="visually-hidden">Informations importantes</h2>
@@ -65,10 +67,14 @@
             {{ endif }}
         </dfn>
         <div class="card__CTAs">
-            {{ unless is_aside }}
+            {{ if is_aside }}
+                <a href="{{ horaire:url }}" class="btn btn--secondary"
+                   title="Voir dossier pédagogique de la section {{ title }} au format (PDF) ">Dossier pédagogique de la
+                    section (PDF)</a>
+            {{ else }}
                 <a href="{{ url }}" class="btn btn--secondary">Voir la formation<span
                     class="visually-hidden"> : {{ title }}</span></a>
-            {{ /unless }}
+            {{ /if }}
 
             {{ if horaire }}
                 <a href="{{ horaire:url }}" class="btn btn--secondary"
