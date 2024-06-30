@@ -1,6 +1,12 @@
-<article class="card card--course">
+{{ if is_aside }}
+    <aside class="card card--course">
+{{ else }}
+    <article class="card card--course">
+{{ /if }}
     <div class="card__content">
-        {{ partial src="partials/is-new" }}
+        {{ unless is_aside }}
+            {{ partial src="partials/is-new" }}
+        {{ /unless }}
         <div class="card__img-container">
             <img src="{{ glide:img preset="thumbnail" }}" alt="{{ img['alt'] }}">
             {{ if courses_categories }}
@@ -12,10 +18,14 @@
 
         {{ partial src="partials/category-levels" class="levels--course" :items="courses_levels" }}
 
-        <h2 class="card__title h4">{{ title }}</h2>
-        {{ if subtitle }}
-            <p class="card__subtitle">{{ subtitle }}</p>
-        {{ endif }}
+        {{ if is_aside }}
+            <h2 class="visually-hidden">Informations importantes</h2>
+        {{ else }}
+            <h2 class="card__title h4">{{ title }}</h2>
+            {{ if subtitle }}
+                <p class="card__subtitle">{{ subtitle }}</p>
+            {{ endif }}
+        {{ /if }}
 
         {{ if tags }}
             <ul class="card__tags">
@@ -55,13 +65,25 @@
             {{ endif }}
         </dfn>
         <div class="card__CTAs">
-            <a href="{{ url }}" class="btn btn--secondary">Voir la formation<span
-                class="visually-hidden"> : {{ title }}</span></a>
+            {{ unless is_aside }}
+                <a href="{{ url }}" class="btn btn--secondary">Voir la formation<span
+                    class="visually-hidden"> : {{ title }}</span></a>
+            {{ /unless }}
+
             {{ if horaire }}
                 <a href="{{ horaire:url }}" class="btn btn--secondary"
                    title="Voir L’horaire au format (PDF) de la formation {{ title }}">Voir l’horaire (PDF)<span
                     class="visually-hidden"> de la formation {{ title }}</span></a>
             {{ endif }}
+
+            {{ if is_aside }}
+                <p><small>Cette horaire est donné à titre indicatif, susceptible de changer. Seul l’horaire affiché aux
+                    valves de l’école aura valeur officielle.</small></p>
+            {{ /if }}
         </div>
     </div>
-</article>
+{{ if is_aside }}
+    </aside>
+{{ else }}
+    </article>
+{{ /if }}
