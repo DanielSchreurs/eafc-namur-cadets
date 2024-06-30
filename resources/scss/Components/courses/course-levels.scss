@@ -1,0 +1,29 @@
+.course-levels {
+    display: flex;
+    gap: $base-size;
+    flex-wrap: wrap;
+    @media screen and (min-width: 700px) {
+        justify-content: flex-end;
+    }
+
+    &__label {
+        white-space: nowrap;
+        width: fit-content;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    &__items-container {
+        display: flex;
+        gap: $base-size;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        &__item {
+            display: flex;
+            gap: $base-size-s;
+        }
+    }
+}

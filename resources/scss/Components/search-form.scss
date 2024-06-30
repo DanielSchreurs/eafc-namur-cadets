@@ -24,18 +24,20 @@ body .search-form {
             flex-shrink: 1;
             width: fit-content;
             border-radius: 0 $base-size-s $base-size-s 0;
+            padding: $base-size-s;
+            line-height: 1;
 
             svg {
                 fill: $white;
-                width: $base-size;
-                height: auto;
+                height: 22px;
+                width: auto;
             }
         }
 
         &__shortcut {
             display: flex;
             position: absolute;
-            right: 68px;
+            right: $base-size-xl;
 
             kbd {
                 align-items: center;
@@ -47,6 +49,7 @@ body .search-form {
                 position: relative;
                 top: -1px;
                 border: 1px solid $secondary;
+                padding: $base-size-s $base-size-xs;
             }
         }
     }

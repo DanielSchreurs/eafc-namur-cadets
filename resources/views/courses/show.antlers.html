@@ -4,7 +4,29 @@
         {{ if main_sub_title }}
             <p class="h2 course-header__subtitle">{{ main_sub_title }}</p>
         {{ /if }}
-        <h1 class="course-header__title {{ if is_new && ! main_sub_title }}add-padding{{ /if }}">{{ title }}</h1>
+        <h1 class="course-header__title
+
+
+
+
+
+            {{ if is_new && ! main_sub_title }}add-padding{{ /if }}">{{ title }}</h1>
         {{ partial src="partials/search-form" }}
     </div>
+</div>
+<div class="wrapper">
+    <div class="course-levels">
+        <p class="course-levels__label">Niveau certificatif&nbsp;:</p>
+        {{ if courses_levels  }}
+            <ul class="course-levels__items-container">
+                {{ courses_levels }}
+                <li class="course-levels__items-container__item">
+                    <input type="checkbox" id="{{ abbr }}" checked disabled/>
+                    <label for="{{ abbr }}">{{ title }} (<abbr title="{{ title }} ">{{ abbr }}</abbr>)</label>
+                </li>
+                {{ /courses_levels }}
+            </ul>
+        {{ endif }}
+    </div>
+
 </div>
