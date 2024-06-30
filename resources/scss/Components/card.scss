@@ -70,8 +70,8 @@
         }
 
         &:has(&__cat) img {
-            filter: blur(5px);
-            -webkit-filter: blur(5px);
+            filter: blur(2px);
+            -webkit-filter: blur(2px);
         }
 
         &__cat {

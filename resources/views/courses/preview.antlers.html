@@ -6,42 +6,40 @@
         {{ endif }}
         <div class="card__img-container">
             <img src="{{ glide:img preset="thumbnail" }}" alt="{{ img['alt'] }}">
-            {{ if formation_categories }}
+            {{ if courses_categories }}
                 {{ courses_categories }}
                 <div class="card__img-container__cat">{{ icon }}<span>{{ title }}</span></div>
                 {{ /courses_categories }}
             {{ endif }}
         </div>
-        {{ if formations_levels }}
-            <ul class="levels levels--course">
-                {{ courses_levels }}
-                <li class="levels__level levels__level--{{ abbr | upper }}"><abbr
-                    title="{{ title }}"></abbr>{{ abbr }}</li>
-                {{ /courses_levels }}
-            </ul>
-        {{ endif }}
+
+        {{ partial src="partials/category-levels" class="levels--course" :items="courses_levels" }}
 
         <h2 class="card__title h4">{{ title }}</h2>
         {{ if subtitle }}
             <p class="card__subtitle">{{ subtitle }}</p>
         {{ endif }}
 
-        {{ if tag }}
+        {{ if tags }}
             <ul class="card__tags">
-                {{ tag }}
+                {{ tags }}
                 <li title="{{ description | smartypants }}">#{{ title }}</li>
-                {{ /tag }}
+                {{ /tags }}
             </ul>
         {{ endif }}
 
-        {{ overview }}
+        <p>{{ overview }}</p>
         <dfn>
             {{ if admission_conditions }}
                 <div class="card__content__spacer">
-
-                    <dt>Conditions d'admission&nbsp;:</dt>
+                    <dt>Conditions d’admission par diplôme&nbsp;:</dt>
                     <dd>{{ admission_conditions:label }}</dd>
-                    <dd>ou {{ conditions_dadmission_epreuve:label }}</dd>
+                </div>
+            {{ endif }}
+            {{ if conditions_dadmission_epreuve }}
+                <div class="card__content__spacer">
+                    <dt>Conditions d’admission par épreuve &nbsp;:</dt>
+                    <dd>{{ conditions_dadmission_epreuve:label }}</dd>
                 </div>
             {{ endif }}
 

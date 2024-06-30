@@ -1,0 +1,8 @@
+{{ if items  }}
+    <ul class="levels {{ class }}">
+        {{ items }}
+        <li class="levels__level levels__level--{{ abbr | upper }}"><abbr
+            title="Niveau certificatif : {{ title }}">{{ abbr }}</abbr></li>
+        {{ /items }}
+    </ul>
+{{ endif }}

@@ -1,0 +1,11 @@
+<div class="wrapper search-wrapper">
+    <h1 class="search-wrapper__header">{{page_title}}</h1>
+    {{ partial src="partials/search-form"}}
+    {{ svg src="css/glass" class="search-wrapper__glass" }}
+</div>
+
+<ul class="wrapper grid-card">
+    {{ collection:courses }}
+    {{ partial:courses.preview }}
+    {{ /collection:courses }}
+</ul>
