@@ -1,3 +1,10 @@
-<div class="wrapper">
-    {{ title }}
+<div class="course-header">
+    <div class="course-header__wrapper">
+        {{ partial src="partials/is-new" }}
+        {{ if main_sub_title }}
+            <p class="h2 course-header__subtitle">{{ main_sub_title }}</p>
+        {{ /if }}
+        <h1 class="course-header__title {{ if is_new && ! main_sub_title }}add-padding{{ /if }}">{{ title }}</h1>
+        {{ partial src="partials/search-form" }}
+    </div>
 </div>

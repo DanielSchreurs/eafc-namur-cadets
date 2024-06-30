@@ -49,7 +49,9 @@
     &__new {
         position: absolute;
         top: -$base-size;
-        right: -$base-size-s;
+        right: -$base-size;
+        width: $base-size-xxl;
+        height: auto;
     }
 
     &__img-container {
@@ -233,7 +235,6 @@
 
 .card--course {
     background: $light-shade;
-    box-shadow: none;
 
     :where(.card__content) {
         padding-top: $base-size-l;

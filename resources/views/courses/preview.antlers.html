@@ -1,9 +1,6 @@
 <article class="card card--course">
     <div class="card__content">
-        {{ if is_new }}
-            <span class="card__new"><span
-                class="visually-hidden">Il s’agit d’une nouvelle formation</span>{{ svg src="css/new" }}</span>
-        {{ endif }}
+        {{ partial src="partials/is-new" }}
         <div class="card__img-container">
             <img src="{{ glide:img preset="thumbnail" }}" alt="{{ img['alt'] }}">
             {{ if courses_categories }}
@@ -38,7 +35,7 @@
             {{ endif }}
             {{ if conditions_dadmission_epreuve }}
                 <div class="card__content__spacer">
-                    <dt>Conditions d’admission par épreuve &nbsp;:</dt>
+                    <dt>Ou conditions d’admission par épreuve&nbsp;:</dt>
                     <dd>{{ conditions_dadmission_epreuve:label }}</dd>
                 </div>
             {{ endif }}
@@ -52,7 +49,7 @@
             {{ if duration }}
                 <div class="card__content__spacer">
 
-                    <dt>Durée minimale de la formation &nbsp;:</dt>
+                    <dt>Durée minimale de la formation&nbsp;:</dt>
                     <dd>{{ duration }}</dd>
                 </div>
             {{ endif }}

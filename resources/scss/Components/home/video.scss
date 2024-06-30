@@ -28,7 +28,7 @@
         width: 100%;
         aspect-ratio: 16 / 9;
         border-radius: $base-size-s;
-        box-shadow: $box-shadow-strong;
+        box-shadow: $box-shadow;
         position: relative;
         z-index: 2;
         @media screen and (min-width: 768px) {
