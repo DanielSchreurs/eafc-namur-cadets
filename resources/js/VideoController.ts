@@ -1,4 +1,4 @@
-import {setting} from "./setting";
+import {settings} from "./settings";
 
 
 export class VideoController {
@@ -6,8 +6,8 @@ export class VideoController {
     private readonly seekTime: number;
 
     constructor() {
-        this.htmlVideoElement = document.querySelector(setting.video.selector) as HTMLVideoElement;
-        this.seekTime = setting.video.videoSeekTime;
+        this.htmlVideoElement = document.querySelector(settings.video.selector) as HTMLVideoElement;
+        this.seekTime = settings.video.videoSeekTime;
         if (this.htmlVideoElement) {
             this.addEventListeners();
         }

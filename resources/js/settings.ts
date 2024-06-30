@@ -1,6 +1,6 @@
 import {A11y, Keyboard, Navigation, Pagination} from 'swiper/modules';
 
-export const setting = {
+export const settings = {
     video: {
         videoSeekTime: 0.5,
         selector: 'video',
@@ -80,5 +80,17 @@ export const setting = {
             firstSlideMessage: 'Première catégorie',
             lastSlideMessage: 'Dernière catégorie',
         }
-    }
+    },
+    searchForm: {
+        selector: '.search-form',
+        inputSelector: '.search-form__input-container__search',
+        templateSelector: '#keyboard-template',
+        operatingSystemSelector: '#os'
+
+    },
+    macosPlatforms : /(macintosh|macintel|macppc|mac68k|macos)/i,
+    windowsPlatforms : /(win32|win64|windows|wince)/i,
+    iosPlatforms : /(iphone|ipad|ipod)/i,
+    androidPlatforms : /(android)/i,
+    linuxPlatforms : /(linux)/i,
 };

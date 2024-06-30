@@ -12,7 +12,7 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/scss/main.scss',
-                'resources/js/site.ts',
+                'resources/js/main.ts',
             ],
             refresh: true,
         }),],

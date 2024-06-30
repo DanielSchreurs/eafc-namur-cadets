@@ -4,17 +4,20 @@ body .search-form {
     flex-direction: column;
     align-items: start;
     gap: $base-size-s;
-    max-width: 21.875rem;
+
     &__input-container {
         display: flex;
         justify-content: start;
         align-items: center;
         gap: $base-size-s;
         width: 100%;
+        position: relative;
 
         &__search {
             flex-grow: 1;
             border-radius: $base-size-s 0 0 $base-size-s;
+            background: $white;
+            min-width: 17.5rem;
         }
 
         &__submit {
@@ -26,6 +29,24 @@ body .search-form {
                 fill: $white;
                 width: $base-size;
                 height: auto;
+            }
+        }
+
+        &__shortcut {
+            display: flex;
+            position: absolute;
+            right: 68px;
+
+            kbd {
+                align-items: center;
+                border-radius: 3px;
+                display: flex;
+                height: $base-size;
+                justify-content: center;
+                margin-right: .4em;
+                position: relative;
+                top: -1px;
+                border: 1px solid $secondary;
             }
         }
     }

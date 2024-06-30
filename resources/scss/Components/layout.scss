@@ -20,12 +20,27 @@ main {
 .search-wrapper {
     display: flex;
     flex-direction: column;
+    position: relative;
 
     &__header {
         width: 100%;
     }
 
+    &__glass {
+        display: none;
+    }
+
     @media screen and (min-width: 600px) {
         align-items: flex-end;
+
+        &__glass {
+            display: block;
+            position: absolute;
+            right: 11%;
+            z-index: -1;
+            width: auto;
+            fill: $light;
+        }
     }
+
 }
