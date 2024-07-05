@@ -41,6 +41,9 @@
             bottom: -8.6875rem;
             left: -5rem;
             fill: $secondary;
+            &:hover {
+                fill: $primary;
+            }
         }
     }
 

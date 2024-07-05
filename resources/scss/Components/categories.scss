@@ -24,6 +24,9 @@
             @media screen and (min-width: 768px) {
                 display: block;
             }
+            &:hover {
+                fill: $secondary;
+            }
 
         }
     }
@@ -113,6 +116,9 @@
         fill: $secondary;
         @media screen and (min-width: 768px) {
             right: calc(((100% - $max-width) / 2 - 6rem));
+        }
+        &:hover {
+            fill: $primary;
         }
     }
 
