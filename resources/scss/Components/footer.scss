@@ -5,23 +5,29 @@
     margin: 0;
     padding-top: $base-size-xl;
 
+    .arrow {
+        display: none;
+    }
+
+    @media screen and (min-width: $max-width) {
+        .arrow {
+            display: block;
+            position: absolute;
+            left: 2vw;
+            width: 3.125rem;
+            height: 3.125rem;
+            fill: $secondary;
+
+            &:hover {
+                fill: $white;
+            }
+        }
+    }
+
     .footer_content {
         display: flex;
         @media screen and (max-width: 680px) {
             flex-direction: column;
-        }
-        @media screen and (min-width: 680px) {
-            &:before {
-                display: block;
-                content: '';
-                position: absolute;
-                top: 3%;
-                left: -5%;
-                background: url("../svg/css/arrow.svg ") no-repeat;
-                background-size: contain;
-                width: 3.125rem;
-                height: 3.125rem;
-            }
         }
         align-items: start;
         gap: $base-size-xl;
@@ -40,7 +46,7 @@
         }
     }
 
-    h2,.h2 {
+    h2, .h2 {
         margin: 0;
         color: $white;
         font-size: 2.05rem;
@@ -117,19 +123,21 @@
             transition: $transition;
         }
 
-        &:after {
+        .arobase {
             display: block;
-            content: '';
             position: absolute;
             bottom: 20%;
             right: -30%;
             @media (screen and min-width: 1200px) {
                 right: 0;
             }
-            background: url("../svg/css/arobase.svg ") no-repeat;
-            background-size: contain;
             width: 12.5rem;
             height: 12.5rem;
+            z-index: 0;
+            opacity: 0.3;
+            &:hover {
+                opacity: 0.5;
+            }
         }
 
         p {
@@ -139,7 +147,8 @@
 
         &__info {
             margin-top: $base-size-l;
-
+            position: relative;
+            z-index: 2;
             &:first-of-type {
                 margin-top: $base-size;
             }
@@ -189,6 +198,7 @@
             margin-top: $base-size-l;
             justify-content: start;
             align-items: start;
+
             svg {
                 min-width: 200px;
                 height: auto;

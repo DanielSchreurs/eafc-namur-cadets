@@ -1,3 +1,3 @@
-<svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.880249 0.986664L6.44013 8.11559L12 0.986664" stroke="#FBBA40" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="13" class="arrow-down-menu" height="9"  fill="none" viewBox="0 0 13 9" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.880249 0.986664L6.44013 8.11559L12 0.986664" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

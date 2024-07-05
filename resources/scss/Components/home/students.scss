@@ -103,6 +103,7 @@
                 transform: rotate(-5deg) scale(1.05);
             }
         }
+
         svg {
             fill: $quaternary;
         }
@@ -119,17 +120,14 @@
 
         .students__item__border {
             &:before {
-                border: none;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: url("../../resources/svg/css/triangle.svg") no-repeat center;
-                //background: rgba(0, 0, 0, 0.1);
-                transform: rotate(5deg) translate($base-size-s, $base-size-s);
-                // TODO: Fix the background-size
-                background-size: cover;
+                display: none;
             }
+
+        }
+
+        .triangle-shape {
+            position: absolute;
+            transform: rotate(5deg) scale(1.05);
         }
 
         .students__spirale {

@@ -9,7 +9,7 @@
             {{ dp_years }}
             {{ if dp_courses }}
                 <li class="ue__years_year">
-                    <label class="ue__years_year__name h4" for="{{ year | urlencode }}">{{ year }}</label>
+                    <label class="ue__years_year__name h4" for="{{ year | urlencode }}">{{ year }}{{ svg src="css/arrow-down-menu" }}</label>
                     <input class="visually-hidden" type="checkbox"
                            id="{{ year | urlencode }}" {{ count == 1 ? "checked" : "" }}/>
                     <ul class="ue__years_year__courses" title="Les dossiers pédagogique de l'année : {{ year }}">

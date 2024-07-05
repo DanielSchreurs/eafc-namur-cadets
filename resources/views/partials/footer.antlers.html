@@ -1,4 +1,5 @@
 <footer class="footer">
+    {{ svg src="css/arrow" }}
     <div class="wrapper">
         <div class="footer_content">
             {{ if footer:partners  }}
@@ -23,6 +24,7 @@
                     </div>
                     {{ /footer:contacts }}
                 {{ endif }}
+                {{ svg src="css/arobase" }}
             </section>
             {{#             <nav class="tools-nav" aria-label="{{ footer:tools_title }}"> #}}
             {{#                 <h2 class="">{{footer:tools_title}}</h2> #}}
@@ -30,7 +32,8 @@
             {{#             </nav> #}}
             <div class="footer__po">
                 <div class="h2">Pouvoir organisateur</div>
-                <a rel="external" title="Aller sur la page : Wallonie-Bruxelles Enseignement" href="https://www.wbe.be">{{ svg src="./logo/wbe-enseignement-vertical.svg" }}</a>
+                <a rel="external" title="Aller sur la page : Wallonie-Bruxelles Enseignement"
+                   href="https://www.wbe.be">{{ svg src="./logo/wbe-enseignement-vertical.svg" }}</a>
             </div>
         </div>
         <div class="footer__bottom">

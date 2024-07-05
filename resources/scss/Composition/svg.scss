@@ -1,3 +1,6 @@
+svg {
+    transition: $transition;
+}
 svg .main {
     fill: var(--color-primary);
 }

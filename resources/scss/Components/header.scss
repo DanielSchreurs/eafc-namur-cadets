@@ -139,6 +139,15 @@
     &__content {
         overflow: hidden;
     }
+
+}
+
+.current-line {
+    display: none;
+}
+
+.arrow-down-menu {
+    //display: none;
 }
 
 .header:has(#burger:checked) {
@@ -212,18 +221,26 @@
     }
     .header .main-nav {
         display: flex;
+        justify-content: space-between;
         padding-top: 0;
 
         > a, > div {
-            display: flex;
-            border-bottom: none;
             @media screen and (min-width: 1500px) {
                 font-size: 1.25rem;
+                text-align: right;
             }
-            flex-grow: 1;
-            justify-content: end;
-            align-items: center;
-            position: relative;
+        }
+
+        .current {
+            .current-line {
+                display: block;
+                position: absolute;
+                width: 6rem;
+                height: 0.4rem;
+                bottom: -$base-size-xs;
+                left: 0;
+                fill: $secondary;
+            }
 
         }
 
@@ -231,46 +248,35 @@
             padding-right: 0;
         }
 
-        .current span {
-            position: relative;
-
-            &:after {
-                content: '';
-                display: block;
-                position: absolute;
-                width: 6rem;
-                height: 0.4rem;
-                background: url("../svg/css/actif-line.svg") no-repeat;
-                background-size: 100% 100%;
-                left: 0;
-                bottom: -$base-size-s;
-            }
-        }
     }
     .header .main-nav .children {
+        position: relative;
 
-        &:after {
+        .arrow-down-menu {
             display: block;
-            content: '';
+            position: absolute;
+            top: 50%;
+            right: -($base-size+$base-size-s);
+            transform: translateY(-50%);
+            stroke: $secondary;
             width: $base-size;
-            height: $base-size;
-            background: url("../svg/css/arrow-down-menu.svg") no-repeat;
-            background-size: contain;
-            margin-left: 0.2rem;
-            margin-top: 0.2rem;
+            height: auto;
         }
     }
     .header .main-nav .children__items {
         position: absolute;
-        top: 100%;
+        bottom: -165%;
         display: none;
-        background: $white;
+        background: $light-shade;
         border-radius: 0 0 $base-size-s $base-size-s;
         padding-left: $base-size-s;
+        box-shadow: $box-shadow;
+        width: fit-content;
 
         a {
             border: none;
             font-size: 0.8em;
+            text-align: left;
         }
     }
     .header .main-nav .children:hover .children__items, .header .main-nav .children:focus .children__items {
