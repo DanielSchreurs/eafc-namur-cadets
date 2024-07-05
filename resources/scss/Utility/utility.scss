@@ -1,0 +1,14 @@
+.f-grow {
+    flex-grow: 1;
+}
+
+.text-column {
+    @media screen and (min-width: $max-width) {
+        column-count: 2;
+        gap: $base-size-l;
+        column-rule: 1px dashed $grey;
+        :first-child {
+            margin-top: 0;
+        }
+    }
+}

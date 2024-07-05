@@ -103,6 +103,9 @@
                 transform: rotate(-5deg) scale(1.05);
             }
         }
+        svg {
+            fill: $quaternary;
+        }
     }
 
     .triangle {

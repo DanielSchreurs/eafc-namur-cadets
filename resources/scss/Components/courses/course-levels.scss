@@ -2,6 +2,7 @@
     display: flex;
     gap: $base-size;
     flex-wrap: wrap;
+    margin-bottom: $base-size;
     @media screen and (min-width: 700px) {
         justify-content: flex-end;
     }
@@ -26,4 +27,5 @@
             gap: $base-size-s;
         }
     }
+
 }

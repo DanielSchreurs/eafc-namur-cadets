@@ -4,13 +4,13 @@
     <div class="categories__slider swiper swiper-horizontal wrapper">
         <ul class="swiper-wrapper">
             {{ taxonomy:courses_categories }}
-        <li class="categories__category swiper-slide">
-        <a class="categories__category__link" href="{{ url }}">
-            <span class="categories__category__link__icon">{{ icon }}</span>
-            <span>{{ title }}</span>
-            {{ partial src="partials/category-levels" :items="category_levels" }}
-            </a>
-            </li>
+                <li class="categories__category swiper-slide">
+                    <a class="categories__category__link" href="{{ url }}">
+                        <span class="categories__category__link__icon">{{ icon }}</span>
+                        <span>{{ title }}</span>
+                        {{ partial src="partials/category-levels" :items="category_levels" }}
+                    </a>
+                </li>
             {{ /taxonomy:courses_categories }}
         </ul>
         <div class="swiper-pagination"></div>

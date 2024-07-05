@@ -58,5 +58,7 @@ body .search-form {
         text-align: left;
     }
 
-
+}
+.search-form__input-container__search:focus + .search-form__input-container__shortcut,.search-form__input-container__search:valid + .search-form__input-container__shortcut{
+    display: none;
 }

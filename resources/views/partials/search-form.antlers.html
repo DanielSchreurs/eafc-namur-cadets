@@ -1,7 +1,7 @@
-<form action="/search/results" class="search-form" role="search" aria-labelledby="search-label">
+<form action="/recherche" class="search-form" role="search" aria-labelledby="search-label">
     <label for="search-input" id="search-label" class="search-form__label">Rechercher <strong>votre</strong> formation&nbsp;:</label>
     <div class="search-form__input-container">
-        <input type="search" class="search-form__input-container__search" id="search-input" name="q"
+        <input type="search" value="{{ get:q }}" class="search-form__input-container__search" id="search-input" name="q"
                placeholder="Le nom, la catégorie, etc." required>
 
         <button type="submit" class="search-form__input-container__submit"><span

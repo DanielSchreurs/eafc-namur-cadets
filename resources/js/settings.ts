@@ -81,6 +81,32 @@ export const settings = {
             lastSlideMessage: 'Dernière catégorie',
         }
     },
+    course_pictures: {
+        modules: [Navigation, Pagination, Keyboard, A11y],
+        slidesPerView: 4.3,
+        spaceBetween: 16,
+        loop: true,
+        keyboard: {
+            enabled: true,
+        },
+        navigation: {
+            nextEl: '.course-pictures .swiper-button-next',
+            prevEl: '.course-pictures .swiper-button-prev',
+        },
+        pagination: {
+            el: ".course-pictures .swiper-pagination",
+            clickable: true
+        },
+        a11y: {
+            enabled: true,
+            paginationBulletMessage: 'Aller à l’image {{index}}',
+            containerMessage: 'La liste de toutes les images de nos formations',
+            prevSlideMessage: 'Image précédente',
+            nextSlideMessage: 'Image suivante',
+            firstSlideMessage: 'Premièr image',
+            lastSlideMessage: 'Dernière image',
+        }
+    },
     searchForm: {
         selector: '.search-form',
         inputSelector: '.search-form__input-container__search',
@@ -88,9 +114,9 @@ export const settings = {
         operatingSystemSelector: '#os'
 
     },
-    macosPlatforms : /(macintosh|macintel|macppc|mac68k|macos)/i,
-    windowsPlatforms : /(win32|win64|windows|wince)/i,
-    iosPlatforms : /(iphone|ipad|ipod)/i,
-    androidPlatforms : /(android)/i,
-    linuxPlatforms : /(linux)/i,
+    macosPlatforms: /(macintosh|macintel|macppc|mac68k|macos)/i,
+    windowsPlatforms: /(win32|win64|windows|wince)/i,
+    iosPlatforms: /(iphone|ipad|ipod)/i,
+    androidPlatforms: /(android)/i,
+    linuxPlatforms: /(linux)/i,
 };

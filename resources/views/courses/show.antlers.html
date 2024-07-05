@@ -1,11 +1,10 @@
 <div class="course-header">
     <div class="course-header__wrapper">
         {{ partial src="partials/is-new" }}
-        {{ if main_sub_title }}
-            <p class="h2 course-header__subtitle">{{ main_sub_title }}</p>
+        {{ if subtitle }}
+            <p class="h2 course-header__subtitle">{{ subtitle }}</p>
         {{ /if }}
-        <h1 class="course-header__title
-            {{ if is_new && ! main_sub_title }}add-padding{{ /if }}">{{ title }}</h1>
+        <h1 class="course-header__title {{ is_new && ! subtitle ? "add-padding" : "" }}">{{ title }}</h1>
         {{ partial src="partials/search-form" }}
     </div>
 </div>
@@ -23,5 +22,66 @@
             </ul>
         {{ endif }}
     </div>
-    {{ partial src="courses/preview" is_aside="true" }}
+    <div class="course-container">
+        <div class="course-container__aside">
+            {{ partial src="courses/preview" is_aside="true" }}
+            {{ partial src="courses/ue" }}
+        </div>
+        {{ if replicator_field }}
+            <div class="course-container__content">
+                {{ replicator_field }}
+                {{ if type == "un_titre_avec_du_contenu_textuel_libre" }}
+                    <section>
+                        {{ svg src="css/ampoule" }}
+                        <h3>{{ title }}</h3>
+                        <div class="text-column">
+                            {{ content }}
+                            <small>Environ {{ content | read_time }} minute{{ (content | read_time) > 1 ? "s" : "" }} de
+                                lecture</small>
+                        </div>
+                    </section>
+                {{ elseif type == "modalites_de_capitalisation_de_la_section" }}
+                    <figure>
+                        {{ svg src="css/eye" }}
+                        <h3>{{ title }}</h3>
+                        <img src="{{ modalite_img }}" alt="{{ title }}" width="100%" height="auto">
+                    </figure>
+                {{ elseif type == "un_titre_avec_liste_par_exemple_les_debouches" }}
+                    <section class="course-container__content__items">
+                        <h3>{{ title }}</h3>
+                        <p>{{ description  }}</p>
+                        <ul class="badges">
+                            {{ items }}
+                            <li class="badges__item">{{ value }}</li>
+                            {{ /items }}
+                        </ul>
+                    </section>
+                {{ elseif type == "img_slider" }}
+                    <section>
+                        <h3>{{ title }}</h3>
+                        <div class="course-pictures swiper swiper-horizontal wrapper">
+                            <ul class="swiper-wrapper">
+                                {{ img_slider }}
+                                <li class="swiper-slide"><img src="{{ url }}" alt="{{ alt }}"></li>
+                                {{ /img_slider }}
+                            </ul>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </section>
+                {{ /if }}
+
+                {{ /replicator_field }}
+                {{ if view_registration_details }}
+                    <section>
+                        {{ svg src="css/book" }}
+                        <h3>{{ modalites_dinscription:title }}</h3>
+                        {{ modalites_dinscription:content }}
+                    </section>
+                {{ endif }}
+            </div>
+        {{ endif }}
+
+    </div>
 </div>

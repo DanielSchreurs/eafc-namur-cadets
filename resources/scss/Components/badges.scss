@@ -1,0 +1,20 @@
+
+.badges {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: $base-size;
+    flex-wrap: wrap;
+
+    &__item {
+        padding: $base-size;
+        background: $light-shade;
+        border-radius: 0 $base-size 0 $base-size;
+        font-weight: bold;
+        font-family: "Inter-Medium", Helvetica, sans-serif;
+        box-shadow: $box-shadow;
+    }
+}
+
+

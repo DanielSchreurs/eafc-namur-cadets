@@ -1,0 +1,33 @@
+<aside class="ue">
+    <h2 class="ue__header h3">Dossiers pédagogiques des UE</h2>
+    <div class="ue__caption">
+        <p>Unités d’enseignement constitutives de la section</p>
+        <p>Période<sup>*</sup> 1440</p>
+    </div>
+    {{ if dp_years }}
+        <ul class="ue__years" title="Les différentes UE de la formation : {{ title }}">
+            {{ dp_years }}
+            {{ if dp_courses }}
+                <li class="ue__years_year">
+                    <label class="ue__years_year__name h4" for="{{ year | urlencode }}">{{ year }}</label>
+                    <input class="visually-hidden" type="checkbox"
+                           id="{{ year | urlencode }}" {{ count == 1 ? "checked" : "" }}/>
+                    <ul class="ue__years_year__courses" title="Les dossiers pédagogique de l'année : {{ year }}">
+                        {{ dp_courses }}
+                        {{ if dp_course }}
+                            {{ dp_course }}
+                            <li class="ue__years_year__courses__course">
+                                <a class="ue__years_year__courses__course__name" href="{{ dp:url }}"
+                                   title="Télécharger au format {{ dp:size }} le dossier pédagogique du cours {{ name }}">{{ svg src="css/download-pdf" }}{{ name }}</a>
+                                <span class="ue__years_year__courses__course__hours">{{ nb_periods }}</span>
+                            </li>
+                            {{ /dp_course }}
+                        {{ /if }}
+                        {{ /dp_courses }}
+                    </ul>
+                </li>
+            {{ /if }}
+            {{ /dp_years }}
+        </ul>
+    {{ endif }}
+</aside>

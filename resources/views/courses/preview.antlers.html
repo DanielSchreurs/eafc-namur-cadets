@@ -5,6 +5,9 @@
 {{ /if }}
     <div class="card__content">
         {{ unless is_aside }}
+        <div class="f-grow">
+        {{ /unless }}
+        {{ unless is_aside }}
             {{ partial src="partials/is-new" }}
         {{ /unless }}
         <div class="card__img-container">
@@ -39,19 +42,20 @@
 
         <p>{{ overview }}</p>
         <dfn>
-            {{ if admission_conditions }}
-                <div class="card__content__spacer">
-                    <dt>Conditions d’admission par diplôme&nbsp;:</dt>
-                    <dd>{{ admission_conditions:label }}</dd>
-                </div>
-            {{ endif }}
-            {{ if conditions_dadmission_epreuve }}
-                <div class="card__content__spacer">
-                    <dt>Ou conditions d’admission par épreuve&nbsp;:</dt>
-                    <dd>{{ conditions_dadmission_epreuve:label }}</dd>
-                </div>
-            {{ endif }}
-
+            {{ if is_aside }}
+                {{ if admission_conditions }}
+                    <div class="card__content__spacer">
+                        <dt>Conditions d’admission par diplôme&nbsp;:</dt>
+                        <dd>{{ admission_conditions:label }}</dd>
+                    </div>
+                {{ endif }}
+                {{ if conditions_dadmission_epreuve }}
+                    <div class="card__content__spacer">
+                        <dt>Ou conditions d’admission par épreuve&nbsp;:</dt>
+                        <dd>{{ conditions_dadmission_epreuve:label }}</dd>
+                    </div>
+                {{ endif }}
+            {{ /if }}
             {{ if type_delivered && course_name }}
                 <div class="card__content__spacer">
                     <dt>Titre délivré&nbsp;:</dt>
@@ -60,17 +64,22 @@
             {{ endif }}
             {{ if duration }}
                 <div class="card__content__spacer">
-
                     <dt>Durée minimale de la formation&nbsp;:</dt>
                     <dd>{{ duration }}</dd>
                 </div>
             {{ endif }}
         </dfn>
+        {{ unless is_aside }}
+        </div>
+        {{ /unless }}
         <div class="card__CTAs">
             {{ if is_aside }}
-                <a href="{{ horaire:url }}" class="btn btn--secondary"
-                   title="Voir dossier pédagogique de la section {{ title }} au format (PDF) ">Dossier pédagogique de la
-                    section (PDF)</a>
+                {{ if dp_section }}
+                    <a href="{{ dp_section:url }}" class="btn btn--secondary"
+                       title="Voir dossier pédagogique de la section {{ title }} au format (PDF : {{ dp_section:size }})">Dossier pédagogique
+                        de la
+                        section (PDF)</a>
+                {{ /if }}
             {{ else }}
                 <a href="{{ url }}" class="btn btn--secondary">Voir la formation<span
                     class="visually-hidden"> : {{ title }}</span></a>
@@ -78,13 +87,17 @@
 
             {{ if horaire }}
                 <a href="{{ horaire:url }}" class="btn btn--secondary"
-                   title="Voir L’horaire au format (PDF) de la formation {{ title }}">Voir l’horaire (PDF)<span
-                    class="visually-hidden"> de la formation {{ title }}</span></a>
+                   title="Voir L’horaire au format (PDF : {{ horaire:size }}) de la formation {{ title }}">Voir l’horaire
+                    (PDF){{ is_aside ? "<sup>*</sup>" : "" }}<span
+                        class="visually-hidden"> de la formation {{ title }}</span></a>
             {{ endif }}
 
             {{ if is_aside }}
-                <p><small>Cette horaire est donné à titre indicatif, susceptible de changer. Seul l’horaire affiché aux
-                    valves de l’école aura valeur officielle.</small></p>
+                {{ if horaire }}
+                    <p><sup>*</sup><small>Cette horaire est donné à titre indicatif, susceptible de changer. Seul l’horaire affiché
+                        aux
+                        valves de l’école aura valeur officielle.</small></p>
+                {{ /if }}
             {{ /if }}
         </div>
     </div>

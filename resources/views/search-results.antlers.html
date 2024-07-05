@@ -1,0 +1,18 @@
+<div class="wrapper search-wrapper">
+    <h1 class="search-wrapper__header">Résultats de recherche : {{ get:q }}</h1>
+    {{ partial src="partials/search-form" }}
+    {{ svg src="css/glass" class="search-wrapper__glass" }}
+</div>
+
+<div class="wrapper">
+    {{ search:results }}
+        {{ if no_results }}
+            <h2>No results.</h2>
+        {{ else }}
+            <a href="{{ url }}" class="result">
+                <h2>{{ result_type }} : {{ title }}</h2>
+                <p>{{ content | truncate:240 }}</p>
+            </a>
+        {{ /if }}
+    {{ /search:results }}
+</div>
