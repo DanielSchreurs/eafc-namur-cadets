@@ -251,6 +251,7 @@
     }
     .header .main-nav .children {
         position: relative;
+        margin-right: $base-size;
 
         .arrow-down-menu {
             display: block;
@@ -265,13 +266,13 @@
     }
     .header .main-nav .children__items {
         position: absolute;
-        bottom: -165%;
+        bottom: -120%;
         display: none;
         background: $light-shade;
         border-radius: 0 0 $base-size-s $base-size-s;
         padding-left: $base-size-s;
         box-shadow: $box-shadow;
-        width: fit-content;
+        min-width: 12rem;
 
         a {
             border: none;
