@@ -4,20 +4,11 @@
     position: relative;
     margin-right: $base-size;
     padding: $base-size 0;
-
     border-radius: 0 $base-size $base-size 0;
     box-shadow: $box-shadow;
-    .search-form {
-        display: none;
-    }
-
     @media screen and (min-width: $max-width) {
         margin-right: calc(((100% - $max-width) / 2));
         padding-bottom: $base-size-xl;
-
-        .search-form {
-            display: flex;
-        }
     }
 
     &__wrapper {
@@ -28,6 +19,31 @@
         padding-right: 1rem;
         max-width: $max-width;
         margin-left: auto;
+        position: relative;
+        gap: $base-size-l;
+
+        > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        &__glass {
+            display: none;
+            @media screen and (min-width: $max-width) {
+                display: block;
+            }
+            fill: $white;
+            position: absolute;
+            right: 5%;
+            bottom: -20%;
+            transform: rotate(90deg);
+            z-index: 0;
+            opacity: 0.5;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 
     &__title {

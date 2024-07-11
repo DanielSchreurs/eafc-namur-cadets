@@ -1,19 +1,25 @@
 .hero {
     padding-top: $base-size;
+    position: relative;
+
+    .circle {
+        display: none;
+    }
+
     @media (screen and min-width: 1200px) {
         padding-top: $base-size-xl;
     }
-    position: relative;
 
     h1 {
         margin-top: 0;
         z-index: 9;
-
+        line-height: 1;
+        letter-spacing: -4px;
         dfn {
-            font-family: 'RecursiveSansCslSt-Light', fantasy;
+            font-family: 'RecursiveSansCslSt-Light', 'Helvetica', sans-serif;
             font-weight: 100;
             display: block;
-
+            position: relative;
             span {
                 color: $secondary;
             }
@@ -39,20 +45,38 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            max-width: 50rem;
+            max-width: 53rem;
             left: $base-size-xl;
-            z-index: 3;
+        }
+        span{
+            position: relative;
+            z-index: 5;
         }
         .video-container {
-            video {
-                border-radius: 0;
-                box-shadow: none;
-            }
-
             border-radius: $base-size;
             box-shadow: $box-shadow;
             position: relative;
             overflow: clip;
+
+            video {
+                border-radius: 0;
+                box-shadow: none;
+            }
+            &__header {
+                .circle {
+                    //display: block;
+                    position: absolute;
+                    width: 75%;
+                    height: 100%;
+                    fill: none;
+                    stroke: #FBBA00;
+                    z-index: 0;
+                    transform: rotate(-0.7deg);
+                    bottom: 7%;
+                    left: -1%;
+                }
+            }
+
 
             &:before {
                 z-index: 2;

@@ -49,8 +49,10 @@
                 padding: $base-size-s $base-size-s $base-size-s $base-size;
                 color: $secondary;
                 border-radius: $base-size-xs;
-                margin-bottom: 1rem;
+                margin: $base-size-l 0;
+                margin-bottom: 0;
                 transition: $transition;
+
                 .arrow-down-menu {
                     width: $base-size;
                     height: auto;
@@ -59,6 +61,7 @@
 
                 &:hover {
                     color: $primary;
+
                     .arrow-down-menu {
                         stroke: $primary;
                     }
@@ -96,6 +99,11 @@
             }
         }
 
+    }
+
+    small {
+        padding-top: $base-size-l;
+        display: block;
     }
 }
 
