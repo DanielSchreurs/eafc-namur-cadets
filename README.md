@@ -44,4 +44,5 @@ Bienvenue sur le dépôt du site Internet de l'EAFC-Namur-Cadet. Ce projet est c
     php please stache:clear
     php please stache:warm
     php please stache:refresh
+    php please search:update
    ```

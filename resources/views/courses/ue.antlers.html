@@ -2,14 +2,17 @@
     <h2 class="ue__header h3">Dossiers pédagogiques des UE</h2>
     <div class="ue__caption">
         <p>Unités d’enseignement constitutives de la section</p>
-        <p>Période<sup>*</sup> 1440</p>
+        {{ if sum_periods }}
+            <p>{{ sum_periods }} périodes<sup>*</sup></p>
+        {{ endif }}
     </div>
     {{ if dp_years }}
         <ul class="ue__years" title="Les différentes UE de la formation : {{ title }}">
             {{ dp_years }}
             {{ if dp_courses }}
                 <li class="ue__years_year">
-                    <label class="ue__years_year__name h4" for="{{ year | urlencode }}">{{ year }}{{ svg src="css/arrow-down-menu" }}</label>
+                    <label class="ue__years_year__name h4"
+                           for="{{ year | urlencode }}">{{ year }}{{ svg src="css/arrow-down-menu" }}</label>
                     <input class="visually-hidden" type="checkbox"
                            id="{{ year | urlencode }}" {{ count == 1 ? "checked" : "" }}/>
                     <ul class="ue__years_year__courses" title="Les dossiers pédagogique de l'année : {{ year }}">
@@ -19,7 +22,8 @@
                             <li class="ue__years_year__courses__course">
                                 <a class="ue__years_year__courses__course__name" href="{{ dp:url }}"
                                    title="Télécharger au format {{ dp:size }} le dossier pédagogique du cours {{ name }}">{{ svg src="css/download-pdf" }}{{ name }}</a>
-                                <span class="ue__years_year__courses__course__hours">{{ nb_periods }}</span>
+                                <abbr title="{{ nb_periods }} périodes (50 minutes) de cours dans l'UE : {{ name }}"
+                                      class="ue__years_year__courses__course__hours">{{ nb_periods }}</abbr>
                             </li>
                             {{ /dp_course }}
                         {{ /if }}
@@ -29,5 +33,6 @@
             {{ /if }}
             {{ /dp_years }}
         </ul>
+        <small><sup>*</sup><dfn>Une période</dfn> correspond à 50 minutes de cours.</small>
     {{ endif }}
 </aside>

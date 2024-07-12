@@ -1,18 +1,20 @@
 <div class="wrapper search-wrapper">
-    <h1 class="search-wrapper__header">Résultats de recherche : {{ get:q }}</h1>
+    {{ if no_results }}
+        <h1 class="search-wrapper__header">Oups, rien trouvé ! Essayez avec d'autres mots-clés.</h1>
+    {{ else }}
+        <h1 class="search-wrapper__header">Résultats de recherche : {{ get:q }}</h1>
+    {{ /if }}
     {{ partial src="partials/search-form" }}
     {{ svg src="css/glass" class="search-wrapper__glass" }}
 </div>
-
-<div class="wrapper">
-    {{ search:results }}
-        {{ if no_results }}
-            <h2>No results.</h2>
-        {{ else }}
-            <a href="{{ url }}" class="result">
-                <h2>{{ result_type }} : {{ title }}</h2>
-                <p>{{ content | truncate:240 }}</p>
-            </a>
+<div class="wrapper grid-card">
+    {{ search:results index="default" }}
+        {{ if collection == "courses" }}
+            {{ partial:courses.preview }}
+        {{ /if }}
+        {{ if collection == "news" }}
+            {{ partial src="news/preview" }}
         {{ /if }}
     {{ /search:results }}
 </div>
+

@@ -5,19 +5,17 @@
             <p class="h2 course-header__subtitle">{{ subtitle }}</p>
         {{ /if }}
         <h1 class="course-header__title {{ is_new && ! subtitle ? "add-padding" : "" }}">{{ title }}</h1>
+        {{ svg src="css/glass" class="course-header__wrapper__glass" }}
         {{ partial src="partials/search-form" }}
     </div>
 </div>
 <div class="wrapper">
     <div class="course-levels">
-        <p class="course-levels__label">Niveau certificatif&nbsp;:</p>
+        <p class="course-levels__label">Niveau{{ (courses_levels | count) > 1 ? "x" : "" }} certificatif&nbsp;:</p>
         {{ if courses_levels  }}
             <ul class="course-levels__items-container">
                 {{ courses_levels }}
-                <li class="course-levels__items-container__item">
-                    <input type="checkbox" id="{{ abbr }}" checked disabled/>
-                    <label for="{{ abbr }}">{{ title }} (<abbr title="{{ title }} ">{{ abbr }}</abbr>)</label>
-                </li>
+                    <li class="course-levels__items-container__item">{{ title }} (<abbr title="{{ title }}">{{abbr}}</abbr>)</li>
                 {{ /courses_levels }}
             </ul>
         {{ endif }}
@@ -36,16 +34,19 @@
                         <h3>{{ title }}</h3>
                         <div class="text-column">
                             {{ content }}
-                            <small>Environ {{ content | read_time }} minute{{ (content | read_time) > 1 ? "s" : "" }} de
-                                lecture</small>
+                            {{ if (content | read_time) > 1 }}
+                                <small>Environ {{ content | read_time }}
+                                    minute{{ (content | read_time) > 1 ? "s" : "" }} de
+                                    lecture</small>
+                            {{ /if }}
                         </div>
                     </section>
                 {{ elseif type == "modalites_de_capitalisation_de_la_section" }}
-                    <figure>
+                    <section>
                         {{ svg src="css/eye" }}
                         <h3>{{ title }}</h3>
                         <img src="{{ modalite_img }}" alt="{{ title }}" width="100%" height="auto">
-                    </figure>
+                    </section>
                 {{ elseif type == "un_titre_avec_liste_par_exemple_les_debouches" }}
                     <section class="course-container__content__items">
                         <h3>{{ title }}</h3>

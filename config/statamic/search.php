@@ -27,8 +27,22 @@ return [
 
         'default' => [
             'driver' => 'local',
-            'searchables' => 'all',
-            'fields' => ['title', 'content'],
+            'searchables' => ['collection:courses'],
+            'fields' => ['title', 'subtitle', 'course_name', 'type_delivered', 'duration', 'replicator_field'],
+            'match_weights' => [
+                'partial_word' => 1,
+                'partial_first_word' => 2,
+                'partial_word_start' => 1,
+                'partial_first_word_start' => 2,
+                'whole_word' => 5,
+                'whole_first_word' => 5,
+                'partial_whole' => 2,
+                'partial_whole_start' => 2,
+                'whole' => 10,
+            ],
+            'min_characters' => 3,
+            'use_stemming' => true,
+            'use_alternates' => true,
         ],
 
         // 'blog' => [
@@ -78,5 +92,9 @@ return [
     'defaults' => [
         'fields' => ['title'],
     ],
+
+
+
+
 
 ];
