@@ -14,11 +14,11 @@ export const settings = {
             enabled: true,
         },
         navigation: {
-            nextEl: '.news .swiper-button-next',
-            prevEl: '.news .swiper-button-prev',
+            nextEl: '.slider-section--news .swiper-button-next',
+            prevEl: '.slider-section--news .swiper-button-prev',
         },
         pagination: {
-            el: ".news .swiper-pagination",
+            el: ".slider-section--news .swiper-pagination",
             clickable: true
         },
         breakpoints: {
