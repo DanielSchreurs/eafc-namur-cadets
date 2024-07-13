@@ -24,12 +24,11 @@
         overflow: visible;
 
         h2 {
-            margin: 0;
             color: white;
             background: $primary;
-            padding: $base-size $base-size $base-size-xl;
+            padding: $base-size-l $base-size;
             border-radius: $base-size 0 0 $base-size;
-            margin-right: - $base-size;
+            margin: 0 - $base-size 0 0;
             @media screen and (min-width: $max-width) {
                 margin-right: 0;
                 border-radius: $base-size;
@@ -41,6 +40,7 @@
             bottom: -8.6875rem;
             left: -5rem;
             fill: $secondary;
+
             &:hover {
                 fill: $primary;
             }
@@ -48,11 +48,9 @@
     }
 
     &__slider {
-        margin-top: -$base-size-l;
         padding-left: $base-size-l;
         @media screen and (min-width: $max-width) {
             padding: $base-size-l;
-            margin-top: -$base-size-xxl;
         }
     }
 

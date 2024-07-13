@@ -3,9 +3,9 @@
     <div class="students__items">
         {{ student_links }}
         <a class="{{ shape }} students__item" href="{{ url }}" title="{{ label }}">
-                <span class="students__item__border">
-                    {{ glide:student_img preset="{{shape}}" tag="true" }}
-                </span>
+                <div class="students__item__border">
+                    {{ glide:student_img :preset=":shape" tag="true" }}
+                </div>
             {{ if shape == 'square' }}
                 {{ svg src="css/infinity" class="students__infinity" }}
             {{ endif }}

@@ -16,7 +16,7 @@ tree:
     title: Moodle
     url: '#'
     data:
-      icon: moodle
+      icon: Moodle
   -
     id: 9ce513b3-a180-47b9-8243-173abb76f1bd
     title: Enora
