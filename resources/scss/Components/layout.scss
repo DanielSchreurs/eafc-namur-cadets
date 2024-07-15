@@ -5,6 +5,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
 main {
     min-height: 100vh;
     display: flex;
@@ -31,6 +32,19 @@ main {
 
     &__header {
         width: 100%;
+
+        i {
+            color: $secondary;
+            font-style: normal;
+        }
+
+        span {
+            color: $secondary;
+            font-size: 0.8em;
+            font-weight: 700;
+            display: block;
+            font-family: 'Inter-Light', sans-serif;
+        }
     }
 
     &__glass {

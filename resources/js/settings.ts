@@ -41,6 +41,44 @@ export const settings = {
             lastSlideMessage: 'Dernière actualité',
         }
     },
+    courseSlider: {
+        selectors: ['.slider-section--course-si', '.slider-section--course-ss', '.slider-section--course-stc'],
+        generateSwiperSettings: (selector: string) => {
+            return {
+                modules: [Navigation, Pagination, Keyboard, A11y],
+                slidesPerView: 1.1,
+                spaceBetween: 16,
+                loop: false,
+                navigation: {
+                    nextEl: `${selector} .swiper-button-next`,
+                    prevEl: `${selector} .swiper-button-prev`,
+                },
+                pagination: {
+                    clickable: true
+                },
+                breakpoints: {
+                    480: {
+                        slidesPerView: 2.2,
+                        spaceBetween: 30
+                    },
+                    1200: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    }
+                },
+                a11y: {
+                    enabled: true,
+                    paginationBulletMessage: 'Aller à la formation {{index}}',
+                    containerMessage: 'La liste de toutes les formations',
+                    prevSlideMessage: 'Formations précédente',
+                    nextSlideMessage: 'Formations suivante',
+                    firstSlideMessage: 'Première formation',
+                    lastSlideMessage: 'Dernière formation',
+                }
+            }
+        }
+    },
+
     categories: {
         modules: [Navigation, Pagination, Keyboard, A11y],
         slidesPerView: 1.3,

@@ -1,0 +1,23 @@
+<div class="wrapper search-wrapper">
+    <h1 class="search-wrapper__header">{{page_title}}</h1>
+    {{ partial src="partials/search-form" }}
+    {{ svg src="css/glass" class="search-wrapper__glass" }}
+</div>
+{{ partial:home.categories }}
+{{ taxonomy:courses_levels }}
+    {{ if entries_count > 0 }}
+        <nav class="slider-section slider-section--course-{{ abbr | lower }}">
+            <div class="slider-section__header slider-section__header--{{ abbr | lower }}"><h2>{{ title }} ({{ abbr }})</h2></div>
+            <div class="slider-section__slider swiper swiper-horizontal wrapper">
+                <div class="swiper-wrapper">
+                    {{ entries }}
+                        {{ partial:courses.preview }}
+                    {{ /entries }}
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </nav>
+    {{ endif }}
+{{ /taxonomy:courses_levels }}

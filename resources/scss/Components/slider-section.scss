@@ -22,19 +22,27 @@
     &__header {
         position: relative;
         overflow: visible;
+        margin-left: $base-size;
+        margin-bottom: -$base-size-l;
 
         h2 {
             color: white;
             background: $primary;
             padding: $base-size-l $base-size;
+            padding-bottom: $base-size-xxl;
             border-radius: $base-size 0 0 $base-size;
-            margin: 0 - $base-size 0 0;
-            @media screen and (min-width: $max-width) {
-                margin-right: 0;
+            margin: 0;
+            margin-bottom: -$base-size-xxxl;
+        }
+
+        @media screen and (min-width: $xxl-screen) {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: $max-width;
+            h2{
                 border-radius: $base-size;
             }
         }
-
         svg {
             position: absolute;
             bottom: -8.6875rem;
@@ -45,12 +53,32 @@
                 fill: $primary;
             }
         }
+
+        &--si {
+            h2 {
+                background: $quaternary;
+            }
+        }
+
+        &--ss {
+            h2 {
+                background: $secondary;
+            }
+        }
+
+        &--stc {
+            h2 {
+                background: $tertiary;
+            }
+        }
     }
 
     &__slider {
         padding-left: $base-size-l;
+
         @media screen and (min-width: $max-width) {
-            padding: $base-size-l;
+            padding-left: calc((100vw - $max-width) / 2);
+            padding-bottom: $base-size-l;
         }
     }
 

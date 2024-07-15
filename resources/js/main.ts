@@ -9,4 +9,10 @@ new VideoController();
 (new Swiper(".categories__slider", settings.categories)).init();
 (new Swiper(".course-pictures", settings.course_pictures)).init();
 
+settings.courseSlider.selectors.forEach((selector) => {
+    if (document.querySelector(`${selector}`)) {
+        (new Swiper(`${selector} .slider-section__slider`, settings.courseSlider.generateSwiperSettings(selector))).init();
+    }
+});
+
 new SearchForm();
