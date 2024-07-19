@@ -3,11 +3,32 @@
     {{ partial src="partials/search-form" }}
     {{ svg src="css/glass" class="search-wrapper__glass" }}
 </div>
-{{ partial:home.categories }}
+<nav class="categories" aria-label="{{ cat_title }}">
+    <h2 class="categories__header wrapper">{{ cat_title }}</h2>
+    {{ svg src="css/claw-shapes" class="categories__claw" }}
+    <div class="categories__slider swiper swiper-horizontal wrapper">
+        <ul class="swiper-wrapper">
+            {{ taxonomy:courses_categories }}
+        <li class="categories__category swiper-slide">
+        <a class="categories__category__link" href="{{ url }}">
+            <span class="categories__category__link__icon">{{ icon }}</span>
+            <span>{{ title }}</span>
+            {{ partial src="partials/category-levels" :items="category_levels" }}
+            </a>
+            </li>
+            {{ /taxonomy:courses_categories }}
+        </ul>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    {{ svg src="css/star" class="categories__star" }}
+</nav>
+
 {{ taxonomy:courses_levels }}
     {{ if entries_count > 0 }}
         <nav class="slider-section slider-section--course-{{ abbr | lower }}">
-            <div class="slider-section__header slider-section__header--{{ abbr | lower }}"><h2>{{ title }} ({{ abbr }})</h2></div>
+            <div class="slider-section__header slider-section__header--full slider-section__header--{{ abbr | lower }}"><h2>{{ title }} ({{ abbr }})</h2></div>
             <div class="slider-section__slider swiper swiper-horizontal wrapper">
                 <div class="swiper-wrapper">
                     {{ entries }}

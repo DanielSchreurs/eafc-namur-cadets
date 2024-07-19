@@ -285,8 +285,14 @@
         a {
             font-size: 0.8em;
             text-align: left;
-            padding: $base-size $base-size-l;
+            padding: $base-size;
+            border-bottom: 1px dashed $secondary;
+
+            &:last-child {
+                border-bottom: none;
+            }
         }
+
         .current-line {
             display: none;
         }
@@ -303,3 +309,9 @@
     }
 }
 
+@media (screen and min-width: 1200px) {
+    .header .main-nav {
+        justify-content: flex-end;
+        gap: $base-size-l;
+    }
+}

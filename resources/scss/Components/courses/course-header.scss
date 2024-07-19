@@ -6,6 +6,13 @@
     padding: $base-size 0;
     border-radius: 0 $base-size $base-size 0;
     box-shadow: $box-shadow;
+
+    svg.new {
+        .stain {
+            fill: $secondary;
+        }
+    }
+
     @media screen and (min-width: $max-width) {
         margin-right: calc(((100% - $max-width) / 2));
         padding-bottom: $base-size-xl;
@@ -48,6 +55,7 @@
 
     &__title {
         margin: 0;
+        width: 100%;
     }
 
     .card__new {
@@ -65,6 +73,6 @@
     .add-padding {
         // when there a new icon and no subtile then prevent overlapping of the icon with the title
         // same as the width of the icon
-        margin-right: 5rem;
+        padding-right: 5rem;
     }
 }

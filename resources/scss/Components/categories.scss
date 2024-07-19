@@ -4,9 +4,22 @@
     flex-direction: column;
     gap: $base-size;
     position: relative;
-    background: $light-shade;
     @media screen and (max-width: $xxl-screen) {
-        gap: $base-size-xxl;
+        background: $light-shade;
+    }
+    @media screen and (min-width: $xxl-screen) {
+        &:before {
+            border-radius: 0 $base-size $base-size 0;
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: calc((100vw - $max-width) / 2);;
+            height: 100%;
+            background: $light-shade;
+            z-index: -1;
+        }
     }
 
     &__header {
@@ -24,6 +37,7 @@
             @media screen and (min-width: 768px) {
                 display: block;
             }
+
             &:hover {
                 fill: $secondary;
             }
@@ -93,10 +107,6 @@
         justify-content: end;
         width: 100%;
         z-index: 2;
-
-        .btn {
-            margin-right: $base-size;
-        }
     }
 
     &__star {
@@ -109,14 +119,17 @@
     }
 
     &__claw {
+        display: none;
         position: absolute;
         top: 30%;
         right: 0;
         z-index: 1;
         fill: $secondary;
         @media screen and (min-width: 768px) {
+            display: block;
             right: calc(((100% - $max-width) / 2 - 6rem));
         }
+
         &:hover {
             fill: $primary;
         }

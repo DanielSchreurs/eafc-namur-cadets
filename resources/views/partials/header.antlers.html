@@ -2,8 +2,8 @@
     <div class="wrapper">
         <h1 class="visually-hidden">{{header:full_name}}</h1>
         <div class="header__logo">
-            <a title="Retournez à la page d’accueil" href="{{ site:url }}">
-                {{ svg src="svg/logo-eafc" id="Logo-EAFC" title="Le logo d’EAFC Namur Cadets" }}
+            <a title="Retournez à la page d’accueil &amp;" href="{{ site:url }}">
+                {{ svg src="logo-eafc" id="Logo-EAFC" title="Logo de : {{ header:full_name|smartypants  }}" sanitize="false" }}
             </a>
             <input id="burger" type="checkbox"/>
             <label for="burger">

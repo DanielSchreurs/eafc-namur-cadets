@@ -3,7 +3,7 @@
 }
 
 .text-column {
-    @media screen and (min-width: $max-width) {
+    @media screen and (min-width: 1400px) {
         column-count: 2;
         gap: $base-size-l;
         column-rule: 1px dashed $grey;

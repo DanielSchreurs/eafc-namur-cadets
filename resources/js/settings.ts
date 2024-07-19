@@ -10,6 +10,7 @@ export const settings = {
         slidesPerView: 1.1,
         spaceBetween: 16,
         loop: false,
+        slidesOffsetBefore: 16,
         keyboard: {
             enabled: true,
         },
@@ -27,8 +28,8 @@ export const settings = {
                 spaceBetween: 30
             },
             1200: {
-                slidesPerView: 3,
-                spaceBetween: 40
+                slidesPerView: 4,
+                spaceBetween: 20
             }
         },
         a11y: {
@@ -49,6 +50,7 @@ export const settings = {
                 slidesPerView: 1.1,
                 spaceBetween: 16,
                 loop: false,
+                slidesOffsetBefore: 16,
                 navigation: {
                     nextEl: `${selector} .swiper-button-next`,
                     prevEl: `${selector} .swiper-button-prev`,
@@ -57,14 +59,19 @@ export const settings = {
                     clickable: true
                 },
                 breakpoints: {
-                    480: {
+                    600: {
                         slidesPerView: 2.2,
-                        spaceBetween: 30
                     },
                     1200: {
-                        slidesPerView: 3,
-                        spaceBetween: 30
-                    }
+                        slidesPerView: 3.2,
+                    },
+                    1400: {
+                        slidesPerView: 4.2,
+                    },
+                    1900: {
+                        slidesPerView: 4.0,
+                        slidesOffsetBefore: 0,
+                    },
                 },
                 a11y: {
                     enabled: true,
@@ -104,9 +111,9 @@ export const settings = {
                 slidesPerView: 4.2,
                 spaceBetween: 40
             },
-            800: {
-                slidesPerView: 5,
-                spaceBetween: 40
+            1400: {
+                slidesPerView: 7,
+                spaceBetween: 20
             }
         },
         a11y: {
