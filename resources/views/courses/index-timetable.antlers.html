@@ -1,0 +1,24 @@
+<div class="wrapper search-wrapper">
+    <h1 class="search-wrapper__header">{{page_title}}</h1>
+</div>
+
+<ul class="wrapper grid-card">
+    {{ collection:courses }}
+        {{ if horaire }}
+            <li class="card card--course swiper-slide">
+                <div class="card__content">
+                    <div class="f-grow">
+                        <p class="card__title h5">{{ title }}</p>
+                    </div>
+                    <div class="card__CTAs card__CTAs--small">
+                        <a href="{{ horaire:url }}" class="btn btn--secondary"
+                           title="Voir L’horaire au format (PDF : {{ horaire:size }}) de la formation {{ title }}">Voir
+                            l’horaire
+                            (PDF){{ is_aside ? "<sup>*</sup>" : "" }}<span
+                                class="visually-hidden"> de la formation {{ title }}</span></a>
+                    </div>
+                </div>
+            </li>
+        {{ endif }}
+    {{ /collection:courses }}
+</ul>

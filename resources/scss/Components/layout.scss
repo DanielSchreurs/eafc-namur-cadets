@@ -18,10 +18,10 @@ main {
     display: grid;
     gap: $base-size-l;
     @media screen and (min-width: 680px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    @media screen and (min-width: $max-width) {
+        gap: $base-size-xl;
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+
     }
 }
 

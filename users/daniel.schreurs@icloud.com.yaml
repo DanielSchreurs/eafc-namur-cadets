@@ -20,6 +20,7 @@ preferences:
         - courses_categories
         - status
         - courses_levels
+      after_save: continue_editing
   taxonomies:
     categories:
       columns:
