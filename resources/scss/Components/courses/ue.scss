@@ -37,11 +37,8 @@
 
         &_year {
             display: grid;
-            grid-template-rows: auto 0;
-            transition: $transition;
-            overflow-y: hidden;
-
-
+            grid-template-rows: auto 0fr;
+            transition: 250ms grid-template-rows ease;
             &__name {
                 background: $light-shade;
                 display: flex;
@@ -69,6 +66,7 @@
             }
 
             &__courses {
+                overflow: hidden;
                 &__course {
                     display: flex;
                     gap: $base-size-s;
@@ -108,5 +106,5 @@
 }
 
 .ue__years_year:has(input:checked) {
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 1fr;
 }

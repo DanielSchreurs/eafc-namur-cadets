@@ -1,9 +1,8 @@
 <div class="wrapper search-wrapper">
     <h1 class="search-wrapper__header">{{page_title}}</h1>
 </div>
-
 <ul class="wrapper grid-card">
-    {{ collection:courses }}
+    {{ collection:courses sort="title" }}
         {{ if horaire }}
             <li class="card card--course swiper-slide">
                 <div class="card__content">

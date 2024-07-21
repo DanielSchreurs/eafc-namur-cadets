@@ -74,3 +74,9 @@
         }
     }
 }
+
+.course-container__content__text + .course-container__content__text {
+    .ampule {
+        display: none;
+    }
+}

@@ -29,8 +29,8 @@
             <div class="course-container__content">
                 {{ replicator_field }}
                 {{ if type == "un_titre_avec_du_contenu_textuel_libre" }}
-                    <section>
-                        {{ svg src="css/ampoule" }}
+                    <section class="course-container__content__text">
+                        {{ svg src="css/ampoule" class="ampule" }}
                         <h3>{{ title }}</h3>
                         <div class="text-column">
                             {{ content }}

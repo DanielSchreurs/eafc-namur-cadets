@@ -4,7 +4,7 @@ avatar: img_7926.jpeg
 id: 409cbafe-f643-4145-b952-25177427041d
 password_hash: $2y$10$7D.QznJMfnYeR.BDxiPpwe4GKEXFgG1IFTw5f3AopYGPiFlNJqa36
 preferences:
-  locale: en
+  locale: fr
   collections:
     news:
       columns:

@@ -31,7 +31,7 @@
             <div class="slider-section__header slider-section__header--full slider-section__header--{{ abbr | lower }}"><h2>{{ title }} ({{ abbr }})</h2></div>
             <div class="slider-section__slider swiper swiper-horizontal wrapper">
                 <div class="swiper-wrapper">
-                    {{ entries }}
+                    {{ entries sort="title" }}
                         {{ partial:courses.preview }}
                     {{ /entries }}
                 </div>
