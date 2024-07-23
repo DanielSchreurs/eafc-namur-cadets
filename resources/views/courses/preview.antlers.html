@@ -64,6 +64,13 @@
                     <dd>{{ duration }}</dd>
                 </div>
             {{ endif }}
+            {{ if is_aside }}
+                {{ if place }}
+                    <div class="card__content__spacer card__content__spacer--float">
+                        <dt>Lieu de la formation&nbsp;:</dt><dd>{{ place }}</dd>
+                    </div>
+                {{ endif }}
+            {{ endif }}
         </dfn>
         {{ unless is_aside }}
         </div>
@@ -72,7 +79,8 @@
             {{ if is_aside }}
                 {{ if dp_section }}
                     <a href="{{ dp_section:url }}" class="btn btn--secondary"
-                       title="Voir dossier pédagogique de la section {{ title }} au format (PDF : {{ dp_section:size }})">Dossier pédagogique
+                       title="Voir dossier pédagogique de la section {{ title }} au format (PDF : {{ dp_section:size }})">Dossier
+                        pédagogique
                         de la
                         section (PDF)</a>
                 {{ /if }}
@@ -83,14 +91,16 @@
 
             {{ if horaire }}
                 <a href="{{ horaire:url }}" class="btn btn--secondary"
-                   title="Voir L’horaire au format (PDF : {{ horaire:size }}) de la formation {{ title }}">Voir l’horaire
+                   title="Voir L’horaire au format (PDF : {{ horaire:size }}) de la formation {{ title }}">Voir
+                    l’horaire
                     (PDF){{ is_aside ? "<sup>*</sup>" : "" }}<span
                         class="visually-hidden"> de la formation {{ title }}</span></a>
             {{ endif }}
 
             {{ if is_aside }}
                 {{ if horaire }}
-                    <p><sup>*</sup><small>Cette horaire est donné à titre indicatif, susceptible de changer. Seul l’horaire affiché
+                    <p><sup>*</sup><small>Cette horaire est donné à titre indicatif, susceptible de changer. Seul
+                        l’horaire affiché
                         aux
                         valves de l’école aura valeur officielle.</small></p>
                 {{ /if }}

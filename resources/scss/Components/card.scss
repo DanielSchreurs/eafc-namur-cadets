@@ -19,6 +19,13 @@
 
         &__spacer {
             margin-top: $base-size-l;
+
+            &--float {
+                dt {
+                    float: left;
+                    padding-right: $base-size-s;
+                }
+            }
         }
 
         dt {
@@ -138,6 +145,7 @@
         font-weight: bold;
         text-transform: uppercase;
         margin: $base-size-l 0;
+        margin-top: $base-size;
         display: block;
         width: 100%;
     }
@@ -223,7 +231,8 @@
         display: flex;
         flex-direction: column;
         gap: $base-size;
-        &--small{
+
+        &--small {
             margin-top: 0;
         }
     }
@@ -246,4 +255,12 @@
         padding-top: $base-size-l;
         padding-bottom: $base-size-l;
     }
+}
+
+.card__title + .card__tags {
+    margin-top: -$base-size;
+}
+
+.card__subtitle + .card__tags {
+    margin-top: -$base-size;
 }
