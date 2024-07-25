@@ -3,7 +3,7 @@
     {{ partial src="partials/search-form"}}
     {{ svg src="css/glass" class="search-wrapper__glass" }}
 </div>
-
+{{ partial:courses.filter }}
 <ul class="wrapper grid-card">
     {{ collection:courses }}
         {{ partial:courses.preview }}

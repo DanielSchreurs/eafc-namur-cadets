@@ -1,10 +1,11 @@
 <div class="wrapper search-wrapper">
     <h1 class="search-wrapper__header">{{page_title}}</h1>
 </div>
+{{ partial:courses.filter }}
 <ul class="wrapper grid-card">
     {{ collection:courses sort="title" }}
         {{ if horaire }}
-            <li class="card card--course swiper-slide">
+            <li class="card card--course swiper-slide" {{ if courses_categories }}data-cat="{{ courses_categories }}{{ slug }}{{ /courses_categories }}"{{ endif }}   {{ if tags }}data-tags="{{ tags }}{{ slug }}{{ /tags }}"{{ endif }}>
                 <div class="card__content">
                     <div class="f-grow">
                         <p class="card__title h5">{{ title }}</p>

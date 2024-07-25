@@ -1,0 +1,38 @@
+<form action="#" id="filter-form">
+    <div class="categories" aria-label="{{ cat_title }}">
+        <p class="categories__label wrapper h5">Filtrez par catégories&nbsp;:</p>
+        {{ svg src="css/claw-shapes" class="categories__claw" }}
+        <div class="categories__slider swiper swiper-horizontal wrapper">
+            <ul class="swiper-wrapper">
+                {{ taxonomy:courses_categories }}
+            <li class="categories__category swiper-slide">
+                <input style="display: none" id="{{ slug }}"
+                       type="checkbox" {{ (get | contains(slug)) ? 'checked' : '' }}
+                       name="{{ slug }}" value="1">
+            <label for="{{ slug }}" class="categories__category__link">
+                <span class="categories__category__link__icon">{{ icon }}</span>
+                <span>{{ title }}</span>
+                {{ partial src="partials/category-levels" :items="category_levels" }}
+                </label>
+                </li>
+                {{ /taxonomy:courses_categories }}
+            </ul>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="categories__cta wrapper">
+            <button type="submit" class="btn hidde-by-js">Filtrez les formations</button>
+        </div>
+    </div>
+    {{ svg src="css/star" class="categories__star" }}
+    <div class="wrapper tag-filter">
+        <p class="h5">Filtrez par étiquettes&nbsp;:</p>
+        {{ taxonomy:tags }}
+            <div class="tag-filter__item">
+                <input type="checkbox" id="{{ slug }}" name="{{ slug }}" value="1">
+                <label for="{{ slug }}">{{ title }}</label>
+            </div>
+        {{ /taxonomy:tags }}
+    </div>
+</form>
