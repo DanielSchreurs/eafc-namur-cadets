@@ -1,7 +1,10 @@
+import {Filter} from "./Filter";
 import {VideoController} from "./VideoController";
 import Swiper from 'swiper';
 import {settings} from "./settings";
 import {SearchForm} from "./SearchForm";
+
+document.documentElement.classList.add('js');
 
 new VideoController();
 
@@ -15,4 +18,5 @@ settings.courseSlider.selectors.forEach((selector) => {
     }
 });
 
-new SearchForm();
+new SearchForm(settings.searchForm);
+new Filter(settings.filter);

@@ -1,0 +1,18 @@
+.tag-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding-top: $base-size-l;
+    gap: $base-size-l;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    &__item{
+        display: flex;
+        align-items: center;
+        gap: $base-size-s;
+    }
+    p {
+        margin:0;
+    }
+}

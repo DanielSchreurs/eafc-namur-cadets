@@ -22,10 +22,15 @@
         }
     }
 
+    &__label {
+        margin-bottom: -$base-size-l;
+    }
+
     &__header {
         position: relative;
         width: 100%;
         z-index: 2;
+        padding-bottom: $base-size;
 
         svg {
             fill: $white;
@@ -107,6 +112,10 @@
         justify-content: end;
         width: 100%;
         z-index: 2;
+
+        > * {
+            width: fit-content;
+        }
     }
 
     &__star {
@@ -127,7 +136,7 @@
         fill: $secondary;
         @media screen and (min-width: 768px) {
             display: block;
-            right: calc(((100% - $max-width) / 2 - 6rem));
+            right: calc(((100% - $max-width) / 2 - 3%));
         }
 
         &:hover {
@@ -151,4 +160,17 @@
     .swiper-pagination {
         padding-top: 0;
     }
+}
+
+.categories__category:has(input:checked) {
+    background: $primary;
+    color: white;
+
+    .categories__category__link__icon {
+        background: $white;
+    }
+}
+
+.categories__category:has(input:checked) :where(.categories__category__link__icon svg path) {
+    fill: $primary;
 }

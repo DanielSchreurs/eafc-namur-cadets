@@ -1,7 +1,7 @@
 {{ if is_aside }}
     <aside class="card card--course">
 {{ else }}
-    <article class="card card--course swiper-slide">
+    <article class="card card--course swiper-slide" {{ if courses_categories }}data-cat="{{ courses_categories }}{{ slug }}{{ /courses_categories }}"{{ endif }}   {{ if tags }}data-tags="{{ tags }}{{ slug }}{{ /tags }}"{{ endif }}>
 {{ /if }}
     <div class="card__content">
         {{ unless is_aside }}
@@ -67,7 +67,8 @@
             {{ if is_aside }}
                 {{ if place }}
                     <div class="card__content__spacer card__content__spacer--float">
-                        <dt>Lieu de la formation&nbsp;:</dt><dd>{{ place }}</dd>
+                        <dt>Lieu de la formation&nbsp;:</dt>
+                        <dd>{{ place }}</dd>
                     </div>
                 {{ endif }}
             {{ endif }}

@@ -5,7 +5,7 @@
         <ul class="swiper-wrapper">
             {{ taxonomy:courses_categories }}
                 <li class="categories__category swiper-slide">
-                    <a class="categories__category__link" href="{{ url }}">
+                    <a class="categories__category__link" href="{{ cat_link }}?{{slug}}=1">
                         <span class="categories__category__link__icon">{{ icon }}</span>
                         <span>{{ title }}</span>
                         {{ partial src="partials/category-levels" :items="category_levels" }}
@@ -18,7 +18,7 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
     <div class="categories__cta wrapper">
-        <a class="btn " href="#">Voir toutes nos formations</a>
+        <a class="btn" href="{{ cat_link }}">Voir toutes nos formations</a>
     </div>
     {{ svg src="css/star" class="categories__star" }}
 </nav>
