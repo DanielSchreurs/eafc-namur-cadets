@@ -1,16 +1,26 @@
-import {settings} from "./settings";
+export type SearchFormSettings = {
+    formSelector: string;
+    inputSelector: string;
+    templateSelector: string;
+    operatingSystemSelector: string;
+};
 
 export class SearchForm {
+    private readonly macosPlatforms: RegExp = /(macintosh|macintel|macppc|mac68k|macos)/i;
+    private readonly windowsPlatforms: RegExp = /(win32|win64|windows|wince)/i;
+    private readonly linuxPlatforms: RegExp = /(linux)/i;
     private readonly form: HTMLFormElement;
     private readonly input: HTMLInputElement;
+    private readonly settings: SearchFormSettings;
     private readonly keyboardTemplate: HTMLTemplateElement;
     private hasKeyboard = false;
     private isMacos: boolean = false;
 
-    constructor() {
-        this.form = document.querySelector(settings.searchForm.selector) as HTMLFormElement;
-        this.input = document.querySelector(settings.searchForm.inputSelector) as HTMLInputElement;
-        this.keyboardTemplate = document.querySelector(settings.searchForm.templateSelector) as HTMLTemplateElement;
+    constructor(settings: SearchFormSettings) {
+        this.settings = settings;
+        this.form = document.querySelector(settings.formSelector) as HTMLFormElement;
+        this.input = document.querySelector(settings.inputSelector) as HTMLInputElement;
+        this.keyboardTemplate = document.querySelector(settings.templateSelector) as HTMLTemplateElement;
         if (this.form && this.input) {
             this.insertHTMLTemplate();
             this.addEventListeners();
@@ -32,12 +42,12 @@ export class SearchForm {
         const htmlElements = this.keyboardTemplate.content.cloneNode(true);
         htmlElements.childNodes.forEach((element: HTMLElement) => {
             const userAgent = window.navigator.userAgent.toLowerCase();
-            if (settings.macosPlatforms.test(userAgent)) {
-                element.querySelector(settings.searchForm.operatingSystemSelector).innerHTML = '&#8984;';
+            if (this.macosPlatforms.test(userAgent)) {
+                element.querySelector(this.settings.operatingSystemSelector).innerHTML = '&#8984;';
                 this.hasKeyboard = true;
                 this.isMacos = true;
-            } else if (settings.windowsPlatforms.test(userAgent) || settings.linuxPlatforms.test(userAgent)) {
-                element.querySelector(settings.searchForm.operatingSystemSelector).textContent = 'Ctrl';
+            } else if (this.windowsPlatforms.test(userAgent) || this.linuxPlatforms.test(userAgent)) {
+                element.querySelector(this.settings.operatingSystemSelector).textContent = 'Ctrl';
                 this.hasKeyboard = true;
             }
             if (this.hasKeyboard) {

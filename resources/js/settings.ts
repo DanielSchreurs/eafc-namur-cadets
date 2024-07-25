@@ -139,7 +139,7 @@ export const settings = {
             prevEl: '.course-pictures .swiper-button-prev',
         },
         pagination: {
-            el: ".course-pictures .swiper-pagination",
+            el: '.course-pictures .swiper-pagination',
             clickable: true
         },
         a11y: {
@@ -153,15 +153,15 @@ export const settings = {
         }
     },
     searchForm: {
-        selector: '.search-form',
+        formSelector: '.search-form',
         inputSelector: '.search-form__input-container__search',
         templateSelector: '#keyboard-template',
         operatingSystemSelector: '#os'
-
     },
-    macosPlatforms: /(macintosh|macintel|macppc|mac68k|macos)/i,
-    windowsPlatforms: /(win32|win64|windows|wince)/i,
-    iosPlatforms: /(iphone|ipad|ipod)/i,
-    androidPlatforms: /(android)/i,
-    linuxPlatforms: /(linux)/i,
+    filter: {
+        formSelector: '#filter-form',
+        itemSelector: '.card--course',
+        hiddenClass: 'visually-hidden'
+    },
+
 };
