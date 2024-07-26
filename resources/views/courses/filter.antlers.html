@@ -30,7 +30,7 @@
         <p class="h5">Filtrez par étiquettes&nbsp;:</p>
         {{ taxonomy:tags }}
             <div class="tag-filter__item">
-                <input type="checkbox" id="{{ slug }}" name="{{ slug }}" value="1">
+                <input type="checkbox" id="{{ slug }}" name="{{ slug }}" {{ (get | contains(slug)) ? 'checked' : '' }} value="1">
                 <label for="{{ slug }}">{{ title }}</label>
             </div>
         {{ /taxonomy:tags }}

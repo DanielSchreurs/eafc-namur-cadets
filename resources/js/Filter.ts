@@ -20,14 +20,14 @@ export class Filter {
         // @ts-ignore
         this.url = new URL(window.location);
         this.addEventListeners();
-        this.filterItems();
+        this.filter();
     }
 
     private addEventListeners() {
         this.inputs.forEach((input) => {
             input.addEventListener('change', (e) => {
                 this.updateURL(e.currentTarget as HTMLInputElement);
-                this.filterItems();
+                this.filter();
             });
         });
     }
@@ -41,7 +41,7 @@ export class Filter {
         history.pushState(null, '', this.url);
     }
 
-    private filterItems() {
+    public filter() {
         this.showAllItems();
         if (this.url.searchParams.toString().length === 0) {
             return;

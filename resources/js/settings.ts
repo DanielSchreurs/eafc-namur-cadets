@@ -156,7 +156,9 @@ export const settings = {
         formSelector: '.search-form',
         inputSelector: '.search-form__input-container__search',
         templateSelector: '#keyboard-template',
-        operatingSystemSelector: '#os'
+        operatingSystemSelector: '#os',
+        itemsSelector: '.card--course',
+        hiddenClass: 'visually-hidden'
     },
     filter: {
         formSelector: '#filter-form',

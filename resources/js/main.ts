@@ -18,5 +18,5 @@ settings.courseSlider.selectors.forEach((selector) => {
     }
 });
 
-new SearchForm(settings.searchForm);
-new Filter(settings.filter);
+const filter = new Filter(settings.filter);
+new SearchForm({...settings.searchForm, afterEmptySearch: filter.filter.bind(filter)});

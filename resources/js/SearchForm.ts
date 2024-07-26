@@ -3,6 +3,9 @@ export type SearchFormSettings = {
     inputSelector: string;
     templateSelector: string;
     operatingSystemSelector: string;
+    itemsSelector: string;
+    hiddenClass: string;
+    afterEmptySearch?: () => void;
 };
 
 export class SearchForm {
@@ -15,12 +18,14 @@ export class SearchForm {
     private readonly keyboardTemplate: HTMLTemplateElement;
     private hasKeyboard = false;
     private isMacos: boolean = false;
+    private readonly items: NodeListOf<Element>;
 
     constructor(settings: SearchFormSettings) {
         this.settings = settings;
         this.form = document.querySelector(settings.formSelector) as HTMLFormElement;
         this.input = document.querySelector(settings.inputSelector) as HTMLInputElement;
         this.keyboardTemplate = document.querySelector(settings.templateSelector) as HTMLTemplateElement;
+        this.items = document.querySelectorAll(settings.itemsSelector);
         if (this.form && this.input) {
             this.insertHTMLTemplate();
             this.addEventListeners();
@@ -36,6 +41,13 @@ export class SearchForm {
                 }
             });
         }
+        // this.form.addEventListener('submit', (e) => {
+        //     e.preventDefault();
+        //     this.search(this.input.value);
+        // });
+        this.input.addEventListener('input', (e) => {
+            this.search(this.input.value);
+        });
     }
 
     private insertHTMLTemplate() {
@@ -54,5 +66,37 @@ export class SearchForm {
                 this.input.insertAdjacentElement('afterend', element);
             }
         });
+    }
+
+    private search(q: string) {
+        this.removeAllMarks();
+        if (q.trim().length > 0) {
+            document.querySelectorAll(`${this.settings.itemsSelector}:not(.${this.settings.hiddenClass})`).forEach((item) => {
+                if (item.textContent.toLowerCase().includes(q.toLowerCase())) {
+                    item.innerHTML = item.innerHTML.replace(
+                        new RegExp(
+                            `(>[^<>]*)(${this.escapeRegExp(q)})([^<>]*<)`,
+                            "gi",
+                        ),
+                        "$1<mark>$2</mark>$3",
+                    );
+                    item.classList.remove(this.settings.hiddenClass);
+                } else {
+                    item.classList.add(this.settings.hiddenClass);
+                }
+            });
+        } else {
+            this.settings.afterEmptySearch?.();
+        }
+    }
+
+    private removeAllMarks() {
+        this.items.forEach((item) => {
+            item.innerHTML = item.innerHTML.replace(/<mark>/gi, '').replace(/<\/mark>/gi, '');
+        });
+    }
+
+    private escapeRegExp(s: string) {
+        return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     }
 }

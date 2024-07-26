@@ -113,3 +113,10 @@ html {
 ) {
     color: $secondary;
 }
+
+mark {
+    background-color: $secondary;
+    color: $primary;
+    border: 1px dashed white;
+    border-radius: 0.1em;
+}
