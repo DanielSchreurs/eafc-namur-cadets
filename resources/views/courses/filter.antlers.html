@@ -27,11 +27,12 @@
     </div>
     {{ svg src="css/star" class="categories__star" }}
     <div class="wrapper tag-filter">
-        <p class="h5">Filtrez par étiquettes&nbsp;:</p>
+        <p class="h5">Filtrez par <span lang="en" title="étiquettes">tags</span>&nbsp;:</p>
         {{ taxonomy:tags }}
             <div class="tag-filter__item">
-                <input type="checkbox" id="{{ slug }}" name="{{ slug }}" {{ (get | contains(slug)) ? 'checked' : '' }} value="1">
-                <label for="{{ slug }}">{{ title }}</label>
+                <input type="checkbox" id="{{ slug }}" name="{{ slug }}" {{ (get | contains(slug)) ? 'checked' : '' }}
+                       value="1">
+                <label title="{{ description | smartypants }}" for="{{ slug }}">{{ title }}</label>
             </div>
         {{ /taxonomy:tags }}
     </div>

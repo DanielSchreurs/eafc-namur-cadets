@@ -102,3 +102,7 @@
 .slider-section:has(.card--show) {
     display: block;
 }
+
+body:has(.card--show) .warn-message--course-slider {
+    display: none;
+}

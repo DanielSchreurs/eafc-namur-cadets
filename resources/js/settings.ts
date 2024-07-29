@@ -165,7 +165,9 @@ export const settings = {
         formSelector: '#filter-form',
         itemSelector: '.card--course',
         showClass: 'card--show',
-        hiddenClass: 'visually-hidden'
+        hiddenClass: 'visually-hidden',
+        categoryInputSelector: '.categories__slider input[type="checkbox"]',
+        tagInputSelector: '.tag-filter input[type="checkbox"]',
     },
 
 };

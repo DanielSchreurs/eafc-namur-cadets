@@ -1,8 +1,8 @@
-import Swiper from "swiper";
-
 export type FilterSettings = {
     itemSelector: string;
     formSelector: string,
+    categoryInputSelector: string,
+    tagInputSelector: string,
     hiddenClass: string,
     // this is a css class that is used to hide the slider if no items are found
     showClass: string,
@@ -10,8 +10,9 @@ export type FilterSettings = {
 
 export class Filter {
     private readonly form: HTMLFormElement;
-    private readonly inputs: NodeListOf<HTMLInputElement>;
-    private readonly items: NodeListOf<HTMLElement>;
+    private readonly categoryInputs: NodeListOf<HTMLInputElement>;
+    private readonly tagInputs: NodeListOf<HTMLInputElement>;
+    private readonly courses: NodeListOf<HTMLElement>;
     private readonly url: URL;
     private settings: FilterSettings;
 
@@ -19,8 +20,9 @@ export class Filter {
         this.settings = settings;
         this.form = document.querySelector(settings.formSelector) as HTMLFormElement;
         if (!this.form) return;
-        this.inputs = this.form.querySelectorAll('input[type="checkbox"]');
-        this.items = document.querySelectorAll(settings.itemSelector);
+        this.categoryInputs = this.form.querySelectorAll(settings.categoryInputSelector);
+        this.tagInputs = this.form.querySelectorAll(settings.tagInputSelector);
+        this.courses = document.querySelectorAll(settings.itemSelector);
         // @ts-ignore
         this.url = new URL(window.location);
         this.addEventListeners();
@@ -28,7 +30,7 @@ export class Filter {
     }
 
     private addEventListeners() {
-        this.inputs.forEach((input) => {
+        document.querySelectorAll(`${this.settings.categoryInputSelector}, ${this.settings.tagInputSelector}`).forEach((input) => {
             input.addEventListener('change', (e) => {
                 this.updateURL(e.currentTarget as HTMLInputElement);
                 this.filter();
@@ -50,23 +52,47 @@ export class Filter {
         if (this.url.searchParams.toString().length === 0) {
             return;
         }
-        this.items.forEach((item) => {
+        this.courses.forEach((course) => {
             let hidde = true;
-            this.inputs.forEach((input) => {
-                if (input.checked && (input.name === item.dataset.cat || input.name === item.dataset.tags)) {
-                    hidde = false;
-                    return;
+            let hasNoCategoryChecked = true;
+            this.categoryInputs.forEach((catInput) => {
+                if (catInput.checked) {
+                    hasNoCategoryChecked = false;
+                    if (catInput.name === course.dataset.cat) {
+                        hidde = false;
+                        this.tagInputs.forEach((levelInput) => {
+                            if (levelInput.checked) {
+                                if (course.dataset.tags === undefined || !course.dataset.tags.includes(levelInput.name)) {
+                                    hidde = true;
+                                    return;
+                                }
+                            }
+                        });
+                        return;
+                    }
                 }
             });
+
+            if (hasNoCategoryChecked) {
+                hidde = false;
+                this.tagInputs.forEach((levelInput) => {
+                    if (levelInput.checked) {
+                        if (course.dataset.tags === undefined || !course.dataset.tags.includes(levelInput.name)) {
+                            hidde = true;
+                            return;
+                        }
+                    }
+                });
+            }
             if (hidde) {
-                item.classList.add((this.settings.hiddenClass));
-                item.classList.remove((this.settings.showClass));
+                course.classList.add((this.settings.hiddenClass));
+                course.classList.remove((this.settings.showClass));
             }
         });
     }
 
     private showAllItems() {
-        this.items.forEach((item) => {
+        this.courses.forEach((item) => {
             item.classList.remove(this.settings.hiddenClass);
             item.classList.add(this.settings.showClass);
         });
