@@ -158,11 +158,13 @@ export const settings = {
         templateSelector: '#keyboard-template',
         operatingSystemSelector: '#os',
         itemsSelector: '.card--course',
-        hiddenClass: 'visually-hidden'
+        hiddenClass: 'visually-hidden',
+        showClass: 'card--show',
     },
     filter: {
         formSelector: '#filter-form',
         itemSelector: '.card--course',
+        showClass: 'card--show',
         hiddenClass: 'visually-hidden'
     },
 

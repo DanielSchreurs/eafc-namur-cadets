@@ -96,3 +96,9 @@
     }
 
 }
+.slider-section {
+    display: none;
+}
+.slider-section:has(.card--show) {
+    display: block;
+}

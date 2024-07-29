@@ -3,7 +3,6 @@ import {VideoController} from "./VideoController";
 import Swiper from 'swiper';
 import {settings} from "./settings";
 import {SearchForm} from "./SearchForm";
-
 document.documentElement.classList.add('js');
 
 new VideoController();
@@ -14,7 +13,7 @@ new VideoController();
 
 settings.courseSlider.selectors.forEach((selector) => {
     if (document.querySelector(`${selector}`)) {
-        (new Swiper(`${selector} .slider-section__slider`, settings.courseSlider.generateSwiperSettings(selector))).init();
+        new Swiper(`${selector} .slider-section__slider`, settings.courseSlider.generateSwiperSettings(selector));
     }
 });
 

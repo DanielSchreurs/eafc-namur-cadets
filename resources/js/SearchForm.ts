@@ -5,6 +5,8 @@ export type SearchFormSettings = {
     operatingSystemSelector: string;
     itemsSelector: string;
     hiddenClass: string;
+    // this is a css class that is used to hide the slider if no items are found
+    showClass: string;
     afterEmptySearch?: () => void;
 };
 
@@ -96,8 +98,10 @@ export class SearchForm {
                         "$1<mark>$2</mark>$3",
                     );
                     item.classList.remove(this.settings.hiddenClass);
+                    item.classList.add(this.settings.showClass);
                 } else {
                     item.classList.add(this.settings.hiddenClass);
+                    item.classList.remove(this.settings.showClass);
                 }
             });
         } else {

@@ -1,7 +1,11 @@
+import Swiper from "swiper";
+
 export type FilterSettings = {
     itemSelector: string;
     formSelector: string,
     hiddenClass: string,
+    // this is a css class that is used to hide the slider if no items are found
+    showClass: string,
 }
 
 export class Filter {
@@ -56,6 +60,7 @@ export class Filter {
             });
             if (hidde) {
                 item.classList.add((this.settings.hiddenClass));
+                item.classList.remove((this.settings.showClass));
             }
         });
     }
@@ -63,6 +68,7 @@ export class Filter {
     private showAllItems() {
         this.items.forEach((item) => {
             item.classList.remove(this.settings.hiddenClass);
+            item.classList.add(this.settings.showClass);
         });
     }
 }
