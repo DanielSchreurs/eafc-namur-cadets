@@ -18,6 +18,7 @@ export class SearchForm {
     private readonly keyboardTemplate: HTMLTemplateElement;
     private hasKeyboard = false;
     private isMacos: boolean = false;
+    private readonly url: URL;
     private readonly items: NodeListOf<Element>;
 
     constructor(settings: SearchFormSettings) {
@@ -25,11 +26,15 @@ export class SearchForm {
         this.form = document.querySelector(settings.formSelector) as HTMLFormElement;
         this.input = document.querySelector(settings.inputSelector) as HTMLInputElement;
         this.keyboardTemplate = document.querySelector(settings.templateSelector) as HTMLTemplateElement;
-        this.items = document.querySelectorAll(settings.itemsSelector);
-        if (this.form && this.input) {
-            this.insertHTMLTemplate();
-            this.addEventListeners();
+        if (!this.form || !this.input || !this.keyboardTemplate) {
+            return;
         }
+        this.items = document.querySelectorAll(settings.itemsSelector);
+        // @ts-ignore
+        this.url = new URL(window.location);
+        this.setValueFromURL();
+        this.insertHTMLTemplate();
+        this.addEventListeners();
     }
 
     private addEventListeners() {
@@ -46,8 +51,18 @@ export class SearchForm {
         //     this.search(this.input.value);
         // });
         this.input.addEventListener('input', (e) => {
+            this.updateURL(e.currentTarget as HTMLInputElement);
             this.search(this.input.value);
         });
+    }
+
+    private updateURL(input: HTMLInputElement) {
+        if (input.value.trim().length === 0) {
+            this.url.searchParams.delete(input.name);
+        } else {
+            this.url.searchParams.set(input.name, input.value);
+        }
+        history.pushState(null, '', this.url);
     }
 
     private insertHTMLTemplate() {
@@ -98,5 +113,13 @@ export class SearchForm {
 
     private escapeRegExp(s: string) {
         return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+
+    private setValueFromURL() {
+        const q = this.url.searchParams.get(this.input.name);
+        if (q) {
+            this.input.value = q;
+            this.search(q);
+        }
     }
 }
