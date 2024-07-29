@@ -96,10 +96,10 @@
     }
 
 }
-.slider-section {
+.slider-section--course .slider-section {
     display: none;
 }
-.slider-section:has(.card--show) {
+.slider-section--course .slider-section:has(.card--show) {
     display: block;
 }
 

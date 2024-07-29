@@ -10,7 +10,6 @@ export const settings = {
         slidesPerView: 1.1,
         spaceBetween: 16,
         loop: false,
-        slidesOffsetBefore: 16,
         keyboard: {
             enabled: true,
         },
