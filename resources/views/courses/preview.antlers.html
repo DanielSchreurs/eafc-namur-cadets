@@ -1,7 +1,7 @@
 {{ if is_aside }}
     <aside class="card card--course">
 {{ else }}
-    <article class="card card--course swiper-slide" {{ if courses_categories }}data-cat="{{ courses_categories }}{{ slug }}{{ /courses_categories }}"{{ endif }}   {{ if tags }}data-tags="{{ tags }}{{ slug }}{{ /tags }}"{{ endif }}>
+    <article id="{{ id }}" class="card card--course swiper-slide" {{ if courses_categories }}data-cat="{{ courses_categories }}{{ slug }}{{ /courses_categories }}"{{ endif }}   {{ if tags }}data-tags="{{ tags }}{{ slug }} {{ /tags }}"{{ endif }}>
 {{ /if }}
     <div class="card__content">
         {{ unless is_aside }}

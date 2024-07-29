@@ -15,6 +15,6 @@ class FilterByCategoriesAndLevels extends Scope
      */
     public function apply($query, $values)
     {
-       // HELP NEEDED HERE
+        //$query->where('courses_categories', 'in', 'animalieres');
     }
 }
