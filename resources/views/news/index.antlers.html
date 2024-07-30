@@ -16,51 +16,51 @@
         <h2 class="visually-hidden">Pagination des actualités et des événements</h2>
         {{ paginate }}
         {{ if prev_page }}
-            <a class="btn" href="{{ prev_page }}" title="">Précédent</a>
+            <a class="btn" href="{{ prev_page }}" title="Page précédente">Précédent</a>
         {{ else }}
-            <div class="btn btn--disabled">Précédent</div>
+            <div class="btn btn--disabled" title="Page précédente indisponible">Précédent</div>
         {{ /if }}
 
         {{ links:segments }}
 
         {{ first }}
         {{ if page == current_page }}
-            <div class="btn btn--active">{{ page }}</div>
+            <div class="btn btn--active" title="Page actuelle, page {{ page }}">{{ page }}</div>
         {{ else }}
-            <a class="btn" href="{{ url }}" title="Vous êtes sur la page {{ page }}">{{ page }}</a>
+            <a class="btn" href="{{ url }}" title="Aller à la page {{ page }}">{{ page }}</a>
         {{ /if }}
         {{ /first }}
 
         {{ if slider }}
-            <div class="btn btn--disabled">&hellip;</div>
+            <div class="btn btn--disabled" title="Séparation des pages">&hellip;</div>
         {{ /if }}
 
         {{ slider }}
         {{ if page == current_page }}
-            <div class="btn btn--active">{{ page }}</div>
+            <div class="btn btn--active" title="Page actuelle, page {{ page }}">{{ page }}</div>
         {{ else }}
-            <a class="btn" href="{{ url }}" title="Vous êtes sur la page {{ page }}">{{ page }}</a>
+            <a class="btn" href="{{ url }}" title="Aller à la page {{ page }}">{{ page }}</a>
         {{ /if }}
         {{ /slider }}
 
         {{ if slider || (! slider && last) }}
-            <div class=" btn btn--disabled">&hellip;</div>
+            <div class="btn btn--disabled" title="Séparation des pages">&hellip;</div>
         {{ /if }}
 
         {{ last }}
         {{ if page == current_page }}
-            <div class="btn btn--active">{{ page }}</div>
+            <div class="btn btn--active" title="Page actuelle, page {{ page }}">{{ page }}</div>
         {{ else }}
-            <a class="btn" href="{{ url }}" title="Vous êtes sur la page {{ page }}">{{ page }}</a>
+            <a class="btn" href="{{ url }}" title="Aller à la page {{ page }}">{{ page }}</a>
         {{ /if }}
         {{ /last }}
 
         {{ /links:segments }}
 
         {{ if next_page }}
-            <a class="btn" href="{{ next_page }}" title="">Suivant</a>
+            <a class="btn" href="{{ next_page }}" title="Page suivante">Suivant</a>
         {{ else }}
-            <div class="btn btn--disabled">Suivant</div>
+            <div class="btn btn--disabled" title="Page suivante indisponible">Suivant</div>
         {{ /if }}
         {{ /paginate }}
     </nav>
