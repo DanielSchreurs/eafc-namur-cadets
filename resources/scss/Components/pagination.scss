@@ -1,0 +1,8 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: $base-size;
+    margin-bottom: $base-size;
+    gap: $base-size;
+}

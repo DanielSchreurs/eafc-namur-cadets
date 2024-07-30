@@ -1,0 +1,67 @@
+<div class="wrapper search-wrapper">
+    <h1 class="search-wrapper__header">{{page_title}}</h1>
+</div>
+{{ collection:news paginate="3" as="posts" }}
+{{ if no_results }}
+    <div class="wrapper warn-message">
+        <p>Il n'y a plus de news ici.</p>
+    </div>
+{{ /if }}
+<ul class="wrapper grid-card">
+{{ posts }}
+{{ partial:news.preview }}
+    {{ /posts }}
+    </ul>
+    <nav class="wrapper pagination">
+        <h2 class="visually-hidden">Pagination des actualités et des événements</h2>
+        {{ paginate }}
+        {{ if prev_page }}
+            <a class="btn" href="{{ prev_page }}" title="">Précédent</a>
+        {{ else }}
+            <div class="btn btn--disabled">Précédent</div>
+        {{ /if }}
+
+        {{ links:segments }}
+
+        {{ first }}
+        {{ if page == current_page }}
+            <div class="btn btn--active">{{ page }}</div>
+        {{ else }}
+            <a class="btn" href="{{ url }}" title="Vous êtes sur la page {{ page }}">{{ page }}</a>
+        {{ /if }}
+        {{ /first }}
+
+        {{ if slider }}
+            <div class="btn btn--disabled">&hellip;</div>
+        {{ /if }}
+
+        {{ slider }}
+        {{ if page == current_page }}
+            <div class="btn btn--active">{{ page }}</div>
+        {{ else }}
+            <a class="btn" href="{{ url }}" title="Vous êtes sur la page {{ page }}">{{ page }}</a>
+        {{ /if }}
+        {{ /slider }}
+
+        {{ if slider || (! slider && last) }}
+            <div class=" btn btn--disabled">&hellip;</div>
+        {{ /if }}
+
+        {{ last }}
+        {{ if page == current_page }}
+            <div class="btn btn--active">{{ page }}</div>
+        {{ else }}
+            <a class="btn" href="{{ url }}" title="Vous êtes sur la page {{ page }}">{{ page }}</a>
+        {{ /if }}
+        {{ /last }}
+
+        {{ /links:segments }}
+
+        {{ if next_page }}
+            <a class="btn" href="{{ next_page }}" title="">Suivant</a>
+        {{ else }}
+            <div class="btn btn--disabled">Suivant</div>
+        {{ /if }}
+        {{ /paginate }}
+    </nav>
+{{ /collection:news }}

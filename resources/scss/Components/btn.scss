@@ -1,4 +1,4 @@
-.btn,button {
+.btn, button {
     background-color: $primary;
     border: 2px solid $secondary;
     text-decoration: none;
@@ -14,7 +14,8 @@
     user-select: none;
     transition: $transition;
     white-space: nowrap;
-    &:hover,&:focus {
+
+    &:hover, &:focus, &--active {
         text-decoration: none;
         background-color: $secondary;
         border-radius: 0 $base-size-s 0 $base-size-s;
@@ -22,6 +23,7 @@
         border: 2px solid $primary;
         outline-offset: 2px;
     }
+
 }
 
 .btn--secondary {
@@ -29,9 +31,22 @@
     border-color: $secondary;
     color: $primary;
 
-    &:hover,&:focus {
+    &:hover, &:focus {
         background-color: $primary;
         border-color: $secondary;
         color: $white;
+    }
+}
+.btn--disabled {
+    background-color: $light-shade;
+    border-color: $primary;
+    color: $primary;
+    cursor: not-allowed;
+
+    &:hover, &:focus {
+        border-radius: $base-size-s 0 $base-size-s 0;
+        background-color: $light-shade;
+        border-color: $primary;
+        color: $primary;
     }
 }
