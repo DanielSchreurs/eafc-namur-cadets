@@ -3,6 +3,13 @@
     justify-content: center;
     align-items: center;
     margin-top: $base-size;
-    margin-bottom: $base-size;
+    margin-bottom: $base-size-xl;
     gap: $base-size;
+    flex-wrap: wrap;
+    .btn--first, .btn--last {
+        width: 100%;
+        @media screen and (min-width: 768px) {
+            width: auto;
+        }
+    }
 }
