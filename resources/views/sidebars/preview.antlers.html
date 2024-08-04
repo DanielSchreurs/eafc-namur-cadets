@@ -1,25 +1,6 @@
-<article class="card card--new-preview  swiper-slide">
-    <span class="card__tag">{{ is_event ? "Événement" : "Actualité" }}</span>
-    <a href="{{ url }}" title="Se rendre sur la page de {{ is_event ? "l’événement" : "l’actualité" }} : {{ title }}"
-       class="card__content">
-        {{ if main_image }}
-            <div class="card__img-container">
-                <img src="{{ glide:main_image preset="thumbnail" }}" alt="{{ main_image['alt'] }}">
-
-            </div>
-        {{ endif }}
-        <h3 class="card__title">{{ title }}</h3>
-        {{ short_description }}
-    </a>
-    {{ if logistics_info }}
-        <ul class="card__info">
-            {{ logistics_info }}
-            {{ if url_link }}
-                <li><a href="{{ url_link }}">{{ icon }}<span class="">{{ label }}</span></a></li>
-            {{ else }}
-                <li>{{ icon }}<span class="">{{ label }}</span></li>
-            {{ /if }}
-            {{ /logistics_info }}
-        </ul>
-    {{ /if }}
-</article>
+<aside class="aside">
+    <h2 class="aside__header h3">{{title}}</h2>
+    <div class="aside__content">
+        {{ content }}
+    </div>
+</aside>

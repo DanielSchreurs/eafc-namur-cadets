@@ -1,1 +1,85 @@
-{{ content }}
+<div class="wrapper">
+    <h1 class="search-wrapper__header">{{ page_title ?? title }}
+        {{ if subtitle }}<span class="h2 course-header__subtitle">{{ subtitle }}</span>{{ /if }}</h1>
+    {{ if (sections | count) > 2 }}
+        <nav class="internal-links">
+            <h2 class="visually-hidden">Les liens vers les sections</h2>
+            <p class="internal-links__label">Faire défiler jusqu'à la section&nbsp;:</p>
+            {{ sections }}
+            <a class="internal-links__link" href="#{{ title | slugify }}"
+               title="Aller à la section {{ title }}">{{ title }}</a>
+            {{ /sections }}
+        </nav>
+    {{ /if }}
+</div>
+<div class="wrapper">
+    <div class="page">
+        {{ if page_sidebars }}
+            <div>
+                {{ page_sidebars }}
+                {{ partial src="sidebars/preview" }}
+                {{ /page_sidebars }}
+            </div>
+        {{ /if }}
+        <div class="page__content">
+            {{ if sections }}
+                {{ sections }}
+                <section id="{{ title | slugify }}">
+                    <h2>{{ title }}</h2>
+                    {{ if choises }}
+                        {{ choises }}
+                        {{ if bard_field }}
+                            <div class="{{ two_col ? "text-column" : "" }}">
+                                {{ bard_field }}
+                            </div>
+                        {{ /if }}
+                        {{ if liframe }}
+                            {{ liframe }}
+                        {{ /if }}
+                        {{ if ressource_file }}
+                            <a class="btn btn--with-svg" href="{{ ressource_file:url }}"
+                               title="Télécharger au format {{ ressource_file:size }} le ressource_file {{ ressource_file:name }}">{{ svg src="css/download-pdf" }}{{ file_name }}</a>
+                        {{ /if }}
+                        {{ if display_mod }}
+                            {{ modalites_dinscription:content }}
+                        {{ /if }}
+                        {{ if element }}
+                            <dl class="grid-items">
+                                {{ element }}
+                                <div class="grid-items__item">
+                                    <dt class="grid-items__item__header">
+                                        <div>
+                                            {{ if profile_pic }}
+                                                <img src="{{ profile_pic }}"
+                                                     alt="Une photo de {{ name ? name : denomination }}">
+                                            {{ else }}
+                                                {{ svg src="User" }}
+                                            {{ /if }}
+                                        </div>
+                                        <div class="grid-items__item__header__name">
+                                            <span class="grid-items__item__header__name__important">{{ name}}</span>
+                                            <span>{{denomination}}</span>
+                                        </div>
+                                    </dt>
+                                    <dd>
+                                        {{ if telephone }}
+                                            <a href="tel:{{ telephone | regex_replace('[^0-9]', '') }}">{{ svg src="Phone" }}
+                                                <span>{{ telephone }}</span></a>
+                                        {{ /if }}
+                                        {{ if email }}
+                                            <a href="mailto:{{ email }}">{{ svg src="Mail" }}
+                                                <span>{{ email }}</span></a>
+                                        {{ /if }}
+                                    </dd>
+                                </div>
+                                {{ /element }}
+                            </dl>
+                        {{ endif }}
+                        {{ /choises }}
+                    {{ /if }}
+                </section>
+                {{ /sections }}
+            {{ /if }}
+        </div>
+    </div>
+</div>

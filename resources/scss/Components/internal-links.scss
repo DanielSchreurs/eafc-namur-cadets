@@ -1,0 +1,35 @@
+.internal-links {
+    background: $light-shade;
+    padding: $base-size;
+    display: flex;
+    gap: $base-size;
+    flex-wrap: wrap;
+    margin-top: $base-size-xxl;
+    border-radius: 0 $base-size 0 $base-size;
+    box-shadow: $box-shadow;
+
+    &__label {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__link {
+        box-shadow: $box-shadow;
+        border-radius: 0 $base-size 0 $base-size;
+        background: white;
+        padding: $base-size;
+        text-decoration: none;
+        text-align: center;
+        justify-content: center;
+        font-weight: bold;
+        display: flex;
+        @media screen and (max-width: 700px) {
+            width: 100%;
+        }
+
+        &:hover {
+            border-radius: $base-size 0 $base-size 0;
+        }
+    }
+}

@@ -21,6 +21,8 @@ preferences:
         - status
         - courses_levels
       after_save: continue_editing
+    pages:
+      after_save: continue_editing
   taxonomies:
     categories:
       columns:

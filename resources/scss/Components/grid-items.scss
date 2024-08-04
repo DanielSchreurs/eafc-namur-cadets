@@ -1,0 +1,68 @@
+.grid-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $base-size-l;
+
+    &__item {
+        background: $light-shade;
+        padding: $base-size;
+        width: 100%;
+        border-radius: 0 $base-size 0 $base-size;
+        box-shadow: $box-shadow;
+        display: flex;
+        flex-direction: column;
+        gap: $base-size-l;
+
+        a:has(svg) {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: $base-size-s;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        dd {
+            margin-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: $base-size-s;
+
+
+            > * {
+                display: block;
+            }
+
+            svg {
+                width: $base-size;
+                height: auto;
+            }
+        }
+
+        &__header {
+            text-transform: uppercase;
+            font-weight: bold;
+            display: flex;
+            gap: $base-size-s;
+            flex-direction: row;
+
+            svg {
+                width: $base-size-l;
+                height: auto;
+            }
+
+            &__name {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                &__important {
+                    color: $secondary;
+                    font-weight: bold;
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+}

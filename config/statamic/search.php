@@ -28,7 +28,7 @@ return [
         'default' => [
             'driver' => 'local',
             'searchables' => ['collection:courses'],
-            'fields' => ['title', 'subtitle', 'course_name', 'type_delivered', 'duration', 'replicator_field'],
+            'fields' => ['title', 'subtitle', 'course_name', 'type_delivered', 'duration', 'replicator_field', 'courses_categories', 'courses_levels', 'tags', 'admission_conditions', 'conditions_dadmission_epreuve', 'type_delivered', 'place',],
             'match_weights' => [
                 'partial_word' => 1,
                 'partial_first_word' => 2,
@@ -92,9 +92,4 @@ return [
     'defaults' => [
         'fields' => ['title'],
     ],
-
-
-
-
-
 ];

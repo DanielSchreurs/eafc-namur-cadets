@@ -26,6 +26,14 @@
 
 }
 
+.btn--with-svg {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: start;
+    gap: $base-size-s;
+}
+
 .btn--secondary {
     background-color: $white;
     border-color: $secondary;
@@ -37,6 +45,7 @@
         color: $white;
     }
 }
+
 .btn--disabled {
     background-color: $light-shade;
     border-color: $primary;
