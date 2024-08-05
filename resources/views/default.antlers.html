@@ -15,7 +15,7 @@
 <div class="wrapper">
     <div class="page">
         {{ if page_sidebars }}
-            <div>
+            <div class="page__aside">
                 {{ page_sidebars }}
                 {{ partial src="sidebars/preview" }}
                 {{ /page_sidebars }}
@@ -51,7 +51,7 @@
                                         <div>
                                             {{ if profile_pic }}
                                                 <img src="{{ profile_pic }}"
-                                                     alt="Une photo de {{ name ? name : denomination }}">
+                                                     alt="Une photo de {{ name ? name :denomination }}">
                                             {{ else }}
                                                 {{ svg src="User" }}
                                             {{ /if }}
