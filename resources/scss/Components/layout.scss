@@ -2,8 +2,8 @@
     max-width: $max-width;
     width: 100%;
     margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: $base-size;
+    padding-right: $base-size;
 }
 
 main {

@@ -1,4 +1,4 @@
-import {A11y, Keyboard, Navigation, Pagination} from 'swiper/modules';
+import {A11y, FreeMode, Keyboard, Navigation, Pagination} from 'swiper/modules';
 
 export const settings = {
     video: {
@@ -10,6 +10,7 @@ export const settings = {
         slidesPerView: 1.1,
         spaceBetween: 16,
         loop: false,
+        slidesOffsetBefore: 16,
         keyboard: {
             enabled: true,
         },
@@ -29,7 +30,12 @@ export const settings = {
             1200: {
                 slidesPerView: 4,
                 spaceBetween: 20
+            },
+            1900: {
+                slidesPerView: 4,
+                slidesOffsetBefore: 0,
             }
+
         },
         a11y: {
             enabled: true,
@@ -45,11 +51,12 @@ export const settings = {
         selectors: ['.slider-section--course-si', '.slider-section--course-ss', '.slider-section--course-stc'],
         generateSwiperSettings: (selector: string) => {
             return {
-                modules: [Navigation, Pagination, Keyboard, A11y],
+                modules: [Navigation, Pagination, Keyboard, A11y, FreeMode],
                 slidesPerView: 1.1,
-                spaceBetween: 16,
+                spaceBetween: 20,
                 loop: false,
                 slidesOffsetBefore: 16,
+                freeMode: true,
                 navigation: {
                     nextEl: `${selector} .swiper-button-next`,
                     prevEl: `${selector} .swiper-button-prev`,
@@ -69,7 +76,6 @@ export const settings = {
                     },
                     1900: {
                         slidesPerView: 4.0,
-                        slidesOffsetBefore: 0,
                     },
                 },
                 a11y: {

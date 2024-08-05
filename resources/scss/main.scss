@@ -8,7 +8,9 @@
 @import 'swiper/scss';
 @import 'swiper/scss/pagination';
 @import 'swiper/scss/navigation';
+@import 'swiper/scss/free-mode';
 @import 'swiper/scss/a11y';
+@import "Components/layout";
 @import "Components/header";
 @import "Components/home/hero";
 @import "Components/home/students";
@@ -24,7 +26,6 @@
 @import "Components/card";
 @import "Components/search-form";
 @import "Components/btn";
-@import "Components/layout";
 @import "Components/categories";
 @import "Components/levels";
 @import "Components/footer";
