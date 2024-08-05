@@ -48,9 +48,10 @@
                                 {{ element }}
                                 <div class="grid-items__item">
                                     <dt class="grid-items__item__header">
-                                        <div>
+                                        <div class="grid-items__item__header__img">
                                             {{ if profile_pic }}
-                                                <img src="{{ profile_pic }}"
+                                                <img src="{{ glide:profile_pic width='50' height='50' }}" width="50"
+                                                     height="50"
                                                      alt="Une photo de {{ name ? name :denomination }}">
                                             {{ else }}
                                                 {{ svg src="User" }}
