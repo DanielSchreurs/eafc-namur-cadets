@@ -59,3 +59,38 @@
         color: $primary;
     }
 }
+
+.btn--go-up {
+    width: fit-content;
+    position: fixed;
+    bottom: $base-size-xl;
+    right: $base-size-xl;
+    z-index: 99;
+    opacity: 0;
+    display: none;
+    @media screen and (min-width: 2000px) {
+        display: inline-block;
+    }
+
+    &--visible {
+        opacity: 1;
+    }
+
+    svg {
+        stroke: $white;
+        stroke-width: 2px;
+        transform: rotate(180deg);
+    }
+}
+
+.btn--go-up.btn--secondary {
+    svg {
+        stroke: $primary;
+    }
+
+    &:hover, &:focus {
+        svg {
+            stroke: $white;
+        }
+    }
+}

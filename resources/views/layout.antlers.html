@@ -10,12 +10,14 @@
     <title>{{ (page_title | strip_tags) ?? title }} | {{ site:name }}</title>
     {{ vite src="resources/js/main.ts|resources/scss/main.scss" }}
 </head>
-<body>
+<body id="top">
 <a class="visually-hidden" href="#main-content">Aller au contenu principale</a>
 {{ partial:header }}
 <main id="main-content">
     {{ template_content }}
 </main>
+<a class="btn btn--go-up" href="#top"
+   title="Remonter vers le haut de la page">{{ svg src="css/arrow-down-menu" }}</a>
 {{ partial:footer }}
 </body>
 </html>

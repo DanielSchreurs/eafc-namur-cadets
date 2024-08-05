@@ -8,11 +8,13 @@
         grid-template-rows: 1fr;
         gap: $base-size-xl;
     }
+
     &__aside {
         display: flex;
         flex-direction: column;
         gap: $base-size-xl;
     }
+
     &__content {
         @media screen and (max-width: 1200px) {
             grid-row-start: 1;
@@ -48,3 +50,4 @@
     }
 
 }
+

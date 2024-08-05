@@ -3,6 +3,8 @@ import {VideoController} from "./VideoController";
 import Swiper from 'swiper';
 import {settings} from "./settings";
 import {SearchForm} from "./SearchForm";
+import {GoUpBtn} from "./GoUpBtn";
+
 document.documentElement.classList.add('js');
 
 new VideoController();
@@ -19,3 +21,4 @@ settings.courseSlider.selectors.forEach((selector) => {
 
 const filter = new Filter(settings.filter);
 new SearchForm({...settings.searchForm, afterEmptySearch: filter.filter.bind(filter)});
+new GoUpBtn(settings.goUpBtn);

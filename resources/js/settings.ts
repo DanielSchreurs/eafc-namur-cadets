@@ -168,5 +168,9 @@ export const settings = {
         categoryInputSelector: '.categories__slider input[type="checkbox"]',
         tagInputSelector: '.tag-filter input[type="checkbox"]',
     },
-
+    goUpBtn: {
+        selector: '.btn--go-up',
+        showClass: 'btn--go-up--visible',
+        inverseClass: 'btn--secondary',
+    },
 };

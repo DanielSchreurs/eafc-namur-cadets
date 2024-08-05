@@ -147,17 +147,13 @@
     display: none;
 }
 
-.arrow-down-menu {
-    //display: none;
-}
-
 .header:has(#burger:checked) {
     .header__nav {
         grid-template-rows: 1fr;
     }
 }
 
-.arrow-down-menu {
+header .arrow-down-menu {
     display: none;
 }
 
