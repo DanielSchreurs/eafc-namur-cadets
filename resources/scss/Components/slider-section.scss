@@ -65,9 +65,11 @@
 
         &--full {
             max-width: none;
+
             h2 {
-                border-radius:  $base-size 0 0 $base-size;
+                border-radius: $base-size 0 0 $base-size;
             }
+
             @media screen and (min-width: $xxl-screen) {
                 margin-left: calc((100vw - $max-width) / 2);
             }
