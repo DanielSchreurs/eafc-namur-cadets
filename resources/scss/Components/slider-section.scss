@@ -97,13 +97,19 @@
     }
 
 }
-.slider-section--course .slider-section {
-    display: none;
-}
-.slider-section--course .slider-section:has(.card--show) {
-    display: block;
+
+@supports selector(:has(*)) {
+    .slider-section--course.slider-section {
+        display: none;
+    }
+
+    .slider-section--course.slider-section:has(.card--show) {
+        display: block;
+    }
+
+    body:has(.card--show) .warn-message--course-slider {
+        display: none;
+    }
 }
 
-body:has(.card--show) .warn-message--course-slider {
-    display: none;
-}
+
