@@ -17,7 +17,6 @@ export class GoUpBtn {
         }
 
         this.bottom = parseInt(window.getComputedStyle(this.goUpBtn).bottom) + this.goUpBtn.offsetHeight;
-        console.log(this.bottom);
         this.addEvent();
     }
 
