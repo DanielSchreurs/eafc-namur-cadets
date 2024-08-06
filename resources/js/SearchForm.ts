@@ -23,7 +23,7 @@ export class SearchForm {
     private readonly url: URL;
     private readonly items: NodeListOf<Element>;
 
-    constructor(settings: SearchFormSettings) {
+    constructor(settings: SearchFormSettings, url: URL) {
         this.settings = settings;
         this.form = document.querySelector(settings.formSelector) as HTMLFormElement;
         this.input = document.querySelector(settings.inputSelector) as HTMLInputElement;
@@ -33,7 +33,7 @@ export class SearchForm {
         }
         this.items = document.querySelectorAll(settings.itemsSelector);
         // @ts-ignore
-        this.url = new URL(window.location);
+        this.url = url;
         this.setValueFromURL();
         this.insertHTMLTemplate();
         this.addEventListeners();

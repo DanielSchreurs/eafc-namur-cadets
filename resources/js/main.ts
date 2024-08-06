@@ -7,6 +7,8 @@ import {GoUpBtn} from "./GoUpBtn";
 
 document.documentElement.classList.add('js');
 
+const url = new URL(window.location.href);
+
 new VideoController();
 
 (new Swiper(".slider-section--news .slider-section__slider", settings.news)).init();
@@ -19,6 +21,6 @@ settings.courseSlider.selectors.forEach((selector) => {
     }
 });
 
-const filter = new Filter(settings.filter);
-new SearchForm({...settings.searchForm, afterEmptySearch: filter.filter.bind(filter)});
+const filter = new Filter(settings.filter, url);
+new SearchForm({...settings.searchForm, afterEmptySearch: filter.filter.bind(filter)}, url);
 new GoUpBtn(settings.goUpBtn);

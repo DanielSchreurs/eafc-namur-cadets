@@ -16,7 +16,7 @@ export class Filter {
     private readonly url: URL;
     private settings: FilterSettings;
 
-    constructor(settings: FilterSettings) {
+    constructor(settings: FilterSettings, url: URL) {
         this.settings = settings;
         this.form = document.querySelector(settings.formSelector) as HTMLFormElement;
         if (!this.form) return;
@@ -24,7 +24,7 @@ export class Filter {
         this.tagInputs = this.form.querySelectorAll(settings.tagInputSelector);
         this.courses = document.querySelectorAll(settings.itemSelector);
         // @ts-ignore
-        this.url = new URL(window.location);
+        this.url = url;
         this.addEventListeners();
         this.filter();
     }
@@ -42,7 +42,7 @@ export class Filter {
         if (this.url.searchParams.has(input.name)) {
             this.url.searchParams.delete(input.name);
         } else {
-            this.url.searchParams.set(input.name, input.value);
+            this.url.searchParams.set(input.name, input.name);
         }
         history.pushState(null, '', this.url);
     }
