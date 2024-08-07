@@ -83,23 +83,16 @@ export class SearchForm {
 
     private search() {
         this.afterSearch?.();
-        this.searchWithoutFiltering()
-        this.updateSearch();
+        this.searchWithoutFiltering();
     }
 
     public searchWithoutFiltering() {
         const q = this.input.value.trim();
         this.removeAllMarks();
         if (q.trim().length > 0) {
-            if (this.input.dataset.oldValue > q) {
-                this.items.forEach((item) => {
-                    this.traiteItem(item as HTMLElement, q);
-                });
-            } else {
-                document.querySelectorAll(`${this.settings.itemsSelector}:not(.${this.settings.hiddenClass})`).forEach((item) => {
-                    this.traiteItem(item as HTMLElement, q);
-                });
-            }
+            document.querySelectorAll(`${this.settings.itemsSelector}:not(.${this.settings.hiddenClass})`).forEach((item) => {
+                this.traiteItem(item as HTMLElement, q);
+            });
         }
     }
 
@@ -140,9 +133,5 @@ export class SearchForm {
 
     public registerAfterSearch(callback: () => void) {
         this.afterSearch = callback;
-    }
-
-    private updateSearch() {
-        this.input.dataset.oldValue = this.input.value.trim();
     }
 }
