@@ -89,7 +89,9 @@
         display: flex;
         flex-direction: column;
         gap: $base-size;
-
+        .arrow-down-menu {
+            display: none;
+        }
         > a, > div > a {
             display: flex;
             flex-direction: row;
