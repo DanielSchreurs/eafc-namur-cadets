@@ -1,4 +1,4 @@
-<nav class="categories" aria-label="{{ cat_title }}">
+<nav class="categories">
     <h2 class="categories__header wrapper">{{ svg src="css/ampoule" }}{{ cat_title }}</h2>
     {{ svg src="css/claw-shapes" class="categories__claw" }}
         <ul class="slider slider--cat wrapper">
@@ -7,7 +7,7 @@
                     <a class="categories__category__link" href="{{ cat_link }}?{{slug}}=1">
                         <span class="categories__category__link__icon">{{ icon }}</span>
                         <span>{{ title }}</span>
-                        {{ partial src="partials/category-levels" :items="category_levels" }}
+                        {{ partial src="partials/category-levels" :items="category_levels" use_span="false"  }}
                     </a>
                 </li>
             {{ /taxonomy:courses_categories }}

@@ -15,7 +15,8 @@
         {{ if courses_levels  }}
             <ul class="course-levels__items-container">
                 {{ courses_levels }}
-                    <li class="course-levels__items-container__item">{{ title }} (<abbr title="{{ title }}">{{abbr}}</abbr>)</li>
+                <li class="course-levels__items-container__item">{{ title }} (<abbr title="{{ title }}">{{abbr}}</abbr>)
+                </li>
                 {{ /courses_levels }}
             </ul>
         {{ endif }}
@@ -43,9 +44,9 @@
                     </section>
                 {{ elseif type == "modalites_de_capitalisation_de_la_section" }}
                     <section>
-                        {{ svg src="css/eye" }}
+                        {{ svg src=":hammer: Refactoring code/eye" }}
                         <h3>{{ title }}</h3>
-                        <img src="{{ modalite_img }}" alt="{{ title }}" width="100%" height="auto">
+                        <img class="course-container__content__img" src="{{ modalite_img }}" alt="{{ title }}">
                     </section>
                 {{ elseif type == "un_titre_avec_liste_par_exemple_les_debouches" }}
                     <section class="course-container__content__items">
@@ -60,11 +61,11 @@
                 {{ elseif type == "img_slider" }}
                     <section>
                         <h3>{{ title }}</h3>
-                            <ul class="course-pictures">
-                                {{ img_slider }}
-                                <li class=""><img src="{{ url }}" alt="{{ alt }}"></li>
-                                {{ /img_slider }}
-                            </ul>
+                        <ul class="course-pictures">
+                            {{ img_slider }}
+                            <li class=""><img src="{{ url }}" alt="{{ alt }}"></li>
+                            {{ /img_slider }}
+                        </ul>
                     </section>
                 {{ /if }}
 

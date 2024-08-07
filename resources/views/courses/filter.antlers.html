@@ -1,5 +1,5 @@
 <form action="#" id="filter-form">
-    <div class="categories" aria-label="{{ cat_title }}">
+    <div class="categories">
         <p class="categories__label wrapper h5">Filtrez par catégories&nbsp;:</p>
         {{ svg src="css/claw-shapes" class="categories__claw" }}
         <ul class="slider slider--cat wrapper">
@@ -11,7 +11,7 @@
         <label for="{{ slug }}" class="categories__category__link">
             <span class="categories__category__link__icon">{{ icon }}</span>
             <span>{{ title }}</span>
-            {{ partial src="partials/category-levels" :items="category_levels" }}
+            {{ partial src="partials/category-levels" :items="category_levels" use_span="true" }}
             </label>
             </li>
             {{ /taxonomy:courses_categories }}

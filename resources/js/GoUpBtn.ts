@@ -2,6 +2,7 @@ export type GoUpBtnSettings = {
     selector: string;
     showClass: string;
     inverseClass: string;
+    scrollTrigger: number;
 }
 
 export class GoUpBtn {
@@ -22,7 +23,7 @@ export class GoUpBtn {
 
     addEvent() {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 200) {
+            if (window.scrollY > this.settings.scrollTrigger) {
                 this.goUpBtn.classList.add(this.settings.showClass);
                 if (window.innerHeight - document.querySelector('main').getBoundingClientRect().bottom > this.bottom) {
                     this.goUpBtn.classList.add(this.settings.inverseClass);

@@ -10,7 +10,7 @@
             <div class="slider-section__header slider-section__header--full slider-section__header--{{ abbr | lower }}">
                 <h2>{{ title }} ({{ abbr }})</h2></div>
             <div class="slider slider--course wrapper">
-                {{ entries filter = "{{get}}" query_scope = "filter_by_categories_and_levels" }}
+                {{ entries filter="{{get}}" query_scope="filter_by_categories_and_levels" }}
                 {{ partial:courses.preview }}
                 {{ /entries }}
             </div>

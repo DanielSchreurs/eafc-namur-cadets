@@ -2,7 +2,7 @@
     <div class="wrapper">
         <h1 class="visually-hidden">{{header:full_name}}</h1>
         <div class="header__logo">
-            <a title="Retournez à la page d’accueil &amp;" href="{{ site:url }}">
+            <a title="Retournez à la page d’accueil" href="{{ site:url }}">
                 {{ svg src="logo-eafc" id="Logo-EAFC" title="Logo de : {{ header:full_name|smartypants  }}" sanitize="false" }}
             </a>
             <input id="burger" type="checkbox"/>
@@ -15,11 +15,11 @@
         </div>
         <div class="header__nav">
             <div class="header__nav__content">
-                <nav class="tools-nav" aria-label="Navigation secondaire : liens vers nos outils externes">
+                <nav class="tools-nav">
                     <h2 class="visually-hidden">{{ footer:tools_title }}</h2>
                     {{ partial:second_nav }}
                 </nav>
-                <nav class="main-nav" aria-label="Navigation principale">
+                <nav class="main-nav">
                     <h2 class="visually-hidden">Navigation principale</h2>
                     {{ partial:main-nav }}
                 </nav>

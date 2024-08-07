@@ -21,6 +21,7 @@ export const settings = {
         tagInputSelector: '.tag-filter input[type="checkbox"]',
     },
     goUpBtn: {
+        scrollTrigger: 200,
         selector: '.btn--go-up',
         showClass: 'btn--go-up--visible',
         inverseClass: 'btn--secondary',

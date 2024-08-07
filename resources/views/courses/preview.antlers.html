@@ -20,7 +20,7 @@
                 {{ /courses_categories }}
             {{ endif }}
         </div>
-        {{ partial src="partials/category-levels" class="levels--course" :items="courses_levels" }}
+        {{ partial src="partials/category-levels" class="levels--course" :items="courses_levels" use_span="false"  }}
         {{ if is_aside }}
             <h2 class="visually-hidden">Informations importantes</h2>
         {{ else }}

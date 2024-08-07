@@ -1,8 +1,17 @@
 {{ if items  }}
-    <ul class="levels {{ class }}">
-        {{ items }}
-        <li class="levels__level levels__level--{{ abbr | upper }}"><abbr
-            title="Niveau certificatif : {{ title }}">{{ abbr }}</abbr></li>
-        {{ /items }}
-    </ul>
+    {{ if use_span }}
+        <span class="levels">
+            {{ items }}
+            <span class="levels__level levels__level--{{ abbr | upper }}"><abbr
+                title="Niveau certificatif : {{ title }}">{{ abbr }}</abbr></span>
+            {{ /items }}
+        </span>
+    {{ else }}
+        <ul class="levels">
+            {{ items }}
+            <li class="levels__level levels__level--{{ abbr | upper }}"><abbr
+                title="Niveau certificatif : {{ title }}">{{ abbr }}</abbr></li>
+            {{ /items }}
+        </ul>
+    {{ endif }}
 {{ endif }}
