@@ -8,7 +8,7 @@ export const settings = {
         inputSelector: '.search-form__input-container__search',
         templateSelector: '#keyboard-template',
         operatingSystemSelector: '#os',
-        itemsSelector: '.slider-section--course .slider__slide',
+        itemsSelector: '.slider-section--course .slider__slide, .grid-card .card--course',
         hiddenClass: 'visually-hidden',
         showClass: 'card--show',
     },
