@@ -34,7 +34,7 @@
             padding-bottom: $base-size-xxl;
             border-radius: $base-size 0 0 $base-size;
             margin: 0;
-            margin-bottom: -$base-size-xxxl;
+            margin-bottom: -$base-size-xl;
         }
 
         @media screen and (min-width: $xxl-screen) {
@@ -85,14 +85,6 @@
             h2 {
                 background: $tertiary;
             }
-        }
-    }
-
-    &__slider {
-
-        @media screen and (min-width: $max-width) {
-            padding-left: 0;
-            padding-right: $base-size-l;
         }
     }
 

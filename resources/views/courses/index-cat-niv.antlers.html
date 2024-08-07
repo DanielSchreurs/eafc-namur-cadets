@@ -9,15 +9,10 @@
         <nav class="slider-section slider-section--course slider-section--course-{{ abbr | lower }}">
             <div class="slider-section__header slider-section__header--full slider-section__header--{{ abbr | lower }}">
                 <h2>{{ title }} ({{ abbr }})</h2></div>
-            <div class="slider-section__slider swiper swiper-horizontal wrapper">
-                <div class="swiper-wrapper">
-                    {{ entries filter = "{{get}}" query_scope = "filter_by_categories_and_levels" }}
-                    {{ partial:courses.preview }}
-                    {{ /entries }}
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+            <div class="slider slider--course wrapper">
+                {{ entries filter = "{{get}}" query_scope = "filter_by_categories_and_levels" }}
+                {{ partial:courses.preview }}
+                {{ /entries }}
             </div>
         </nav>
     {{ endif }}

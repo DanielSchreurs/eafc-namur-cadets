@@ -1,0 +1,40 @@
+.slider {
+    display: grid;
+    gap: $base-size;
+    overflow-x: auto;
+    padding-bottom: $base-size;
+    position: relative;
+    z-index: 1;
+    @media screen and (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: 900px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (min-width: 1100px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.slider--news {
+    grid-template-columns: repeat(4, min(100%, 30rem));
+
+    .slider__slide {
+        @media screen and (max-width: $max-width) {
+            margin-left: $base-size;
+        }
+    }
+}
+
+.slider--course {
+    @media (screen and min-width: $xxl-screen) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @media (screen and max-width: $xxl-screen) {
+        padding-left: $base-size-l;
+    }
+}
+
+.slider--cat {
+    grid-template-columns: repeat(7, 1fr);
+}

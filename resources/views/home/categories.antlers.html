@@ -1,10 +1,9 @@
 <nav class="categories" aria-label="{{ cat_title }}">
     <h2 class="categories__header wrapper">{{ svg src="css/ampoule" }}{{ cat_title }}</h2>
     {{ svg src="css/claw-shapes" class="categories__claw" }}
-    <div class="categories__slider swiper swiper-horizontal wrapper">
-        <ul class="swiper-wrapper">
+        <ul class="slider slider--cat wrapper">
             {{ taxonomy:courses_categories }}
-                <li class="categories__category swiper-slide">
+                <li class="categories__category slider__slide">
                     <a class="categories__category__link" href="{{ cat_link }}?{{slug}}=1">
                         <span class="categories__category__link__icon">{{ icon }}</span>
                         <span>{{ title }}</span>
@@ -13,10 +12,6 @@
                 </li>
             {{ /taxonomy:courses_categories }}
         </ul>
-        <div class="swiper-pagination"></div>
-    </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
     <div class="categories__cta wrapper">
         <a class="btn" href="{{ cat_link }}">Voir toutes nos formations</a>
     </div>

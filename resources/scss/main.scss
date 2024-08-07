@@ -5,11 +5,6 @@
 @import "Composition/headers";
 @import "Composition/svg";
 @import "Composition/form";
-@import 'swiper/scss';
-@import 'swiper/scss/pagination';
-@import 'swiper/scss/navigation';
-@import 'swiper/scss/free-mode';
-@import 'swiper/scss/a11y';
 @import "Components/layout";
 @import "Components/header";
 @import "Components/home/hero";
@@ -30,13 +25,13 @@
 @import "Components/levels";
 @import "Components/footer";
 @import "Components/404";
-@import "Components/swiper";
 @import "Components/message";
 @import "Components/pagination";
 @import "Components/aside";
 @import "Components/page";
 @import "Components/internal-links";
 @import "Components/grid-items";
+@import "Components/slider";
 
 body {
     color: $primary;

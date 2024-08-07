@@ -22,10 +22,6 @@
         }
     }
 
-    &__label {
-        margin-bottom: -$base-size-l;
-    }
-
     &__header {
         position: relative;
         width: 100%;
@@ -142,23 +138,6 @@
         &:hover {
             fill: $primary;
         }
-    }
-
-    @media screen and (min-width: $xxl-screen) {
-        .swiper-button-prev {
-            left: calc((100% - $max-width) / 2 - $base-size);
-        }
-        .swiper-button-next {
-            right: calc((100% - $max-width) / 2 - $base-size);
-        }
-    }
-
-    &__slider {
-        width: 100%;
-    }
-
-    .swiper-pagination {
-        padding-top: 0;
     }
 }
 

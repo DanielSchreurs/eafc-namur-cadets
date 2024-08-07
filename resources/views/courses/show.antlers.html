@@ -60,16 +60,11 @@
                 {{ elseif type == "img_slider" }}
                     <section>
                         <h3>{{ title }}</h3>
-                        <div class="course-pictures swiper swiper-horizontal wrapper">
-                            <ul class="swiper-wrapper">
+                            <ul class="course-pictures">
                                 {{ img_slider }}
-                                <li class="swiper-slide"><img src="{{ url }}" alt="{{ alt }}"></li>
+                                <li class=""><img src="{{ url }}" alt="{{ alt }}"></li>
                                 {{ /img_slider }}
                             </ul>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-                        </div>
                     </section>
                 {{ /if }}
 
