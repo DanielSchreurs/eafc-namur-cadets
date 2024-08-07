@@ -7,10 +7,10 @@ export type SearchFormSettings = {
     hiddenClass: string;
     // this is a css class that is used to hide the slider if no items are found
     showClass: string;
-    afterEmptySearch?: () => void;
 };
 
 export class SearchForm {
+    afterSearch ?: () => void;
     private readonly macosPlatforms: RegExp = /(macintosh|macintel|macppc|mac68k|macos)/i;
     private readonly windowsPlatforms: RegExp = /(win32|win64|windows|wince)/i;
     private readonly linuxPlatforms: RegExp = /(linux)/i;
@@ -48,13 +48,9 @@ export class SearchForm {
                 }
             });
         }
-        // this.form.addEventListener('submit', (e) => {
-        //     e.preventDefault();
-        //     this.search(this.input.value);
-        // });
         this.input.addEventListener('input', (e) => {
             this.updateURL(e.currentTarget as HTMLInputElement);
-            this.search(this.input.value);
+            this.search();
         });
     }
 
@@ -85,27 +81,42 @@ export class SearchForm {
         });
     }
 
-    private search(q: string) {
+    private search() {
+        this.afterSearch?.();
+        this.searchWithoutFiltering()
+        this.updateSearch();
+    }
+
+    public searchWithoutFiltering() {
+        const q = this.input.value.trim();
         this.removeAllMarks();
         if (q.trim().length > 0) {
-            document.querySelectorAll(`${this.settings.itemsSelector}:not(.${this.settings.hiddenClass})`).forEach((item) => {
-                if (item.textContent.toLowerCase().includes(q.toLowerCase())) {
-                    item.innerHTML = item.innerHTML.replace(
-                        new RegExp(
-                            `(>[^<>]*)(${this.escapeRegExp(q)})([^<>]*<)`,
-                            "gi",
-                        ),
-                        "$1<mark>$2</mark>$3",
-                    );
-                    item.classList.remove(this.settings.hiddenClass);
-                    item.classList.add(this.settings.showClass);
-                } else {
-                    item.classList.add(this.settings.hiddenClass);
-                    item.classList.remove(this.settings.showClass);
-                }
-            });
+            if (this.input.dataset.oldValue > q) {
+                this.items.forEach((item) => {
+                    this.traiteItem(item as HTMLElement, q);
+                });
+            } else {
+                document.querySelectorAll(`${this.settings.itemsSelector}:not(.${this.settings.hiddenClass})`).forEach((item) => {
+                    this.traiteItem(item as HTMLElement, q);
+                });
+            }
+        }
+    }
+
+    private traiteItem(item: HTMLElement, q: string = this.input.value.trim()) {
+        if (item.textContent.toLowerCase().includes(q.toLowerCase())) {
+            item.innerHTML = item.innerHTML.replace(
+                new RegExp(
+                    `(>[^<>]*)(${this.escapeRegExp(q)})([^<>]*<)`,
+                    "gi",
+                ),
+                "$1<mark>$2</mark>$3",
+            );
+            item.classList.remove(this.settings.hiddenClass);
+            item.classList.add(this.settings.showClass);
         } else {
-            this.settings.afterEmptySearch?.();
+            item.classList.add(this.settings.hiddenClass);
+            item.classList.remove(this.settings.showClass);
         }
     }
 
@@ -123,7 +134,15 @@ export class SearchForm {
         const q = this.url.searchParams.get(this.input.name);
         if (q) {
             this.input.value = q;
-            this.search(q);
+            this.search();
         }
+    }
+
+    public registerAfterSearch(callback: () => void) {
+        this.afterSearch = callback;
+    }
+
+    private updateSearch() {
+        this.input.dataset.oldValue = this.input.value.trim();
     }
 }

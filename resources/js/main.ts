@@ -22,5 +22,9 @@ settings.courseSlider.selectors.forEach((selector) => {
 });
 
 const filter = new Filter(settings.filter, url);
-new SearchForm({...settings.searchForm, afterEmptySearch: filter.filter.bind(filter)}, url);
+const search = new SearchForm(settings.searchForm, url);
+
+filter.registerAfterFilter(search.searchWithoutFiltering.bind(search));
+search.registerAfterSearch(filter.filterWithoutSearch.bind(filter));
+
 new GoUpBtn(settings.goUpBtn);

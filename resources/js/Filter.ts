@@ -9,6 +9,7 @@ export type FilterSettings = {
 }
 
 export class Filter {
+    afterFilter?: () => void;
     private readonly form: HTMLFormElement;
     private readonly categoryInputs: NodeListOf<HTMLInputElement>;
     private readonly tagInputs: NodeListOf<HTMLInputElement>;
@@ -47,9 +48,15 @@ export class Filter {
         history.pushState(null, '', this.url);
     }
 
-    public filter() {
+    private filter() {
+        this.filterWithoutSearch();
+        this.afterFilter?.();
+    }
+
+    public filterWithoutSearch() {
         this.showAllItems();
-        if (this.url.searchParams.toString().length === 0) {
+        // Vérifier s'il y a des filtres appliqués
+        if (!(document.querySelector(`${this.settings.categoryInputSelector}:checked`))) {
             return;
         }
         this.courses.forEach((course) => {
@@ -96,5 +103,9 @@ export class Filter {
             item.classList.remove(this.settings.hiddenClass);
             item.classList.add(this.settings.showClass);
         });
+    }
+
+    public registerAfterFilter(callback: () => void) {
+        this.afterFilter = callback;
     }
 }
