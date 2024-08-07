@@ -17,7 +17,7 @@ export const settings = {
         itemSelector: '.slider-section--course .slider__slide',
         showClass: 'card--show',
         hiddenClass: 'visually-hidden',
-        categoryInputSelector: '.categories__slider input[type="checkbox"]',
+        categoryInputSelector: '.slider--cat input[type="checkbox"]',
         tagInputSelector: '.tag-filter input[type="checkbox"]',
     },
     goUpBtn: {
