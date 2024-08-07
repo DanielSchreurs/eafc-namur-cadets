@@ -18,9 +18,13 @@
 }
 
 .slider--news {
-    grid-template-columns: repeat(4, min(100%, 30rem));
+    grid-template-columns: repeat(4, min(90%, 30rem));
 
-    .slider__slide {
+    @media screen and (min-width: 800px) {
+        grid-template-columns: repeat(4, min(100%, 30rem));
+    }
+
+    .slider__slide:first-child {
         @media screen and (max-width: $max-width) {
             margin-left: $base-size;
         }
