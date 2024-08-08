@@ -14,7 +14,7 @@ export const settings = {
     },
     filter: {
         formSelector: '#filter-form',
-        itemSelector: '.slider-section--course .slider__slide',
+        itemSelector: '.slider-section--course .slider__slide, .grid-card .card--course',
         showClass: 'card--show',
         hiddenClass: 'visually-hidden',
         categoryInputSelector: '.slider--cat input[type="checkbox"]',
