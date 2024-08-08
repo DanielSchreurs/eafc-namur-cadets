@@ -6,9 +6,9 @@
 {{ partial:courses.filter }}
 {{ taxonomy:courses_levels }}
     {{ if entries_count > 0 }}
-        <nav class="slider-section slider-section--course slider-section--course-{{ abbr | lower }}">
+        <nav class="slider-section slider-section--course slider-section--course-{{ abbr | lower }}" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
             <div class="slider-section__header slider-section__header--full slider-section__header--{{ abbr | lower }}">
-                <h2>{{ title }} ({{ abbr }})</h2></div>
+                <h2 itemprop="name">{{ title }} ({{ abbr }})</h2></div>
             <div class="slider slider--course wrapper">
                 {{ entries filter="{{get}}" query_scope="filter_by_categories_and_levels" }}
                 {{ partial:courses.preview }}

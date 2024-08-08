@@ -89,9 +89,11 @@
         display: flex;
         flex-direction: column;
         gap: $base-size;
+
         .arrow-down-menu {
             display: none;
         }
+
         > a, > div > a {
             display: flex;
             flex-direction: row;
@@ -111,6 +113,9 @@
 
     .footer__contact {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: $base-size-l;
 
         a {
             color: $secondary;
@@ -120,9 +125,19 @@
             }
         }
 
-        strong {
-            color: $secondary;
-            transition: $transition;
+        a {
+            font-weight: bold;
+        }
+
+        .opening_hours {
+            display: flex;
+            flex-direction: column;
+            gap: $base-size-s;
+
+            li p:nth-child(2) {
+                font-weight: bold;
+                color: $secondary;
+            }
         }
 
         .arobase {
@@ -137,6 +152,7 @@
             height: 12.5rem;
             z-index: 0;
             opacity: 0.3;
+
             &:hover {
                 opacity: 0.5;
             }
@@ -148,12 +164,9 @@
         }
 
         &__info {
-            margin-top: $base-size-l;
             position: relative;
+            font-style: normal;
             z-index: 2;
-            &:first-of-type {
-                margin-top: $base-size;
-            }
         }
     }
 

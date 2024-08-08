@@ -17,7 +17,7 @@
     <title>{{ (page_title | strip_tags) ?? title }} | {{ site:name }}</title>
     {{ vite src="resources/js/main.ts|resources/scss/main.scss" }}
 </head>
-<body id="top">
+<body id="top" itemscope itemtype="https://schema.org/HighSchool">
 <a class="visually-hidden" href="#main-content">Aller au contenu principale</a>
 {{ partial:header }}
 <main id="main-content">

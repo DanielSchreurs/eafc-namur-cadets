@@ -17,19 +17,34 @@
             </nav>
             <section class="footer__contact">
                 <h2>{{ footer:contacts_title }}</h2>
-                {{ if footer:contacts  }}
-                    {{ footer:contacts }}
+
+                {{ if footer:address  }}
+                    <address itemprop="address" class="footer__contact__info">
+                        {{ footer:address }}
+                    </address>
+                {{ endif }}
+                {{ if footer:phone and footer:email  }}
                     <div class="footer__contact__info">
-                        {{ info }}
+                        <p>
+                            {{ svg src="Phone" }}&nbsp;: <a href="tel:{{ footer:phone | regex_replace('[^0-9]', '') }}" title="Nous contacter par téléphone"><span itemprop="telephone">{{ footer:phone }}</span></a>
+                        </p>
+                        <p>
+                            {{ svg src="Mail" }}&nbsp;: <a href="tel:{{ footer:email }}" title="Nous contacter par téléphone"><span itemprop="email">{{ footer:email }}</span></a>
+                        </p>
                     </div>
-                    {{ /footer:contacts }}
+                {{ endif }}
+                {{ if footer:opening_hours  }}
+                    <ul class="footer__contact__info opening_hours">
+                        {{ footer:opening_hours }}
+                        <li itemprop="openingHours">
+                            <p>{{ days }}</p>
+                            <p>{{ opening }}</p>
+                        </li>
+                        {{ /footer:opening_hours }}
+                    </ul>
                 {{ endif }}
                 {{ svg src="css/arobase" }}
             </section>
-            {{#             <nav class="tools-nav" aria-label="{{ footer:tools_title }}"> #}}
-            {{#                 <h2 class="">{{footer:tools_title}}</h2> #}}
-            {{#                 {{ partial:second_nav }} #}}
-            {{#             </nav> #}}
             <div class="footer__po">
                 <div class="h2">Pouvoir organisateur</div>
                 <a rel="external" title="Aller sur la page : Wallonie-Bruxelles Enseignement"

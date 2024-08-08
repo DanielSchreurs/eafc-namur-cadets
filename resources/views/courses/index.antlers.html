@@ -4,7 +4,7 @@
     {{ svg src="css/glass" class="search-wrapper__glass" }}
 </div>
 {{ partial:courses.filter }}
-<ul class="wrapper grid-card">
+<ul class="wrapper grid-card" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
     {{ collection:courses }}
         {{ partial:courses.preview }}
     {{ /collection:courses }}

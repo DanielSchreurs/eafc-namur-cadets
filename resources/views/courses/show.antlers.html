@@ -1,10 +1,10 @@
-<div class="course-header">
+<div class="course-header" itemprop="itemListElement" itemscope itemtype="https://schema.org/EducationalOccupationalProgram">
     <div class="course-header__wrapper">
         {{ partial src="partials/is-new" }}
         {{ if subtitle }}
             <p class="h2 course-header__subtitle">{{ subtitle }}</p>
         {{ /if }}
-        <h1 class="course-header__title {{ is_new && ! subtitle ? "add-padding" : "" }}">{{ title }}</h1>
+        <h1 itemprop="name" class="course-header__title {{ is_new && ! subtitle ? "add-padding" : "" }}">{{ title }}</h1>
         {{ svg src="css/glass" class="course-header__wrapper__glass" }}
         {{ partial src="partials/search-form" }}
     </div>
@@ -33,7 +33,7 @@
                     <section class="course-container__content__text">
                         {{ svg src="css/ampoule" class="ampule" }}
                         <h3>{{ title }}</h3>
-                        <div class="text-column">
+                        <div class="text-column" itemprop="description">
                             {{ content }}
                             {{ if (content | read_time) > 1 }}
                                 <small>Environ {{ content | read_time }}

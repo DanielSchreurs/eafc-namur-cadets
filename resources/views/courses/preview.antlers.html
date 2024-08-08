@@ -1,7 +1,8 @@
 {{ if is_aside }}
     <aside class="card card--course">
 {{ else }}
-    <article class="card card--course slider__slide card--show"
+    <article itemprop="itemListElement" itemscope itemtype="https://schema.org/EducationalOccupationalProgram"
+             class="card card--course slider__slide card--show"
              {{ if courses_categories }}data-cat="{{ courses_categories }}{{ slug }}{{ /courses_categories }}"{{ endif }}
     {{ if tags }}data-tags="{{ tags }}{{ slug }} {{ /tags }}"{{ endif }}>
 {{ /if }}
@@ -13,18 +14,18 @@
             {{ partial src="partials/is-new" }}
         {{ /unless }}
         <div class="card__img-container">
-            <img src="{{ glide:img preset="thumbnail" }}" alt="{{ img['alt'] }}">
+            <img itemprop="image" src="{{ glide:img preset="thumbnail" }}" alt="{{ img['alt'] }}">
             {{ if courses_categories }}
                 {{ courses_categories }}
                 <div class="card__img-container__cat">{{ icon }}<span>{{ title }}</span></div>
                 {{ /courses_categories }}
             {{ endif }}
         </div>
-        {{ partial src="partials/category-levels" class="levels--course" :items="courses_levels" use_span="false"  }}
+        {{ partial src="partials/category-levels" class="levels--course" :items="courses_levels" use_span="false" }}
         {{ if is_aside }}
             <h2 class="visually-hidden">Informations importantes</h2>
         {{ else }}
-            <h2 class="card__title h5">{{ title }}</h2>
+            <h2 class="card__title h5" itemprop="name">{{ title }}</h2>
             {{ if subtitle }}
                 <p class="card__subtitle">{{ subtitle }}</p>
             {{ endif }}
@@ -44,7 +45,7 @@
                 {{ if admission_conditions }}
                     <div class="card__content__spacer">
                         <dt>Conditions d’admission par diplôme&nbsp;:</dt>
-                        <dd>{{ admission_conditions:label }}</dd>
+                        <dd itemprop="programPrerequisites">{{ admission_conditions:label }}</dd>
                     </div>
                 {{ endif }}
                 {{ if conditions_dadmission_epreuve }}
@@ -57,13 +58,13 @@
             {{ if type_delivered && course_name }}
                 <div class="card__content__spacer">
                     <dt>Titre délivré&nbsp;:</dt>
-                    <dd>{{ type_delivered:label }}&nbsp;: {{ course_name }}</dd>
+                    <dd itemprop="educationalCredentialAwarded">{{ type_delivered:label }}&nbsp;: {{ course_name }}</dd>
                 </div>
             {{ endif }}
             {{ if duration }}
                 <div class="card__content__spacer">
                     <dt>Durée minimale de la formation&nbsp;:</dt>
-                    <dd>{{ duration }}</dd>
+                    <dd itemprop="timeToComplete">{{ duration }}</dd>
                 </div>
             {{ endif }}
             {{ if is_aside }}
@@ -88,7 +89,7 @@
                         section (PDF)</a>
                 {{ /if }}
             {{ else }}
-                <a href="{{ url }}" class="btn btn--secondary">Voir la formation<span
+                <a itemprop="url" href="{{ url }}" class="btn btn--secondary">Voir la formation<span
                     class="visually-hidden"> : {{ title }}</span></a>
             {{ /if }}
 

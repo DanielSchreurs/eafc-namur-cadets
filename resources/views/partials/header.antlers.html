@@ -1,6 +1,6 @@
 <header class="header">
     <div class="wrapper">
-        <h1 class="visually-hidden">{{header:full_name}}</h1>
+        <h1 itemprop="legalName" class="visually-hidden">{{header:full_name}}</h1>
         <div class="header__logo">
             <a title="Retournez à la page d’accueil" href="{{ site:url }}">
                 {{ svg src="logo-eafc" id="Logo-EAFC" title="Logo de : {{ header:full_name|smartypants  }}" sanitize="false" }}
